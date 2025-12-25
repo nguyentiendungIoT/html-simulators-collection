@@ -1,0 +1,594 @@
+<html lang="vi"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô phỏng FreeRTOS Heap_4 &amp; xTaskCreate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .heap-block { transition: all 0.5s ease-in-out; }
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.bottom-full{bottom:100%}.left-1\/2{left:50%}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.flex{display:flex}.grid{display:grid}.h-3{height:0.75rem}.h-32{height:8rem}.h-64{height:16rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-3{width:0.75rem}.w-full{width:100%}.max-w-6xl{max-width:72rem}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-orange-500{--tw-border-opacity:1;border-color:rgb(249 115 22 / var(--tw-border-opacity, 1))}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-red-100{--tw-border-opacity:1;border-color:rgb(254 226 226 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-blue-200{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-blue-700{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-green-200{--tw-bg-opacity:1;background-color:rgb(187 247 208 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-orange-200{--tw-bg-opacity:1;background-color:rgb(254 215 170 / var(--tw-bg-opacity, 1))}.bg-purple-200{--tw-bg-opacity:1;background-color:rgb(233 213 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.pb-1{padding-bottom:0.25rem}.pl-5{padding-left:1.25rem}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.italic{font-style:italic}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-orange-600{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-900:hover{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.hover\:bg-green-700:hover{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.hover\:bg-green-200:hover{--tw-bg-opacity:1;background-color:rgb(187 247 208 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}}</style></head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-blue-700 text-white p-6 shadow-md">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl font-bold flex items-center gap-3">
+                <span class="material-symbols-outlined text-4xl">memory</span>
+                FreeRTOS Memory Visualizer
+            </h1>
+            <p class="mt-2 text-blue-100 text-lg">Mô phỏng trực quan `heap_4.c`, `xTaskCreate()` và Dynamic Allocation</p>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl mx-auto w-full p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Column 1: Controls & Explanation (4 cols) -->
+        <div class="lg:col-span-4 space-y-6">
+            
+            <!-- Explanation Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+                <h2 class="text-xl font-bold text-gray-700 mb-3 flex items-center">
+                    <span class="material-symbols-outlined mr-2">school</span>
+                    Nguyên lý hoạt động
+                </h2>
+                <div class="space-y-4 text-sm text-gray-600">
+                    <p>
+                        <strong class="text-blue-600">8) xTaskCreate Flow:</strong><br>
+                        Khi tạo task, FreeRTOS cần 2 khối nhớ từ <code class="bg-gray-100 px-1 rounded">ucHeap</code>:
+                        </p><ul class="list-disc pl-5 mt-1 space-y-1">
+                            <li><strong>TCB (Task Control Block):</strong> Chứa trạng thái task, độ ưu tiên, v.v.</li>
+                            <li><strong>Stack:</strong> Vùng nhớ hoạt động cho task.</li>
+                        </ul>
+                    <p></p>
+                    <p>
+                        <strong class="text-green-600">heap_4.c Logic:</strong><br>
+                        Sử dụng thuật toán <em>First Fit</em> (tìm khối trống đầu tiên vừa đủ) và <em>Coalescence</em> (gộp khối trống liền kề khi giải phóng).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+                <h2 class="text-xl font-bold text-gray-700 mb-4 flex items-center">
+                    <span class="material-symbols-outlined mr-2">tune</span>
+                    Bảng điều khiển
+                </h2>
+                <div class="space-y-3">
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center transition" onclick="simCreateTask()">
+                        <span class="material-symbols-outlined mr-2">add_task</span>
+                        Gọi xTaskCreate()
+                    </button>
+                    
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg flex items-center justify-center transition" onclick="simMalloc(20)">
+                            <span class="material-symbols-outlined mr-1">data_object</span>
+                            malloc(Small)
+                        </button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg flex items-center justify-center transition" onclick="simMalloc(50)">
+                            <span class="material-symbols-outlined mr-1">dataset</span>
+                            malloc(Big)
+                        </button>
+                    </div>
+
+                    <button class="w-full border-2 border-red-100 text-red-600 hover:bg-red-50 font-medium py-2 px-4 rounded-lg flex items-center justify-center transition" onclick="resetHeap()">
+                        <span class="material-symbols-outlined mr-2">restart_alt</span>
+                        Reset Heap (Reboot)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Debug Stats (Part 10) -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+                <h2 class="text-xl font-bold text-gray-700 mb-4 flex items-center">
+                    <span class="material-symbols-outlined mr-2">analytics</span>
+                    vPortGetHeapStats()
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-500">Free Space:</span>
+                        <span class="font-mono font-bold text-green-600" id="stat-free-size">207</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-500">Min Free Ever:</span>
+                        <span class="font-mono text-orange-600" id="stat-min-free">512</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-500">Free Blocks:</span>
+                        <span class="font-mono" id="stat-free-blocks">1</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Allocations:</span>
+                        <span class="font-mono text-blue-600" id="stat-allocs">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Buttons -->
+            <div class="grid grid-cols-1 gap-3">
+                <button class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-xl shadow-lg flex items-center justify-center transition" onclick="downloadSource()">
+                    <span class="material-symbols-outlined mr-2">description</span>
+                    Tải Mã Nguồn C (Logic)
+                </button>
+                <button class="w-full bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 px-4 rounded-xl shadow-lg flex items-center justify-center transition" onclick="downloadHTML()">
+                    <span class="material-symbols-outlined mr-2">html</span>
+                    Tải Mã Nguồn HTML (App)
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Column 2: Visualization & Logs (8 cols) -->
+        <div class="lg:col-span-8 flex flex-col gap-6">
+            
+            <!-- Visual Heap -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-200 p-6 flex-grow flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-gray-700">Mô phỏng Bộ Nhớ (ucHeap)</h2>
+                    <div class="flex gap-4 text-xs font-medium">
+                        <div class="flex items-center"><div class="w-3 h-3 bg-green-200 border border-green-500 rounded mr-1"></div> Free</div>
+                        <div class="flex items-center"><div class="w-3 h-3 bg-blue-200 border border-blue-500 rounded mr-1"></div> TCB</div>
+                        <div class="flex items-center"><div class="w-3 h-3 bg-purple-200 border border-purple-500 rounded mr-1"></div> Stack</div>
+                        <div class="flex items-center"><div class="w-3 h-3 bg-orange-200 border border-orange-500 rounded mr-1"></div> Data</div>
+                    </div>
+                </div>
+
+                <!-- The Heap Container -->
+                <div class="w-full bg-gray-100 rounded-lg border-2 border-gray-300 h-32 relative overflow-hidden flex" id="heap-container"><div class="h-full border-r border-white/20 relative group cursor-pointer heap-block bg-green-100 hover:bg-green-200" style="width: 100%;"><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 pointer-events-none transition z-10 whitespace-nowrap">Addr: 0<br>Size: 512<br>Type: FREE</div></div></div>
+                
+                <div class="mt-2 flex justify-between text-xs text-gray-400 font-mono">
+                    <span>0x0000</span>
+                    <span>ucHeap (Low Address -&gt; High Address)</span>
+                    <span>0xFFFF</span>
+                </div>
+            </div>
+
+            <!-- Logger / Console -->
+            <div class="bg-gray-900 rounded-xl shadow-md p-4 h-64 overflow-y-auto font-mono text-sm text-gray-300 flex flex-col-reverse" id="log-console"><div class="mb-1 border-b border-gray-800 pb-1"><span class="text-gray-500 mr-2">[2:29:23]</span> Hệ thống khởi động. Heap được khởi tạo (1 khối Free duy nhất).</div>
+                <div class="mt-2 italic text-gray-500">Hệ thống đã sẵn sàng...</div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        // --- Configuration ---
+        const HEAP_SIZE = 512; // Abstract units
+        const TCB_SIZE = 32;
+        const DEFAULT_STACK_SIZE = 64;
+
+        // --- State ---
+        let heapBlocks = [];
+        let allocCount = 0;
+        let freeCount = 0;
+        let minFreeEver = HEAP_SIZE;
+
+        // --- Initialization ---
+        function initHeap() {
+            heapBlocks = [
+                { id: 'init', type: 'FREE', size: HEAP_SIZE, start: 0 }
+            ];
+            allocCount = 0;
+            freeCount = 0;
+            minFreeEver = HEAP_SIZE;
+            renderHeap();
+            log("Hệ thống khởi động. Heap được khởi tạo (1 khối Free duy nhất).");
+            updateStats();
+        }
+
+        // --- Core Logic: heap_4.c Simulation ---
+
+        // 1. pvPortMalloc Simulation
+        function pvPortMalloc(size, type) {
+            // Alignment overhead simulation (simplified)
+            const neededSize = size; 
+
+            // Algorithm: First Fit
+            // Scan the list for the first FREE block that is big enough
+            for (let i = 0; i < heapBlocks.length; i++) {
+                const block = heapBlocks[i];
+                
+                if (block.type === 'FREE' && block.size >= neededSize) {
+                    // Found a fit!
+                    
+                    // Logic: Split the block
+                    const remainingSize = block.size - neededSize;
+                    const newBlock = {
+                        id: 'alloc-' + Date.now() + Math.random(),
+                        type: type,
+                        size: neededSize,
+                        start: block.start
+                    };
+
+                    if (remainingSize > 0) {
+                        // Create the remaining free block
+                        const nextFree = {
+                            id: 'free-' + Date.now(),
+                            type: 'FREE',
+                            size: remainingSize,
+                            start: block.start + neededSize
+                        };
+                        // Replace the old big free block with [Allocated, RemainingFree]
+                        heapBlocks.splice(i, 1, newBlock, nextFree);
+                    } else {
+                        // Exact fit (rare), just change type
+                        heapBlocks[i] = newBlock;
+                    }
+
+                    allocCount++;
+                    log(`pvPortMalloc(${size}): Tìm thấy khối trống tại offset ${newBlock.start}. Cấp phát ${type}.`);
+                    renderHeap();
+                    updateStats();
+                    return newBlock.id;
+                }
+            }
+            
+            log(`Lỗi: pvPortMalloc(${size}) thất bại! Không đủ bộ nhớ trống liên tục.`);
+            return null;
+        }
+
+        // 2. vPortFree Simulation
+        function vPortFree(id) {
+            const index = heapBlocks.findIndex(b => b.id === id);
+            if (index === -1) return;
+
+            const block = heapBlocks[index];
+            log(`vPortFree: Giải phóng khối tại offset ${block.start} (${block.type})...`);
+            
+            // Mark as free
+            block.type = 'FREE';
+            block.id = 'freed-' + Date.now();
+            freeCount++;
+
+            // Algorithm: Coalescence (Merge adjacent free blocks)
+            // Check Next
+            if (index + 1 < heapBlocks.length && heapBlocks[index + 1].type === 'FREE') {
+                log(`Coalescence: Gộp với khối trống kế tiếp (Size ${heapBlocks[index+1].size}).`);
+                block.size += heapBlocks[index + 1].size;
+                heapBlocks.splice(index + 1, 1); // Remove the next block
+            }
+
+            // Check Previous
+            if (index - 1 >= 0 && heapBlocks[index - 1].type === 'FREE') {
+                log(`Coalescence: Gộp với khối trống phía trước (Size ${heapBlocks[index-1].size}).`);
+                const prevBlock = heapBlocks[index - 1];
+                prevBlock.size += block.size;
+                heapBlocks.splice(index, 1); // Remove current block (merged into previous)
+            }
+
+            renderHeap();
+            updateStats();
+        }
+
+        // --- High Level Functions ---
+
+        async function simCreateTask() {
+            log("--> Bắt đầu xTaskCreate()...");
+            
+            // Step 1: Allocate TCB
+            await delay(300);
+            const tcbId = pvPortMalloc(TCB_SIZE, 'TCB');
+            if (!tcbId) {
+                log("xTaskCreate thất bại do thiếu RAM cho TCB!");
+                return;
+            }
+
+            // Step 2: Allocate Stack
+            await delay(600);
+            const stackId = pvPortMalloc(DEFAULT_STACK_SIZE, 'STACK');
+            if (!stackId) {
+                log("xTaskCreate thất bại do thiếu RAM cho Stack! (Rollback TCB)");
+                vPortFree(tcbId);
+                return;
+            }
+
+            // Store metadata on the stack block so we can identify it later for UI interaction
+            const stackBlock = heapBlocks.find(b => b.id === stackId);
+            if(stackBlock) stackBlock.relatedId = tcbId; // Link them conceptually
+
+            log("xTaskCreate thành công! Task đã sẵn sàng.");
+        }
+
+        function simMalloc(size) {
+            pvPortMalloc(size, 'DATA');
+        }
+
+        function resetHeap() {
+            initHeap();
+        }
+
+        function updateStats() {
+            let freeSize = 0;
+            let freeBlocks = 0;
+            let minBlock = null;
+
+            heapBlocks.forEach(b => {
+                if (b.type === 'FREE') {
+                    freeSize += b.size;
+                    freeBlocks++;
+                    if (minBlock === null || b.size < minBlock) minBlock = b.size;
+                }
+            });
+
+            if (freeSize < minFreeEver) minFreeEver = freeSize;
+
+            // Update DOM
+            animateValue("stat-free-size", parseInt(document.getElementById("stat-free-size").innerText), freeSize);
+            document.getElementById("stat-min-free").innerText = minFreeEver;
+            document.getElementById("stat-free-blocks").innerText = freeBlocks;
+            document.getElementById("stat-allocs").innerText = allocCount;
+        }
+
+        // --- Rendering & UI Helpers ---
+
+        function renderHeap() {
+            const container = document.getElementById('heap-container');
+            container.innerHTML = '';
+
+            heapBlocks.forEach(block => {
+                const div = document.createElement('div');
+                const percent = (block.size / HEAP_SIZE) * 100;
+                
+                div.style.width = `${percent}%`;
+                div.className = `h-full border-r border-white/20 relative group cursor-pointer heap-block `;
+                
+                // Color Logic
+                if (block.type === 'FREE') div.classList.add('bg-green-100', 'hover:bg-green-200');
+                else if (block.type === 'TCB') div.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                else if (block.type === 'STACK') div.classList.add('bg-purple-500', 'hover:bg-purple-600');
+                else div.classList.add('bg-orange-400', 'hover:bg-orange-500');
+
+                // Tooltip
+                const tooltip = document.createElement('div');
+                tooltip.className = "absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 pointer-events-none transition z-10 whitespace-nowrap";
+                tooltip.innerHTML = `Addr: ${block.start}<br>Size: ${block.size}<br>Type: ${block.type}`;
+                div.appendChild(tooltip);
+
+                // Click to Free (only if allocated)
+                if (block.type !== 'FREE') {
+                    div.onclick = () => {
+                        if (confirm(`Giải phóng khối nhớ ${block.type} tại ${block.start}?`)) {
+                            vPortFree(block.id);
+                        }
+                    };
+                    
+                    // Add label if big enough
+                    if (percent > 5) {
+                        const label = document.createElement('span');
+                        label.className = "absolute inset-0 flex items-center justify-center text-xs font-bold text-white/90 overflow-hidden";
+                        label.innerText = block.type;
+                        div.appendChild(label);
+                    }
+                }
+
+                container.appendChild(div);
+            });
+        }
+
+        function log(msg) {
+            const consoleEl = document.getElementById('log-console');
+            const line = document.createElement('div');
+            line.className = "mb-1 border-b border-gray-800 pb-1";
+            
+            const time = new Date().toLocaleTimeString().split(' ')[0];
+            line.innerHTML = `<span class="text-gray-500 mr-2">[${time}]</span> ${msg}`;
+            
+            consoleEl.insertBefore(line, consoleEl.firstChild);
+        }
+
+        function animateValue(id, start, end) {
+            const obj = document.getElementById(id);
+            if (start === end) return;
+            const range = end - start;
+            let current = start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(500 / range)); // 500ms duration
+            const timer = setInterval(function() {
+                current += increment;
+                obj.innerHTML = current;
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, Math.max(stepTime, 10)); // Min 10ms per step
+        }
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // --- Source Code Generator (C) ---
+        function downloadSource() {
+            const cCode = `/* 
+ * MINH HỌA NGUYÊN LÝ HEAP_4 & xTaskCreate
+ * File này được tạo tự động từ trình mô phỏng.
+ */
+
+#include "FreeRTOS.h"
+#include "task.h"
+
+/* 
+ * 1. Nguồn RAM thực tế
+ * Trong heap_4.c, RAM được lấy từ một mảng tĩnh khổng lồ.
+ * Linker không quản lý heap này, FreeRTOS tự quản lý.
+ */
+#define configTOTAL_HEAP_SIZE  ( 10 * 1024 )
+static uint8_t ucHeap[ configTOTAL_HEAP_SIZE ];
+
+/*
+ * 2. Cấu trúc Linked List (ẩn trong heap_4.c)
+ * Dùng để quản lý các khối nhớ trống (Free Blocks).
+ */
+typedef struct A_BLOCK_LINK
+{
+    struct A_BLOCK_LINK *pxNextFreeBlock; // Trỏ tới khối trống tiếp theo
+    size_t xBlockSize;                    // Kích thước khối này (bao gồm cả header)
+} BlockLink_t;
+
+/*
+ * 3. Minh họa pvPortMalloc (First Fit Logic)
+ * Tìm khối trống đầu tiên đủ lớn, cắt nhỏ ra nếu cần.
+ */
+void *pvPortMalloc( size_t xWantedSize )
+{
+    BlockLink_t *pxBlock, *pxPreviousBlock;
+    void *pvReturn = NULL;
+
+    vTaskSuspendAll(); // Thread safety
+    {
+        /* Căn chỉnh bộ nhớ (Alignment) */
+        if( ( xWantedSize & portBYTE_ALIGNMENT_MASK ) != 0x00 ) {
+             /* Adjust size code... */
+        }
+
+        /* Duyệt Free List từ đầu */
+        pxBlock = &xStart; // xStart là đầu danh sách
+        while( ( pxBlock->xBlockSize < xWantedSize ) && ( pxBlock->pxNextFreeBlock != NULL ) )
+        {
+            pxPreviousBlock = pxBlock;
+            pxBlock = pxBlock->pxNextFreeBlock;
+        }
+
+        /* Nếu tìm thấy khối phù hợp */
+        if( pxBlock != pxEnd )
+        {
+            pvReturn = ( void * ) ( ( uint8_t * ) pxPreviousBlock->pxNextFreeBlock + xHeapStructSize );
+            
+            /* Cắt khối (Split) nếu khối tìm thấy quá lớn */
+            if( ( pxBlock->xBlockSize - xWantedSize ) > heapMINIMUM_BLOCK_SIZE )
+            {
+                BlockLink_t *pxNewBlockLink = ( void * ) ( ( ( uint8_t * ) pxBlock ) + xWantedSize );
+                
+                pxNewBlockLink->xBlockSize = pxBlock->xBlockSize - xWantedSize;
+                pxBlock->xBlockSize = xWantedSize;
+                
+                /* Chèn phần dư trở lại danh sách trống */
+                prvInsertBlockIntoFreeList( ( pxNewBlockLink ) );
+            }
+            
+            /* Xóa khối đã cấp phát khỏi danh sách Free */
+            /* (Trong heap_4 thực tế, bit cao nhất của xBlockSize được set để đánh dấu allocated) */
+        }
+    }
+    xTaskResumeAll();
+    return pvReturn;
+}
+
+/*
+ * 4. Minh họa xTaskCreate 
+ * Gọi malloc 2 lần riêng biệt cho TCB và Stack
+ */
+BaseType_t xTaskCreate( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth, ... )
+{
+    TCB_t *pxNewTCB;
+    StackType_t *pxNewTCBStack;
+
+    /* Bước 1: Cấp phát TCB */
+    pxNewTCB = ( TCB_t * ) pvPortMalloc( sizeof( TCB_t ) );
+
+    if( pxNewTCB != NULL )
+    {
+        /* Bước 2: Cấp phát Stack (lưu ý chuyển đơn vị từ Word sang Byte) */
+        pxNewTCBStack = ( StackType_t * ) pvPortMalloc( ( ( size_t ) usStackDepth ) * sizeof( StackType_t ) );
+
+        if( pxNewTCBStack != NULL )
+        {
+            /* Thành công! Khởi tạo task... */
+            prvInitialiseNewTask( ..., pxNewTCB, pxNewTCBStack, ... );
+        }
+        else
+        {
+            /* Có TCB nhưng thiếu Stack -> Phải giải phóng TCB để tránh leak */
+            vPortFree( pxNewTCB );
+            pxNewTCB = NULL;
+        }
+    }
+
+    return ( pxNewTCB == NULL ) ? errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY : pdPASS;
+}
+
+/*
+ * 5. Debugging Helper
+ */
+void vShowHeapStats()
+{
+    HeapStats_t xHeapStats;
+    vPortGetHeapStats( &xHeapStats );
+    // Place breakpoint here to inspect xHeapStats
+}
+            `;
+            
+            const blob = new Blob([cCode], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "freertos_heap4_demo.c";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // --- Source Code Generator (HTML) ---
+        function downloadHTML() {
+            // Lấy toàn bộ nội dung HTML của trang hiện tại
+            const htmlContent = document.documentElement.outerHTML;
+            
+            // Tạo Blob và link download
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "FreeRTOS_Heap_Sim.html"; // Tên file tải về
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Init
+        window.onload = initHeap;
+
+    </script>
+
+</body></html>

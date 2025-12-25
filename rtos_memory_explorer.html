@@ -1,0 +1,817 @@
+<html lang="vi"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Mô phỏng Trực quan: Queue, Stack &amp; Heap trong RTOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Animations */
+        .slide-in-right { animation: slideInRight 0.5s ease-out forwards; }
+        .slide-out-left { animation: slideOutLeft 0.5s ease-in forwards; }
+        .drop-in { animation: dropIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        .pop-out { animation: popOut 0.4s ease-in forwards; }
+        .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideOutLeft {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(-50px); }
+        }
+        @keyframes dropIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes popOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-50px); }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+        .memory-block { transition: all 0.3s ease; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0px}.bottom-4{bottom:1rem}.left-0{left:0px}.left-2{left:0.5rem}.left-4{left:1rem}.right-0{right:0px}.right-2{right:0.5rem}.top-0{top:0px}.top-2{top:0.5rem}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.my-8{margin-top:2rem;margin-bottom:2rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-16{height:4rem}.h-20{height:5rem}.h-24{height:6rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-64{height:16rem}.h-8{height:2rem}.h-full{height:100%}.h-screen{height:100vh}.min-h-\[400px\]{min-height:400px}.w-1\/3{width:33.333333%}.w-16{width:4rem}.w-2{width:0.5rem}.w-20{width:5rem}.w-3{width:0.75rem}.w-32{width:8rem}.w-64{width:16rem}.w-8{width:2rem}.w-full{width:100%}.min-w-\[70px\]{min-width:70px}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.grid-cols-8{grid-template-columns:repeat(8, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.content-center{align-content:center}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.scroll-smooth{scroll-behavior:smooth}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-b-lg{border-bottom-right-radius:0.5rem;border-bottom-left-radius:0.5rem}.rounded-bl{border-bottom-left-radius:0.25rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-y-2{border-top-width:2px;border-bottom-width:2px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l{border-left-width:1px}.border-l-2{border-left-width:2px}.border-l-4{border-left-width:4px}.border-r{border-right-width:1px}.border-r-2{border-right-width:2px}.border-t{border-top-width:1px}.border-t-4{border-top-width:4px}.border-dashed{border-style:dashed}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-blue-500\/50{border-color:rgb(59 130 246 / 0.5)}.border-blue-900{--tw-border-opacity:1;border-color:rgb(30 58 138 / var(--tw-border-opacity, 1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.border-red-900{--tw-border-opacity:1;border-color:rgb(127 29 29 / var(--tw-border-opacity, 1))}.border-red-900\/50{border-color:rgb(127 29 29 / 0.5)}.border-slate-500{--tw-border-opacity:1;border-color:rgb(100 116 139 / var(--tw-border-opacity, 1))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-blue-900{--tw-bg-opacity:1;background-color:rgb(30 58 138 / var(--tw-bg-opacity, 1))}.bg-blue-900\/20{background-color:rgb(30 58 138 / 0.2)}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-emerald-900\/50{background-color:rgb(6 78 59 / 0.5)}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-purple-500{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234 / var(--tw-bg-opacity, 1))}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.bg-red-900\/20{background-color:rgb(127 29 29 / 0.2)}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-700\/50{background-color:rgb(51 65 85 / 0.5)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-800\/30{background-color:rgb(30 41 59 / 0.3)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-gradient-to-l{background-image:linear-gradient(to left, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-slate-900{--tw-gradient-from:#0f172a var(--tw-gradient-from-position);--tw-gradient-to:rgb(15 23 42 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pb-2{padding-bottom:0.5rem}.pl-4{padding-left:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-blue-200{--tw-text-opacity:1;color:rgb(191 219 254 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-red-200{--tw-text-opacity:1;color:rgb(254 202 202 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.opacity-90{opacity:0.9}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-blue-500\/20{--tw-shadow-color:rgb(59 130 246 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-blue-600\/30{--tw-shadow-color:rgb(37 99 235 / 0.3);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-blue-500:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-900\/30:hover{background-color:rgb(30 58 138 / 0.3)}.hover\:bg-emerald-500:hover{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.hover\:bg-green-500:hover{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-500:hover{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-900\/30:hover{background-color:rgb(88 28 135 / 0.3)}.hover\:bg-red-500:hover{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.hover\:bg-red-900\/30:hover{background-color:rgb(127 29 29 / 0.3)}.hover\:bg-slate-600:hover{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-blue-900\/20:hover{--tw-shadow-color:rgb(30 58 138 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-emerald-900\/20:hover{--tw-shadow-color:rgb(6 78 59 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-purple-900\/20:hover{--tw-shadow-color:rgb(88 28 135 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:inline{display:inline}}@media (min-width: 768px){.md\:block{display:block}.md\:inline{display:inline}.md\:w-64{width:16rem}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:p-8{padding:2rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="bg-slate-900 text-slate-200 h-screen flex flex-col overflow-hidden">
+    <!-- Header -->
+    <header class="bg-slate-800 border-b border-slate-700 p-4 shadow-lg z-10 flex justify-between items-center">
+        <div>
+            <h1 class="text-xl md:text-2xl font-bold text-blue-400 flex items-center gap-2">
+                <span class="material-symbols-outlined text-3xl">memory</span>
+                RTOS Memory Explorer
+            </h1>
+            <p class="text-xs text-slate-400 mt-1">Phân rã khái niệm: Queue vs Stack vs Heap</p>
+        </div>
+        <div class="flex items-center gap-4">
+            <!-- Download Button -->
+            <button onclick="downloadSource()" class="flex items-center gap-2 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 border border-slate-600 rounded text-sm text-slate-200 font-medium transition-all shadow hover:shadow-lg active:scale-95 group" title="Tải toàn bộ mã nguồn HTML">
+                <span class="material-symbols-outlined text-lg group-hover:text-blue-400 transition-colors">download</span>
+                <span class="hidden sm:inline">Tải Mã Nguồn</span>
+            </button>
+            
+            <div class="hidden md:block text-right border-l border-slate-600 pl-4">
+                <div class="text-xs font-mono text-emerald-400">System Status: RUNNING</div>
+                <div class="text-xs text-slate-500">Tick Count: <span id="tick-counter">1</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Sidebar Navigation -->
+        <nav class="w-20 md:w-64 bg-slate-800 border-r border-slate-700 flex flex-col justify-between shrink-0">
+            <div class="flex flex-col gap-1 p-2">
+                <button class="nav-btn active flex items-center gap-3 p-3 rounded-lg text-left hover:bg-slate-700 transition-colors bg-blue-600 text-white" id="btn-overview" onclick="switchTab('overview')">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="hidden md:inline font-medium">Tổng quan</span>
+                </button>
+                <button class="nav-btn flex items-center gap-3 p-3 rounded-lg text-left hover:bg-slate-700 transition-colors text-slate-300" id="btn-queue-stack" onclick="switchTab('queue-stack')">
+                    <span class="material-symbols-outlined">compare_arrows</span>
+                    <span class="hidden md:inline font-medium">Queue vs Stack</span>
+                </button>
+                <button class="nav-btn flex items-center gap-3 p-3 rounded-lg text-left hover:bg-slate-700 transition-colors text-slate-300" id="btn-heap" onclick="switchTab('heap')">
+                    <span class="material-symbols-outlined">apps</span>
+                    <span class="hidden md:inline font-medium">Heap Memory</span>
+                </button>
+                <button class="nav-btn flex items-center gap-3 p-3 rounded-lg text-left hover:bg-slate-700 transition-colors text-slate-300" id="btn-ring-buffer" onclick="switchTab('ring-buffer')">
+                    <span class="material-symbols-outlined">data_usage</span>
+                    <span class="hidden md:inline font-medium">Ring Buffer</span>
+                </button>
+                <button class="nav-btn flex items-center gap-3 p-3 rounded-lg text-left hover:bg-slate-700 transition-colors text-slate-300" id="btn-rtos-comm" onclick="switchTab('rtos-comm')">
+                    <span class="material-symbols-outlined">settings_input_component</span>
+                    <span class="hidden md:inline font-medium">RTOS Communication</span>
+                </button>
+            </div>
+            <div class="p-4 border-t border-slate-700 hidden md:block">
+                <div class="text-xs text-slate-500 mb-2">Chú giải màu sắc:</div>
+                <div class="flex items-center gap-2 text-xs mb-1"><div class="w-3 h-3 bg-blue-500 rounded"></div> Queue (FIFO)</div>
+                <div class="flex items-center gap-2 text-xs mb-1"><div class="w-3 h-3 bg-purple-500 rounded"></div> Stack (LIFO)</div>
+                <div class="flex items-center gap-2 text-xs"><div class="w-3 h-3 bg-emerald-500 rounded"></div> Heap (Free)</div>
+            </div>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="flex-1 bg-slate-900 overflow-y-auto relative scroll-smooth p-4 md:p-8" id="main-content">
+            
+            <!-- SECTION 1: OVERVIEW -->
+            <section class="view-section fade-in max-w-6xl mx-auto" id="view-overview">
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">So sánh Nguyên lý (First Principles)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Queue Card -->
+                    <div class="bg-slate-800 rounded-xl p-6 border-t-4 border-blue-500 shadow-lg hover:shadow-blue-900/20 transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-blue-400">Queue (Hàng đợi)</h3>
+                            <span class="material-symbols-outlined text-blue-500 text-3xl">arrow_forward</span>
+                        </div>
+                        <div class="bg-slate-900 rounded p-4 mb-4 h-24 flex items-center justify-center gap-2 relative overflow-hidden">
+                            <!-- Mini Animation -->
+                            <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-xs animate-pulse">1</div>
+                            <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-xs">2</div>
+                            <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-xs">3</div>
+                            <span class="material-symbols-outlined absolute right-2 text-slate-600">login</span>
+                            <span class="material-symbols-outlined absolute left-2 text-slate-600">logout</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Nguyên lý:</span> FIFO (Vào trước - Ra trước)</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Hình ảnh:</span> Hàng người xếp hàng mua vé.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Mục đích:</span> Truyền dữ liệu giữa các Task hoặc Interrupt. "Ống dẫn" an toàn.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Vật lý:</span> Vùng RAM tĩnh + Con trỏ Read/Write.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Stack Card -->
+                    <div class="bg-slate-800 rounded-xl p-6 border-t-4 border-purple-500 shadow-lg hover:shadow-purple-900/20 transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-purple-400">Stack (Ngăn xếp)</h3>
+                            <span class="material-symbols-outlined text-purple-500 text-3xl">layers</span>
+                        </div>
+                        <div class="bg-slate-900 rounded p-4 mb-4 h-24 flex flex-col-reverse items-center justify-center gap-1 relative overflow-hidden">
+                            <div class="w-16 h-4 bg-purple-600 rounded text-[10px] text-center">Data C</div>
+                            <div class="w-16 h-4 bg-purple-600 rounded text-[10px] text-center">Data B</div>
+                            <div class="w-16 h-4 bg-purple-600 rounded text-[10px] text-center">Data A</div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Nguyên lý:</span> LIFO (Vào sau - Ra trước)</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Hình ảnh:</span> Chồng đĩa. Chỉ lấy được cái trên cùng.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Mục đích:</span> Lưu ngữ cảnh thực thi (biến cục bộ), địa chỉ trả về hàm.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Vật lý:</span> RAM tuyến tính + Thanh ghi SP (Stack Pointer).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Heap Card -->
+                    <div class="bg-slate-800 rounded-xl p-6 border-t-4 border-emerald-500 shadow-lg hover:shadow-emerald-900/20 transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-emerald-400">Heap (Vùng nhớ)</h3>
+                            <span class="material-symbols-outlined text-emerald-500 text-3xl">dataset</span>
+                        </div>
+                        <div class="bg-slate-900 rounded p-4 mb-4 h-24 grid grid-cols-4 gap-1 relative overflow-hidden content-center">
+                            <div class="bg-emerald-900/50 rounded h-4"></div>
+                            <div class="bg-emerald-500 rounded h-4"></div>
+                            <div class="bg-emerald-500 rounded h-4"></div>
+                            <div class="bg-emerald-900/50 rounded h-4"></div>
+                            <div class="bg-emerald-900/50 rounded h-4"></div>
+                            <div class="bg-emerald-900/50 rounded h-4"></div>
+                            <div class="bg-emerald-500 rounded h-4"></div>
+                            <div class="bg-emerald-900/50 rounded h-4"></div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Nguyên lý:</span> Free Access (Truy cập tự do)</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Hình ảnh:</span> Kho nguyên liệu lớn. Lấy bao nhiêu tùy ý.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Mục đích:</span> Cấp phát động (Dynamic Allocation) khi chạy (Runtime).</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Vật lý:</span> "Ao" bộ nhớ chia thành các khối (Blocks).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: QUEUE VS STACK SIMULATION -->
+            <section class="view-section hidden max-w-6xl mx-auto h-full flex flex-col" id="view-queue-stack">
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Mô phỏng Cơ chế Truy cập</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1">
+                    <!-- Queue Interactive -->
+                    <div class="bg-slate-800 rounded-xl p-4 flex flex-col">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-blue-400">Queue (FIFO) - "Ống dẫn"</h3>
+                            <div class="space-x-2">
+                                <button class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="addToQueue()">ENQUEUE (Gửi)</button>
+                                <button class="px-3 py-1 border border-blue-500 text-blue-400 hover:bg-blue-900/30 rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="removeFromQueue()">DEQUEUE (Đọc)</button>
+                            </div>
+                        </div>
+                        <!-- Visualization -->
+                        <div class="bg-slate-900 rounded-lg p-6 flex-1 flex flex-col justify-center items-center relative overflow-hidden border border-slate-700">
+                            <div class="absolute top-2 left-2 text-xs text-slate-500 font-mono">Head (Read)</div>
+                            <div class="absolute top-2 right-2 text-xs text-slate-500 font-mono">Tail (Write)</div>
+                            <!-- The Pipe Container -->
+                            <div class="w-full h-24 border-y-2 border-slate-600 relative flex items-center px-2 bg-slate-800/30" id="queue-container">
+                                <div class="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                                <div class="absolute right-0 top-0 bottom-0 w-2 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                                <!-- Items will be injected here -->
+                                <div class="flex gap-2 w-full justify-end overflow-hidden px-4" id="queue-items"></div>
+                            </div>
+                            <div class="mt-4 text-sm text-slate-400 text-center">
+                                Dữ liệu đi vào ở <span class="text-white font-bold">Đuôi (Tail)</span> và đi ra ở <span class="text-white font-bold">Đầu (Head)</span>.<br>
+                                Đảm bảo trật tự công bằng.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stack Interactive -->
+                    <div class="bg-slate-800 rounded-xl p-4 flex flex-col">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-purple-400">Stack (LIFO) - "Chồng đĩa"</h3>
+                            <div class="space-x-2">
+                                <button class="px-3 py-1 bg-purple-600 hover:bg-purple-500 text-white rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="pushToStack()">PUSH (Thêm)</button>
+                                <button class="px-3 py-1 border border-purple-500 text-purple-400 hover:bg-purple-900/30 rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="popFromStack()">POP (Lấy)</button>
+                            </div>
+                        </div>
+                        <!-- Visualization -->
+                        <div class="bg-slate-900 rounded-lg p-6 flex-1 flex flex-col justify-end items-center relative overflow-hidden border border-slate-700">
+                            <div class="absolute top-2 right-2 text-xs text-slate-500 font-mono">Stack Pointer (SP)</div>
+                            <!-- The Stack Container -->
+                            <div class="w-32 h-64 border-l-2 border-r-2 border-b-2 border-slate-500 rounded-b-lg relative bg-slate-800/30 flex flex-col-reverse items-center justify-start p-1 gap-1" id="stack-container"></div>
+                            <div class="mt-4 text-sm text-slate-400 text-center">
+                                Chỉ tương tác với <span class="text-white font-bold">Đỉnh (Top)</span>.<br>
+                                CPU dùng để "tạm giữ" khi đi làm việc khác.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: HEAP MEMORY -->
+            <section class="view-section hidden max-w-4xl mx-auto" id="view-heap">
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Heap: Quản lý sở hữu</h2>
+                <div class="bg-slate-800 rounded-xl p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-400">Heap Allocation Simulation</h3>
+                            <p class="text-sm text-slate-400">Vùng nhớ tự do. Cấp phát thủ công, giải phóng thủ công.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-bold shadow flex items-center gap-2" onclick="mallocHeap()">
+                                <span class="material-symbols-outlined text-sm">add_box</span> pvPortMalloc()
+                            </button>
+                            <button class="px-4 py-2 border border-red-500 text-red-400 hover:bg-red-900/30 rounded font-bold shadow flex items-center gap-2" onclick="freeHeap()">
+                                <span class="material-symbols-outlined text-sm">delete</span> vPortFree()
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Heap Grid -->
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-700 mb-4">
+                        <div class="flex justify-between text-xs font-mono text-slate-500 mb-2">
+                            <span>0x20000000</span>
+                            <span>Memory Pool</span>
+                            <span>0x2000FFFF</span>
+                        </div>
+                        <div class="grid grid-cols-8 md:grid-cols-12 gap-1" id="heap-grid">
+                            <!-- Generated by JS -->
+                        </div>
+                    </div>
+                    <div class="bg-slate-700/50 p-4 rounded border-l-4 border-emerald-500 text-sm text-slate-300">
+                        <p class="mb-2"><strong class="text-white">Tính sở hữu:</strong> Khi gọi <code class="font-mono bg-slate-800 px-1 rounded text-emerald-300">pvPortMalloc()</code>, bạn lấy một miếng RAM và "toàn quyền sở hữu" cho đến khi trả lại.</p>
+                        <p><strong class="text-white">Khác với Queue:</strong> Queue copy dữ liệu vào vùng đệm riêng của nó. Heap chỉ đưa cho bạn địa chỉ vùng nhớ.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: RING BUFFER (UNDER THE HOOD) -->
+            <section class="view-section hidden max-w-4xl mx-auto" id="view-ring-buffer">
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Cấu trúc Queue: Ring Buffer</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Visualization -->
+                    <div class="bg-slate-800 rounded-xl p-8 flex justify-center items-center min-h-[400px] relative">
+                        <!-- Circle Container -->
+                        <div class="relative w-64 h-64 border-4 border-slate-600 rounded-full flex items-center justify-center" id="ring-buffer">
+                            <div class="absolute text-slate-600 font-mono text-xs">BUFFER</div>
+                        </div>
+                        <!-- Legend -->
+                        <div class="absolute bottom-4 left-4 text-xs font-mono bg-slate-900 p-2 rounded border border-slate-700">
+                            <div class="flex items-center gap-2 mb-1"><div class="w-3 h-3 bg-green-500 rounded-full"></div> Write Pointer (Tail)</div>
+                            <div class="flex items-center gap-2"><div class="w-3 h-3 bg-red-500 rounded-full"></div> Read Pointer (Head)</div>
+                        </div>
+                    </div>
+                    <!-- Controls & Explanation -->
+                    <div class="space-y-6">
+                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                            <h3 class="text-lg font-bold text-blue-400 mb-2">Cơ chế hoạt động</h3>
+                            <p class="text-sm text-slate-300 mb-4">
+                                Queue sử dụng một mảng byte liên tục. Khi con trỏ ghi đến cuối mảng, nó quay ngược lại đầu mảng (wrap around) để tận dụng chỗ trống. Đây là "Vòng đệm".
+                            </p>
+                            <div class="flex gap-4">
+                                <button class="flex-1 py-2 bg-green-600 hover:bg-green-500 text-white rounded font-bold shadow" onclick="ringWrite()">Write (Ghi)</button>
+                                <button class="flex-1 py-2 bg-red-600 hover:bg-red-500 text-white rounded font-bold shadow" onclick="ringRead()">Read (Đọc)</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-lg font-mono text-sm border border-slate-700">
+                            <div class="flex justify-between border-b border-slate-700 pb-2 mb-2">
+                                <span class="text-slate-400">pcWrite (Tail):</span>
+                                <span class="text-green-400" id="val-pc-write">0</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-700 pb-2 mb-2">
+                                <span class="text-slate-400">pcRead (Head):</span>
+                                <span class="text-red-400" id="val-pc-read">0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Items:</span>
+                                <span class="text-white" id="val-count">0/8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: RTOS CONTEXT -->
+            <section class="view-section hidden max-w-6xl mx-auto" id="view-rtos-comm">
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Tại sao RTOS cần Queue?</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Scenario 1: Global Variable (Bad) -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-red-900/50 opacity-90 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-2 py-1 font-bold rounded-bl">CÁCH CŨ (NGUY HIỂM)</div>
+                        <h3 class="text-xl font-bold text-red-400 mb-4">Global Variable (Biến toàn cục)</h3>
+                        <div class="flex justify-between items-center my-8 relative">
+                            <!-- Task A -->
+                            <div class="text-center w-1/3">
+                                <div class="w-16 h-16 bg-slate-600 rounded-full mx-auto flex items-center justify-center border-4 border-slate-500 mb-2">
+                                    <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                                </div>
+                                <div class="font-bold text-sm">Task A (Sender)</div>
+                                <div class="text-xs text-yellow-400 h-4" id="bad-task-a-status">Running</div>
+                            </div>
+                            <!-- The Variable -->
+                            <div class="w-1/3 flex flex-col items-center z-10">
+                                <div class="w-20 h-20 bg-slate-900 border-2 border-dashed border-slate-500 flex items-center justify-center text-xl font-mono text-slate-500 transition-colors" id="global-var-box">
+                                    NULL
+                                </div>
+                                <div class="text-xs mt-2 text-slate-500">Shared Memory</div>
+                            </div>
+                            <!-- Task B -->
+                            <div class="text-center w-1/3">
+                                <div class="w-16 h-16 bg-slate-600 rounded-full mx-auto flex items-center justify-center border-4 border-slate-500 mb-2">
+                                    <span class="material-symbols-outlined text-3xl">analytics</span>
+                                </div>
+                                <div class="font-bold text-sm">Task B (Receiver)</div>
+                                <div class="text-xs text-red-400 h-4 animate-pulse" id="bad-task-b-status">Polling (Wasting CPU)</div>
+                            </div>
+                        </div>
+                        <div class="bg-red-900/20 p-3 rounded text-sm text-red-200 border border-red-900">
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li><strong>Race Condition:</strong> Dữ liệu có thể bị ghi đè khi chưa kịp đọc.</li>
+                                <li><strong>Wasted CPU:</strong> Task B phải liên tục kiểm tra (while loop) xem biến có thay đổi không.</li>
+                            </ul>
+                        </div>
+                        <button class="mt-4 w-full py-2 bg-slate-700 hover:bg-slate-600 text-white rounded" onclick="runBadSimulation()">Chạy mô phỏng (Quan sát CPU)</button>
+                    </div>
+
+                    <!-- Scenario 2: RTOS Queue (Good) -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-blue-500/50 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs px-2 py-1 font-bold rounded-bl">RTOS STANDARD</div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">Queue Communication</h3>
+                        <div class="flex justify-between items-center my-8 relative">
+                            <!-- Task A -->
+                            <div class="text-center w-1/3">
+                                <div class="w-16 h-16 bg-blue-900 rounded-full mx-auto flex items-center justify-center border-4 border-blue-500 mb-2 shadow-lg shadow-blue-500/20">
+                                    <span class="material-symbols-outlined text-3xl text-blue-200">precision_manufacturing</span>
+                                </div>
+                                <div class="font-bold text-sm">Task A (Sender)</div>
+                            </div>
+                            <!-- The Queue Pipe -->
+                            <div class="w-1/3 flex flex-col items-center relative h-20 justify-center">
+                                <div class="w-full h-12 bg-slate-900 border-y-2 border-blue-500 flex items-center px-1 overflow-hidden relative" id="rtos-queue-pipe">
+                                    <!-- Animated Packets -->
+                                </div>
+                                <div class="text-xs mt-2 text-blue-400">Safe "Pipe"</div>
+                            </div>
+                            <!-- Task B -->
+                            <div class="text-center w-1/3 relative">
+                                <div class="w-16 h-16 bg-slate-700 rounded-full mx-auto flex items-center justify-center border-4 border-slate-600 mb-2 transition-colors duration-300" id="rtos-task-b">
+                                    <span class="material-symbols-outlined text-3xl text-slate-400" id="rtos-task-b-icon">bedtime</span>
+                                </div>
+                                <div class="font-bold text-sm">Task B (Receiver)</div>
+                                <div class="text-xs text-slate-400 font-mono h-4" id="rtos-task-b-status">BLOCKED (Sleeping)</div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-900/20 p-3 rounded text-sm text-blue-200 border border-blue-900">
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li><strong>Blocking:</strong> Task B ngủ (CPU 0%) khi Queue rỗng.</li>
+                                <li><strong>Event Driven:</strong> Khi Task A gửi tin, Kernel tự động "đánh thức" Task B.</li>
+                                <li><strong>Data Safety:</strong> Dữ liệu được copy an toàn vào Queue.</li>
+                            </ul>
+                        </div>
+                        <button class="mt-4 w-full py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded shadow-lg shadow-blue-600/30" onclick="runGoodSimulation()">Gửi dữ liệu vào Queue</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // --- State Management ---
+        const state = {
+            activeTab: 'overview',
+            queue: [],
+            stack: [],
+            heap: new Array(48).fill(false), // 48 blocks of memory
+            ringBuffer: {
+                size: 8,
+                buffer: new Array(8).fill(null),
+                writeIdx: 0,
+                readIdx: 0,
+                count: 0
+            },
+            tick: 0
+        };
+
+        // --- Core Utilities ---
+        function switchTab(tabId) {
+            // Update State
+            state.activeTab = tabId;
+
+            // Update UI Tabs
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                btn.classList.add('text-slate-300');
+            });
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            activeBtn.classList.add('active', 'bg-blue-600', 'text-white');
+            activeBtn.classList.remove('text-slate-300');
+
+            // Update View Visibility
+            document.querySelectorAll('.view-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const activeView = document.getElementById(`view-${tabId}`);
+            activeView.classList.remove('hidden');
+            activeView.classList.add('fade-in');
+
+            // Specific Init functions
+            if(tabId === 'heap') renderHeap();
+            if(tabId === 'ring-buffer') initRingBufferUI();
+        }
+
+        // --- Download Source Function ---
+        function downloadSource() {
+            // Get the full HTML content of the current page
+            const htmlContent = document.documentElement.outerHTML;
+            
+            // Create a Blob object
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            
+            // Create a temporary link element
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'rtos_memory_explorer.html'; // Filename
+            
+            // Trigger download
+            document.body.appendChild(a);
+            a.click();
+            
+            // Cleanup
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // --- 1. Queue Logic ---
+        function addToQueue() {
+            if (state.queue.length >= 6) {
+                alert("Queue đầy! (Full)");
+                return;
+            }
+            const id = Math.floor(Math.random() * 90 + 10);
+            state.queue.push(id);
+            renderQueue('enqueue');
+        }
+
+        function removeFromQueue() {
+            if (state.queue.length === 0) return;
+            state.queue.shift(); // Remove first
+            renderQueue('dequeue');
+        }
+
+        function renderQueue(action) {
+            const container = document.getElementById('queue-items');
+            container.innerHTML = '';
+            
+            state.queue.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = `w-10 h-10 bg-blue-500 rounded flex items-center justify-center text-white font-bold shadow-lg border border-blue-400 select-none`;
+                div.textContent = item;
+                
+                // Animation logic
+                if (action === 'enqueue' && index === state.queue.length - 1) {
+                    div.classList.add('slide-in-right');
+                }
+                container.appendChild(div);
+            });
+        }
+
+        // --- 2. Stack Logic ---
+        function pushToStack() {
+             if (state.stack.length >= 7) {
+                alert("Stack Overflow!");
+                return;
+            }
+            const id = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random Letter
+            state.stack.push(id);
+            renderStack(true);
+        }
+
+        function popFromStack() {
+            if (state.stack.length === 0) return;
+            const item = document.getElementById('stack-container').lastElementChild;
+            if(item) {
+                item.classList.remove('drop-in');
+                item.classList.add('pop-out');
+                setTimeout(() => {
+                    state.stack.pop();
+                    renderStack(false);
+                }, 300);
+            }
+        }
+
+        function renderStack(isPush) {
+            const container = document.getElementById('stack-container');
+            // Only rebuild if pushing, popping handled by animation callback
+            if(isPush) {
+                container.innerHTML = '';
+                state.stack.forEach((item, index) => {
+                    const div = document.createElement('div');
+                    div.className = `w-full h-8 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-sm shadow-md border border-purple-400`;
+                    div.textContent = `0x${(1000 + index * 4).toString(16).toUpperCase()} : ${item}`;
+                    
+                    if (index === state.stack.length - 1) {
+                        div.classList.add('drop-in');
+                    }
+                    container.appendChild(div);
+                });
+            } else {
+                 container.innerHTML = '';
+                 state.stack.forEach((item, index) => {
+                    const div = document.createElement('div');
+                    div.className = `w-full h-8 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-sm shadow-md border border-purple-400`;
+                    div.textContent = `0x${(1000 + index * 4).toString(16).toUpperCase()} : ${item}`;
+                    container.appendChild(div);
+                });
+            }
+        }
+
+        // --- 3. Heap Logic ---
+        function renderHeap() {
+            const grid = document.getElementById('heap-grid');
+            grid.innerHTML = '';
+            
+            state.heap.forEach((used, index) => {
+                const block = document.createElement('div');
+                block.className = `h-4 w-full rounded-sm border border-slate-900 ${used ? 'bg-emerald-500 shadow-[0_0_5px_rgba(16,185,129,0.8)]' : 'bg-slate-700/50'}`;
+                block.title = `Address: 0x${(536870912 + index).toString(16).toUpperCase()}`;
+                grid.appendChild(block);
+            });
+        }
+
+        function mallocHeap() {
+            // Find a random contiguous free block of size 1-4
+            const size = Math.floor(Math.random() * 3) + 1;
+            let attempts = 0;
+            while (attempts < 50) {
+                const startIdx = Math.floor(Math.random() * (state.heap.length - size));
+                let free = true;
+                for(let i=0; i<size; i++) {
+                    if(state.heap[startIdx + i]) free = false;
+                }
+                
+                if (free) {
+                    for(let i=0; i<size; i++) state.heap[startIdx + i] = true;
+                    renderHeap();
+                    return;
+                }
+                attempts++;
+            }
+            alert("Heap Fragmentation/Full! (Không tìm thấy vùng nhớ trống)");
+        }
+
+        function freeHeap() {
+            // Free random chunks
+            let freed = false;
+            for(let i=0; i<state.heap.length; i++) {
+                if(state.heap[i] && Math.random() > 0.7) {
+                    state.heap[i] = false;
+                    freed = true;
+                }
+            }
+            if(!freed && state.heap.some(x=>x)) {
+                // Force free one if random failed but heap not empty
+                const idx = state.heap.findIndex(x=>x);
+                state.heap[idx] = false;
+            }
+            renderHeap();
+        }
+
+        // --- 4. Ring Buffer Logic ---
+        function initRingBufferUI() {
+            const container = document.getElementById('ring-buffer');
+            // Keep the center label
+            const label = container.querySelector('.absolute.text-slate-600');
+            container.innerHTML = '';
+            container.appendChild(label);
+
+            const radius = 90; // px
+            const cx = 128 - 20; // center offset correction for div width
+            const cy = 128 - 20;
+
+            for(let i=0; i<state.ringBuffer.size; i++) {
+                const angle = (i / state.ringBuffer.size) * 2 * Math.PI - (Math.PI/2); // Start at top
+                const x = Math.cos(angle) * radius + cx;
+                const y = Math.sin(angle) * radius + cy;
+
+                const slot = document.createElement('div');
+                slot.id = `rb-slot-${i}`;
+                slot.className = `absolute w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-500 flex items-center justify-center font-bold text-slate-400 transition-all duration-300`;
+                slot.style.left = `${x}px`;
+                slot.style.top = `${y}px`;
+                slot.textContent = i;
+                container.appendChild(slot);
+            }
+            updateRingVisuals();
+        }
+
+        function ringWrite() {
+            const rb = state.ringBuffer;
+            if (rb.count >= rb.size) {
+                alert("Buffer Full! (Ghi đè hoặc Block)");
+                return;
+            }
+            
+            rb.buffer[rb.writeIdx] = Math.floor(Math.random()*99);
+            rb.writeIdx = (rb.writeIdx + 1) % rb.size;
+            rb.count++;
+            updateRingVisuals();
+        }
+
+        function ringRead() {
+            const rb = state.ringBuffer;
+            if (rb.count === 0) return;
+
+            rb.buffer[rb.readIdx] = null;
+            rb.readIdx = (rb.readIdx + 1) % rb.size;
+            rb.count--;
+            updateRingVisuals();
+        }
+
+        function updateRingVisuals() {
+            const rb = state.ringBuffer;
+            
+            // Update Stats
+            document.getElementById('val-pc-write').textContent = rb.writeIdx;
+            document.getElementById('val-pc-read').textContent = rb.readIdx;
+            document.getElementById('val-count').textContent = `${rb.count}/${rb.size}`;
+
+            // Update Slots
+            for(let i=0; i<rb.size; i++) {
+                const slot = document.getElementById(`rb-slot-${i}`);
+                
+                // Clear styles
+                slot.className = `absolute w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 border-2`;
+                
+                // Base Style
+                if (rb.buffer[i] !== null) {
+                    slot.classList.add('bg-slate-700', 'text-white', 'border-slate-500');
+                    slot.textContent = rb.buffer[i];
+                } else {
+                    slot.classList.add('bg-slate-900', 'text-slate-600', 'border-slate-700');
+                    slot.textContent = i;
+                }
+
+                // Pointers
+                if (i === rb.writeIdx) {
+                    slot.style.boxShadow = "0 0 15px #22c55e"; // Green glow
+                    slot.style.borderColor = "#22c55e";
+                }
+                if (i === rb.readIdx) {
+                    if (i === rb.writeIdx) {
+                         slot.style.borderColor = "#fbbf24"; // Yellow if both
+                    } else {
+                         slot.style.borderColor = "#ef4444";
+                    }
+                }
+            }
+        }
+
+
+        // --- 5. RTOS Simulation Logic ---
+        
+        // Bad Simulation (Polling)
+        let badSimInterval;
+        function runBadSimulation() {
+            if(badSimInterval) clearInterval(badSimInterval);
+            const box = document.getElementById('global-var-box');
+            const statusB = document.getElementById('bad-task-b-status');
+            
+            // Task A writes
+            box.textContent = "DATA";
+            box.classList.add("bg-red-900", "text-white", "border-red-500");
+            box.classList.remove("border-dashed", "text-slate-500", "bg-slate-900");
+
+            // Task B checks immediately (Simulate collision)
+            setTimeout(() => {
+                statusB.textContent = "DATA RECEIVED!";
+                statusB.className = "text-xs text-green-400 font-bold h-4";
+            }, 500);
+
+            // Reset
+            setTimeout(() => {
+                box.textContent = "NULL";
+                box.classList.remove("bg-red-900", "text-white", "border-red-500");
+                box.classList.add("border-dashed", "text-slate-500", "bg-slate-900");
+                statusB.textContent = "Polling (Wasting CPU)";
+                statusB.className = "text-xs text-red-400 h-4 animate-pulse";
+            }, 2000);
+        }
+
+        // Good Simulation (Queue + Blocking)
+        function runGoodSimulation() {
+            const pipe = document.getElementById('rtos-queue-pipe');
+            const taskB = document.getElementById('rtos-task-b');
+            const taskBIcon = document.getElementById('rtos-task-b-icon');
+            const status = document.getElementById('rtos-task-b-status');
+
+            // Create Packet
+            const packet = document.createElement('div');
+            packet.className = 'absolute w-6 h-6 bg-blue-400 rounded-full left-0 shadow-lg';
+            pipe.appendChild(packet);
+
+            // Animate Packet
+            packet.animate([
+                { left: '0%' },
+                { left: '90%' }
+            ], {
+                duration: 1000,
+                easing: 'ease-in-out',
+                fill: 'forwards'
+            }).onfinish = () => {
+                // Wake up Task B
+                taskB.classList.remove('bg-slate-700', 'border-slate-600');
+                taskB.classList.add('bg-green-600', 'border-green-400', 'scale-110');
+                taskBIcon.textContent = 'bolt'; // Active icon
+                taskBIcon.classList.remove('text-slate-400');
+                taskBIcon.classList.add('text-white');
+                status.textContent = "RUNNING (Woken Up)";
+                status.classList.remove('text-slate-400');
+                status.classList.add('text-green-400', 'font-bold');
+
+                // Clean up packet
+                packet.remove();
+
+                // Go back to sleep
+                setTimeout(() => {
+                    taskB.classList.add('bg-slate-700', 'border-slate-600');
+                    taskB.classList.remove('bg-green-600', 'border-green-400', 'scale-110');
+                    taskBIcon.textContent = 'bedtime';
+                    taskBIcon.classList.add('text-slate-400');
+                    taskBIcon.classList.remove('text-white');
+                    status.textContent = "BLOCKED (Sleeping)";
+                    status.classList.add('text-slate-400');
+                    status.classList.remove('text-green-400', 'font-bold');
+                }, 1500);
+            };
+        }
+
+        // System Tick
+        setInterval(() => {
+            state.tick++;
+            document.getElementById('tick-counter').textContent = state.tick;
+        }, 1000);
+
+        // Init
+        renderQueue();
+        renderStack();
+    </script>
+
+</body></html>

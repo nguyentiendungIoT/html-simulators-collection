@@ -1,0 +1,560 @@
+<html lang="vi"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mổ xẻ FreeRTOS xTaskIncrementTick()</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f0f2f5; }
+        .task-card { transition: all 0.3s ease; }
+        .list-container { min-height: 100px; transition: background-color 0.3s; }
+        .highlight-change { animation: pulse-green 1s; }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.z-0{z-index:0}.z-10{z-index:10}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-1\/3{height:33.333333%}.h-3{height:0.75rem}.h-8{height:2rem}.h-screen{height:100vh}.min-h-\[120px\]{min-height:120px}.min-h-\[60px\]{min-height:60px}.w-1\/4{width:25%}.w-12{width:3rem}.w-3{width:0.75rem}.w-full{width:100%}.w-24{width:6rem}.flex-1{flex:1 1 0%}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-default{cursor:default}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-l-4{border-left-width:4px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-500{--tw-border-opacity:1;border-color:rgb(107 114 128 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-yellow-200{--tw-border-opacity:1;border-color:rgb(254 240 138 / var(--tw-border-opacity, 1))}.border-indigo-300{--tw-border-opacity:1;border-color:rgb(165 180 252 / var(--tw-border-opacity, 1))}.border-pink-300{--tw-border-opacity:1;border-color:rgb(249 168 212 / var(--tw-border-opacity, 1))}.border-purple-300{--tw-border-opacity:1;border-color:rgb(216 180 254 / var(--tw-border-opacity, 1))}.border-yellow-300{--tw-border-opacity:1;border-color:rgb(253 224 71 / var(--tw-border-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-400{--tw-bg-opacity:1;background-color:rgb(156 163 175 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-500{--tw-bg-opacity:1;background-color:rgb(107 114 128 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-pink-100{--tw-bg-opacity:1;background-color:rgb(252 231 243 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-2{padding-bottom:0.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[10px\]{font-size:10px}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-tight{line-height:1.25}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-orange-600{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-800{--tw-text-opacity:1;color:rgb(133 77 14 / var(--tw-text-opacity, 1))}.text-indigo-800{--tw-text-opacity:1;color:rgb(55 48 163 / var(--tw-text-opacity, 1))}.text-pink-800{--tw-text-opacity:1;color:rgb(157 23 77 / var(--tw-text-opacity, 1))}.text-purple-800{--tw-text-opacity:1;color:rgb(107 33 168 / var(--tw-text-opacity, 1))}.opacity-50{opacity:0.5}.opacity-90{opacity:0.9}.opacity-70{opacity:0.7}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-600:hover{--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.hover\:bg-green-700:hover{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.hover\:text-gray-300:hover{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}</style></head>
+<body class="text-gray-800 h-screen flex flex-col overflow-hidden">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4 shadow-md flex justify-between items-center z-10">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-3xl">memory</span>
+            <div>
+                <h1 class="text-xl font-bold">Mổ xẻ xTaskIncrementTick()</h1>
+                <p class="text-xs opacity-90">Mô phỏng cơ chế Tick Interrupt trong FreeRTOS</p>
+            </div>
+        </div>
+        <button onclick="downloadSource()" class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 flex items-center gap-2 font-medium transition">
+            <span class="material-symbols-outlined">code</span> Tải Mã Nguồn
+        </button>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- Left Panel: Controls & Global Vars -->
+        <aside class="w-1/4 bg-white border-r border-gray-200 flex flex-col shadow-lg z-0">
+            <div class="p-4 border-b border-gray-200 bg-gray-50">
+                <h2 class="font-bold text-gray-700 flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined">tune</span> Bảng Điều Khiển
+                </h2>
+                <div class="space-y-3">
+                    <button id="btn-tick" onclick="incrementTick()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded shadow transition flex justify-center items-center gap-2">
+                        <span class="material-symbols-outlined">timer</span> +1 Tick (1ms)
+                    </button>
+                    <div class="flex gap-2">
+                        <button onclick="toggleAutoRun()" id="btn-auto" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded shadow transition flex justify-center items-center gap-1">
+                            <span class="material-symbols-outlined">play_arrow</span> Auto
+                        </button>
+                        <button onclick="resetSim()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 rounded shadow transition flex justify-center items-center gap-1">
+                            <span class="material-symbols-outlined">restart_alt</span> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 space-y-4 flex-1 overflow-y-auto">
+                <!-- Kernel Variables -->
+                <div class="bg-blue-50 p-3 rounded border border-blue-200">
+                    <h3 class="font-bold text-blue-800 text-sm mb-2">Biến Toàn Cục (Kernel)</h3>
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm">xTickCount:</span>
+                        <span id="disp-tick" class="font-mono font-bold text-xl text-blue-600">0</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-1" title="Thời điểm task kế tiếp sẽ thức dậy">
+                        <span class="text-sm">xNextTaskUnblockTime:</span>
+                        <span id="disp-next-wake" class="font-mono font-bold text-orange-600">5</span>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-500">
+                        Tick Type Limit (Demo): <span class="font-mono">50</span> (để giả lập tràn)
+                    </div>
+                </div>
+
+                <!-- Return Value -->
+                <div class="bg-yellow-50 p-3 rounded border border-yellow-200">
+                    <h3 class="font-bold text-yellow-800 text-sm mb-2">Kết quả hàm (Return)</h3>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm">Switch Required?</span>
+                        <span id="disp-switch" class="font-bold text-gray-400">pdFALSE</span>
+                    </div>
+                    <p id="disp-reason" class="text-xs text-gray-500 mt-1 italic h-8 overflow-hidden"></p>
+                </div>
+                
+                <!-- Legend -->
+                <div class="mt-4">
+                     <h3 class="font-bold text-gray-700 text-sm mb-2">Chú thích Task</h3>
+                     <div class="flex flex-col gap-2 text-xs">
+                         <div class="flex items-center gap-2"><div class="w-3 h-3 bg-green-500 rounded"></div> Running (Đang chạy)</div>
+                         <div class="flex items-center gap-2"><div class="w-3 h-3 bg-blue-500 rounded"></div> Ready (Sẵn sàng)</div>
+                         <div class="flex items-center gap-2"><div class="w-3 h-3 bg-gray-400 rounded"></div> Blocked (Đang ngủ/Delay)</div>
+                     </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Panel: Visualization -->
+        <main class="flex-1 bg-gray-100 p-6 overflow-y-auto flex flex-col gap-6">
+            
+            <!-- CPU / Running -->
+            <div class="bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
+                <h2 class="font-bold text-gray-700 mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-green-600">settings_motion_mode</span> 
+                    CPU (pxCurrentTCB)
+                </h2>
+                <div id="container-running" class="min-h-[60px] flex items-center justify-center border-2 border-dashed border-gray-200 rounded bg-gray-50"><div class="task-card flex flex-col p-2 rounded border shadow-sm w-24 text-center cursor-default select-none bg-gray-200 text-gray-800">
+                <span class="font-bold text-xs truncate">Idle</span>
+                <span class="text-[10px] truncate leading-tight">Idle Task</span>
+                <span class="text-[10px] opacity-70">Prio: 0</span>
+            </div></div>
+            </div>
+
+            <!-- Ready Lists -->
+            <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+                <h2 class="font-bold text-gray-700 mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-blue-600">list_alt</span> 
+                    Ready Lists (Theo Priority)
+                </h2>
+                <div class="grid grid-cols-1 gap-2">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold w-12 text-gray-500">Prio 2</span>
+                        <div id="ready-prio-2" class="list-container flex-1 flex gap-2 p-2 bg-blue-50 rounded border border-blue-100"></div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold w-12 text-gray-500">Prio 1</span>
+                        <div id="ready-prio-1" class="list-container flex-1 flex gap-2 p-2 bg-blue-50 rounded border border-blue-100"></div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold w-12 text-gray-500">Prio 0</span>
+                        <div id="ready-prio-0" class="list-container flex-1 flex gap-2 p-2 bg-blue-50 rounded border border-blue-100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delayed Lists (The core of the explanation) -->
+            <div class="bg-white p-4 rounded-lg shadow border-l-4 border-gray-500">
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="font-bold text-gray-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-gray-600">bedtime</span> 
+                        Delayed Lists (Quản lý ngủ)
+                    </h2>
+                    <span id="overflow-indicator" class="hidden px-2 py-1 bg-red-100 text-red-600 text-xs font-bold rounded animate-pulse">OVERFLOW SWAP!</span>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Standard Delayed List -->
+                    <div class="relative">
+                        <h3 id="label-delayed-1" class="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                            <span>pxDelayedTaskList</span>
+                            <span class="text-green-600 text-xs">(Active)</span>
+                        </h3>
+                        <p class="text-xs text-gray-400 mb-2">Chứa task thức dậy trước khi tràn (Tick &lt; 50)</p>
+                        <div id="list-delayed-1" class="list-container min-h-[120px] p-2 bg-gray-50 rounded border border-gray-300 flex flex-col gap-2"><div class="task-card flex flex-col p-2 rounded border shadow-sm w-24 text-center cursor-default select-none bg-purple-100 text-purple-800 border-purple-300">
+                <span class="font-bold text-xs truncate">T1</span>
+                <span class="text-[10px] truncate leading-tight">Sensor Read</span>
+                <span class="text-[10px] font-bold mt-1">Wake: 5</span>
+            </div><div class="task-card flex flex-col p-2 rounded border shadow-sm w-24 text-center cursor-default select-none bg-indigo-100 text-indigo-800 border-indigo-300">
+                <span class="font-bold text-xs truncate">T2</span>
+                <span class="text-[10px] truncate leading-tight">Display Upd</span>
+                <span class="text-[10px] font-bold mt-1">Wake: 12</span>
+            </div><div class="task-card flex flex-col p-2 rounded border shadow-sm w-24 text-center cursor-default select-none bg-yellow-100 text-yellow-800 border-yellow-300">
+                <span class="font-bold text-xs truncate">T4</span>
+                <span class="text-[10px] truncate leading-tight">Led Blink</span>
+                <span class="text-[10px] font-bold mt-1">Wake: 8</span>
+            </div></div>
+                    </div>
+
+                    <!-- Overflow Delayed List -->
+                    <div class="relative">
+                        <h3 id="label-delayed-2" class="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                            <span>pxOverflowDelayedTaskList</span>
+                            <span class="text-red-600 text-xs hidden">(Active)</span>
+                        </h3>
+                         <p class="text-xs text-gray-400 mb-2">Chứa task thức dậy sau khi tràn (Tick &gt; 50)</p>
+                        <div id="list-delayed-2" class="list-container min-h-[120px] p-2 bg-gray-50 rounded border border-gray-300 border-dashed flex flex-col gap-2 bg-gray-200"><div class="task-card flex flex-col p-2 rounded border shadow-sm w-24 text-center cursor-default select-none bg-pink-100 text-pink-800 border-pink-300">
+                <span class="font-bold text-xs truncate">T3</span>
+                <span class="text-[10px] truncate leading-tight">Network</span>
+                <span class="text-[10px] font-bold mt-1">Wake: 55</span>
+            </div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Panel: Logs & Education -->
+        <aside class="w-1/4 bg-white border-l border-gray-200 flex flex-col shadow-lg">
+            <div class="p-3 bg-gray-800 text-white flex justify-between items-center">
+                <span class="font-bold flex items-center gap-2"><span class="material-symbols-outlined text-sm">terminal</span> System Log</span>
+                <button onclick="clearLog()" class="text-xs hover:text-gray-300">Clear</button>
+            </div>
+            <div id="log-container" class="flex-1 overflow-y-auto p-3 space-y-2 font-mono text-sm bg-gray-900 text-green-400">
+                <div class="opacity-50 border-b border-gray-700 pb-2 mb-2">
+                    &gt; System initialized.<br>
+                    &gt; Tick Rate: 1000Hz (Giả định)<br>
+                    &gt; Overflow Limit: 50 ticks
+                </div>
+            <div>&gt; [0] System Ready. Waiting for tick interrupt...</div></div>
+            
+            <!-- Contextual Help -->
+            <div class="p-4 bg-blue-50 border-t border-blue-100 h-1/3 overflow-y-auto">
+                <h3 class="font-bold text-blue-800 mb-2 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">lightbulb</span> 
+                    Giải thích (Real-time)
+                </h3>
+                <div id="explanation-text" class="text-sm text-gray-700 space-y-2">
+                    <p>Hệ thống đang ở trạng thái nghỉ. Bấm <b>+1 Tick</b> để bắt đầu hàm <code class="bg-white px-1 rounded border">xTaskIncrementTick()</code>.</p>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        // --- Constants & Config ---
+        const TICK_LIMIT = 50; // Simulate 32-bit overflow at 50 for demo
+        const PREEMPTION_ENABLED = true;
+        const TIME_SLICING_ENABLED = true;
+
+        // --- State ---
+        let xTickCount = 0;
+        let isOverflowed = false; // To track which list is active
+        let autoRunInterval = null;
+
+        // Task Structure
+        // State: 0=Ready, 1=Running, 2=Blocked
+        let tasks = [
+            { id: 'Idle', name: 'Idle Task', priority: 0, state: 1, wakeTime: null, color: 'bg-gray-200 text-gray-800' },
+            { id: 'T1', name: 'Sensor Read', priority: 2, state: 2, wakeTime: 5, color: 'bg-purple-100 text-purple-800 border-purple-300' },
+            { id: 'T2', name: 'Display Upd', priority: 1, state: 2, wakeTime: 12, color: 'bg-indigo-100 text-indigo-800 border-indigo-300' },
+            { id: 'T3', name: 'Network', priority: 1, state: 2, wakeTime: 55, color: 'bg-pink-100 text-pink-800 border-pink-300' }, // Will be in overflow list initially
+            { id: 'T4', name: 'Led Blink', priority: 2, state: 2, wakeTime: 8, color: 'bg-yellow-100 text-yellow-800 border-yellow-300' }
+        ];
+
+        // --- Initialization ---
+        function init() {
+            renderAll();
+            updateStats();
+            log("System Ready. Waiting for tick interrupt...");
+        }
+
+        // --- Core Logic: xTaskIncrementTick ---
+        function incrementTick() {
+            let xSwitchRequired = false;
+            let logMsg = [];
+            
+            // 4.1 Increment Tick
+            xTickCount++;
+            
+            // 4.2 Handle Wrap-around
+            if (xTickCount >= TICK_LIMIT) {
+                xTickCount = 0;
+                isOverflowed = !isOverflowed;
+                logMsg.push(`WARN: Tick Overflow! Swapping Delayed Lists.`);
+                document.getElementById('overflow-indicator').classList.remove('hidden');
+                setTimeout(() => document.getElementById('overflow-indicator').classList.add('hidden'), 2000);
+            }
+
+            // Calculate xNextTaskUnblockTime (Simple version: Find min wakeTime of tasks in ACTIVE delayed list)
+            let nextWake = getNextWakeTime();
+
+            // 4.3 Check for Unblocking Tasks
+            if (xTickCount >= nextWake && nextWake !== -1) {
+                // Check all blocked tasks
+                let tasksUnblocked = false;
+                tasks.forEach(t => {
+                    if (t.state === 2) {
+                        // Logic simplified: In real RTOS, we check the head of the list.
+                        // Here we check if wakeTime matches current tick.
+                        // Note: If overflow occurred, T3 (wake 55) becomes wake 5 (55-50) relative to new epoch in real code, 
+                        // but for visualization simplicity, we keep absolute numbers and just check the list logic.
+                        
+                        if (t.wakeTime === xTickCount) {
+                            unblockTask(t);
+                            logMsg.push(`UNBLOCK: Task ${t.name} woke up.`);
+                            tasksUnblocked = true;
+                            
+                            // 4.6 A) Preemption Check
+                            let currentTask = tasks.find(x => x.state === 1);
+                            if (PREEMPTION_ENABLED && t.priority > currentTask.priority) {
+                                xSwitchRequired = true;
+                                logMsg.push(`PREEMPT: ${t.name} (P${t.priority}) > ${currentTask.name} (P${currentTask.priority})`);
+                            }
+                            
+                            // 4.6 B) Time Slicing Check (Simulated)
+                            if (TIME_SLICING_ENABLED && t.priority === currentTask.priority) {
+                                xSwitchRequired = true;
+                                logMsg.push(`SLICE: Round Robin for Priority ${t.priority}`);
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Update UI
+            updateStats(xSwitchRequired, logMsg.join('<br>'));
+            if(logMsg.length > 0) log(logMsg.join('\n'));
+            
+            renderAll();
+            updateExplanation(xSwitchRequired, logMsg);
+        }
+
+        function unblockTask(task) {
+            task.state = 0; // Set to Ready
+            task.wakeTime = null;
+            // In a real OS, we would add to the tail of Ready List[priority]
+        }
+
+        function getNextWakeTime() {
+            // Find minimum wakeTime of tasks in the *current* active scope
+            // For sim simplicity, we just look at all blocked tasks that haven't wrapped yet relative to current Tick
+            let min = Infinity;
+            tasks.forEach(t => {
+                if (t.state === 2 && t.wakeTime !== null) {
+                    // Only consider tasks relevant to current epoch logic
+                    // If isOverflowed is false (0-49), we look for tasks 0-49
+                    // If isOverflowed is true (50-99 mapped to 0-49), we look for tasks >= 50
+                    if (!isOverflowed && t.wakeTime < TICK_LIMIT) {
+                        if (t.wakeTime < min) min = t.wakeTime;
+                    } else if (isOverflowed && t.wakeTime >= TICK_LIMIT) {
+                         // This part is tricky in visualization because we wrap xTickCount to 0.
+                         // For visual simplicity, let's treat wakeTimes as absolute but Lists as swapped.
+                         // If we wrapped, xTickCount is 0. A task waiting for 55 (absolute) is effectively waiting for index 5 in the new epoch.
+                         // But to keep the "Number" consistent for the user, let's allow xTickCount to be 0, and T3 wakeTime remains 55.
+                         // Logic adjustment: When overflow happens, we don't change wakeTime, we just know we are in the "Next Phase".
+                    }
+                }
+            });
+            
+            // Simplified for the display logic:
+            // Just find the smallest wakeTime >= xTickCount
+            let next = tasks
+                .filter(t => t.state === 2 && t.wakeTime >= xTickCount)
+                .sort((a,b) => a.wakeTime - b.wakeTime)[0];
+            
+            return next ? next.wakeTime : -1;
+        }
+
+        // --- Rendering ---
+        function renderAll() {
+            // Clear containers
+            document.getElementById('container-running').innerHTML = '';
+            document.getElementById('ready-prio-0').innerHTML = '';
+            document.getElementById('ready-prio-1').innerHTML = '';
+            document.getElementById('ready-prio-2').innerHTML = '';
+            document.getElementById('list-delayed-1').innerHTML = '';
+            document.getElementById('list-delayed-2').innerHTML = '';
+
+            // Handle List Swapping Visuals
+            const label1 = document.getElementById('label-delayed-1');
+            const label2 = document.getElementById('label-delayed-2');
+            
+            if (!isOverflowed) {
+                // Normal: List 1 is Active (Delayed), List 2 is Overflow
+                label1.querySelector('.text-green-600').classList.remove('hidden');
+                label2.querySelector('.text-red-600').classList.add('hidden');
+                document.getElementById('list-delayed-1').classList.remove('bg-gray-200');
+                document.getElementById('list-delayed-2').classList.add('bg-gray-200');
+            } else {
+                // Overflowed: List 2 is Active (Delayed), List 1 is Overflow (waiting for next wrap)
+                label1.querySelector('.text-green-600').classList.add('hidden');
+                label2.querySelector('.text-red-600').classList.remove('hidden');
+                document.getElementById('list-delayed-1').classList.add('bg-gray-200');
+                document.getElementById('list-delayed-2').classList.remove('bg-gray-200');
+            }
+
+            // Distribute Tasks
+            tasks.forEach(t => {
+                const card = createCard(t);
+                
+                if (t.state === 1) {
+                    document.getElementById('container-running').appendChild(card);
+                } else if (t.state === 0) {
+                    document.getElementById(`ready-prio-${t.priority}`).appendChild(card);
+                } else if (t.state === 2) {
+                    // Logic to put in Delayed vs Overflow Delayed
+                    // In simulation, we check if wakeTime >= TICK_LIMIT
+                    if (t.wakeTime < TICK_LIMIT) {
+                        // Usually goes to List 1 (Standard)
+                        // If we are currently overflowed, List 1 is actually the "Overflow" list for the NEXT epoch.
+                        // But to keep it simple for the user:
+                        // List 1 = Low Numbers (0-49), List 2 = High Numbers (50+)
+                        document.getElementById('list-delayed-1').appendChild(card);
+                    } else {
+                        document.getElementById('list-delayed-2').appendChild(card);
+                    }
+                }
+            });
+        }
+
+        function createCard(task) {
+            const div = document.createElement('div');
+            div.className = `task-card flex flex-col p-2 rounded border shadow-sm w-24 text-center cursor-default select-none ${task.color}`;
+            // Content
+            let extraInfo = task.state === 2 ? `<span class="text-[10px] font-bold mt-1">Wake: ${task.wakeTime}</span>` : `<span class="text-[10px] opacity-70">Prio: ${task.priority}</span>`;
+            
+            div.innerHTML = `
+                <span class="font-bold text-xs truncate">${task.id}</span>
+                <span class="text-[10px] truncate leading-tight">${task.name}</span>
+                ${extraInfo}
+            `;
+            return div;
+        }
+
+        function updateStats(switchReq = false, reason = "") {
+            document.getElementById('disp-tick').innerText = xTickCount;
+            
+            let nextWake = getNextWakeTime();
+            document.getElementById('disp-next-wake').innerText = nextWake === -1 ? "--" : nextWake;
+            
+            const switchEl = document.getElementById('disp-switch');
+            const reasonEl = document.getElementById('disp-reason');
+            
+            if (switchReq) {
+                switchEl.innerText = "pdTRUE";
+                switchEl.className = "font-bold text-red-600 animate-pulse";
+                reasonEl.innerHTML = reason;
+            } else {
+                switchEl.innerText = "pdFALSE";
+                switchEl.className = "font-bold text-gray-400";
+                reasonEl.innerHTML = "";
+            }
+        }
+
+        function updateExplanation(switchReq, logs) {
+            const expl = document.getElementById('explanation-text');
+            let html = "";
+            
+            if (logs.length === 0) {
+                html = `<p><b>Tick ${xTickCount}:</b> Không có sự kiện đặc biệt. <br>Kernel kiểm tra <code>xTickCount >= xNextTaskUnblockTime</code>. Nếu sai, nó thoát ngay để tiết kiệm CPU.</p>`;
+            } else {
+                html = `<ul class="list-disc pl-4 space-y-1">`;
+                logs.forEach(l => {
+                    if(l.includes("UNBLOCK")) html += `<li><b>4.3 Đánh thức Task:</b> Đã tới giờ dậy! Task được dời từ Delayed List sang Ready List.</li>`;
+                    if(l.includes("PREEMPT")) html += `<li><b>4.6 Preemption:</b> Task mới dậy có độ ưu tiên cao hơn task đang chạy => Cần đổi người lái xe ngay!</li>`;
+                    if(l.includes("Overflow")) html += `<li><b>4.2 Wrap-around:</b> Biến đếm tràn. Kernel hoán đổi vai trò hai danh sách Delayed để xử lý tuần hoàn liên tục.</li>`;
+                });
+                html += `</ul>`;
+            }
+            
+            if (switchReq) {
+                html += `<div class="mt-2 p-2 bg-yellow-100 text-yellow-800 text-xs rounded border border-yellow-300">
+                    <b>Kết quả:</b> Trả về <code>pdTRUE</code>. Hàm Interrupt Handler sẽ gọi <code>portYIELD_FROM_ISR()</code> để thực hiện Context Switch ngay sau khi Tick kết thúc.
+                </div>`;
+            }
+
+            expl.innerHTML = html;
+        }
+
+        // --- Utilities ---
+        function log(msg) {
+            const c = document.getElementById('log-container');
+            const div = document.createElement('div');
+            div.innerHTML = `> [${xTickCount}] ${msg.replace(/\n/g, '<br>> ')}`;
+            c.appendChild(div);
+            c.scrollTop = c.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('log-container').innerHTML = '';
+        }
+
+        function toggleAutoRun() {
+            const btn = document.getElementById('btn-auto');
+            if (autoRunInterval) {
+                clearInterval(autoRunInterval);
+                autoRunInterval = null;
+                btn.innerHTML = '<span class="material-symbols-outlined">play_arrow</span> Auto';
+                btn.classList.remove('bg-red-600', 'hover:bg-red-700');
+                btn.classList.add('bg-green-600', 'hover:bg-green-700');
+            } else {
+                autoRunInterval = setInterval(incrementTick, 1000);
+                btn.innerHTML = '<span class="material-symbols-outlined">pause</span> Stop';
+                btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                btn.classList.add('bg-red-600', 'hover:bg-red-700');
+            }
+        }
+
+        function resetSim() {
+            if(autoRunInterval) toggleAutoRun();
+            xTickCount = 0;
+            isOverflowed = false;
+            // Reset Tasks
+            tasks = [
+                { id: 'Idle', name: 'Idle Task', priority: 0, state: 1, wakeTime: null, color: 'bg-gray-200 text-gray-800' },
+                { id: 'T1', name: 'Sensor Read', priority: 2, state: 2, wakeTime: 5, color: 'bg-purple-100 text-purple-800 border-purple-300' },
+                { id: 'T2', name: 'Display Upd', priority: 1, state: 2, wakeTime: 12, color: 'bg-indigo-100 text-indigo-800 border-indigo-300' },
+                { id: 'T3', name: 'Network', priority: 1, state: 2, wakeTime: 55, color: 'bg-pink-100 text-pink-800 border-pink-300' },
+                { id: 'T4', name: 'Led Blink', priority: 2, state: 2, wakeTime: 8, color: 'bg-yellow-100 text-yellow-800 border-yellow-300' }
+            ];
+            clearLog();
+            log("System Reset.");
+            renderAll();
+            updateStats();
+            document.getElementById('explanation-text').innerHTML = "Đã reset hệ thống.";
+        }
+
+        function downloadSource() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'freertos_tick_sim.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Start
+        init();
+
+    </script>
+
+
+</body></html>

@@ -1,0 +1,826 @@
+<html lang="vi"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành Trình Digital Logic: Từ SR Latch đến Master-Slave JK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+        .gate-body { fill: #ffffff; stroke: #333; stroke-width: 2; }
+        .wire { fill: none; stroke: #9CA3AF; stroke-width: 3; transition: stroke 0.3s; }
+        .wire.active { stroke: #22C55E; } /* Green for High */
+        .wire.error { stroke: #EF4444; } /* Red for Error/Racing */
+        .node { r: 4; fill: #333; }
+        .led-off { fill: #374151; filter: drop-shadow(0 0 0 transparent); transition: fill 0.2s; }
+        .led-on { fill: #EF4444; filter: drop-shadow(0 0 8px #EF4444); transition: fill 0.2s; }
+        .switch-base { fill: #D1D5DB; }
+        .switch-knob { fill: #374151; transition: transform 0.2s; cursor: pointer; }
+        .switch-active .switch-knob { transform: translateY(-10px); fill: #22C55E; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        .tab-btn.active { border-bottom: 2px solid #2563EB; color: #2563EB; font-weight: bold; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-bottom-3{bottom:-0.75rem}.-top-3{top:-0.75rem}.left-1{left:0.25rem}.left-12{left:3rem}.left-2{left:0.5rem}.left-24{left:6rem}.left-6{left:1.5rem}.left-\[25\%\]{left:25%}.left-\[75\%\]{left:75%}.right-12{right:3rem}.right-24{right:6rem}.top-0{top:0px}.top-1{top:0.25rem}.top-1\/2{top:50%}.top-2{top:0.5rem}.z-20{z-index:20}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-\[2\/1\]{aspect-ratio:2/1}.h-16{height:4rem}.h-24{height:6rem}.h-32{height:8rem}.h-4{height:1rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.h-auto{height:auto}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-16{width:4rem}.w-2{width:0.5rem}.w-4{width:1rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-green-100{--tw-border-opacity:1;border-color:rgb(220 252 231 / var(--tw-border-opacity, 1))}.border-purple-200{--tw-border-opacity:1;border-color:rgb(233 213 255 / var(--tw-border-opacity, 1))}.border-yellow-200{--tw-border-opacity:1;border-color:rgb(254 240 138 / var(--tw-border-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-400{--tw-bg-opacity:1;background-color:rgb(156 163 175 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.align-middle{vertical-align:middle}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-purple-800{--tw-text-opacity:1;color:rgb(107 33 168 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-800{--tw-text-opacity:1;color:rgb(133 77 14 / var(--tw-text-opacity, 1))}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:text-blue-500:hover{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:block{display:block}.sm\:inline{display:inline}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}@media (min-width: 768px){.md\:flex{display:flex}.md\:hidden{display:none}}@media (min-width: 1024px){.lg\:col-span-1{grid-column:span 1 / span 1}.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style></head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-blue-600 text-3xl">memory</span>
+                <h1 class="text-xl font-bold tracking-tight text-gray-900 hidden sm:block">Digital Logic Lab</h1>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <nav class="hidden md:flex space-x-2">
+                    <button id="tab-sr" onclick="switchTab('sr')" class="tab-btn active px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition">1. SR Flip-Flop</button>
+                    <button id="tab-jk" onclick="switchTab('jk')" class="tab-btn px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition">2. Basic JK &amp; Racing</button>
+                    <button id="tab-ms" onclick="switchTab('ms')" class="tab-btn px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition">3. Master-Slave JK</button>
+                    <button id="tab-chip" onclick="switchTab('chip')" class="tab-btn px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition">4. 74LS76 Chip</button>
+                </nav>
+                
+                <!-- Download Button -->
+                <button onclick="downloadSource()" class="flex items-center gap-2 bg-gray-900 hover:bg-gray-700 text-white px-3 py-1.5 rounded text-sm font-medium transition shadow-sm">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    <span class="hidden sm:inline">Tải Mã Nguồn</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Nav -->
+        <div class="md:hidden border-t border-gray-100 overflow-x-auto whitespace-nowrap py-2 px-4 flex gap-2">
+             <button id="mob-tab-sr" onclick="switchTab('sr')" class="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full font-medium">SR Flip-Flop</button>
+             <button id="mob-tab-jk" onclick="switchTab('jk')" class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded-full font-medium">JK Racing</button>
+             <button id="mob-tab-ms" onclick="switchTab('ms')" class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded-full font-medium">Master-Slave</button>
+             <button id="mob-tab-chip" onclick="switchTab('chip')" class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded-full font-medium">74LS76</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <!-- Tab 1: SR Flip-Flop -->
+        <div id="content-sr" class="space-y-8 animate-fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Explanation -->
+                <div class="lg:col-span-1 space-y-4">
+                    <h2 class="text-2xl font-bold text-gray-900">Giai Đoạn 1: SR Flip-Flop</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Đây là nền tảng của bộ nhớ kỹ thuật số. Mạch sử dụng tín hiệu <b>Clock</b> để đồng bộ hóa việc thay đổi trạng thái.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm mt-0.5">check_circle</span> <b>S (Set) = 1:</b> Đặt Q = 1 (Lưu mức cao).</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm mt-0.5">check_circle</span> <b>R (Reset) = 1:</b> Đặt Q = 0 (Lưu mức thấp).</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-red-500 text-sm mt-0.5">warning</span> <b>Vấn đề chí mạng:</b> Khi <b>S=1 và R=1</b>, mạch rơi vào trạng thái "Không hợp lệ" (Invalid). Logic bị phá vỡ.</li>
+                    </ul>
+                    <div class="p-3 bg-blue-50 text-blue-800 text-sm rounded-md border border-blue-100">
+                        <span class="font-bold">Thử ngay:</span> Bật Clock lên, sau đó thử bật cả S và R cùng lúc để xem điều gì xảy ra.
+                    </div>
+                </div>
+
+                <!-- Interactive Simulation -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-lg border border-gray-200 p-6 flex flex-col items-center">
+                    <svg id="sr-canvas" width="600" height="300" viewBox="0 0 600 300" class="w-full h-auto select-none"><line x1="50" y1="80" x2="150" y2="80" class="wire "></line><line x1="50" y1="220" x2="150" y2="220" class="wire "></line><line x1="50" y1="150" x2="100" y2="150" class="wire "></line><line x1="100" y1="150" x2="100" y2="100" class="wire "></line><line x1="100" y1="100" x2="150" y2="100" class="wire "></line><line x1="100" y1="150" x2="100" y2="200" class="wire "></line><line x1="100" y1="200" x2="150" y2="200" class="wire "></line><path d="M 150 70 v 40 h 30 a 20 20 0 0 0 0 -40 h -30 z" class="gate-body"></path>
+                        <text x="160" y="95" font-size="10" font-family="monospace">AND</text><path d="M 150 190 v 40 h 30 a 20 20 0 0 0 0 -40 h -30 z" class="gate-body"></path>
+                        <text x="160" y="215" font-size="10" font-family="monospace">AND</text><line x1="200" y1="90" x2="300" y2="90" class="wire "></line><line x1="200" y1="210" x2="300" y2="210" class="wire "></line><path d="M 300 80 v 40 q 10 -20 0 -40 M 300 80 q 30 5 40 20 q -10 15 -40 20" fill="white" stroke="#333" stroke-width="2"></path>
+                        <circle cx="343" cy="100" r="3" fill="white" stroke="#333" stroke-width="2"></circle>
+                        <text x="310" y="105" font-size="10" font-family="monospace">NOR</text><path d="M 300 200 v 40 q 10 -20 0 -40 M 300 200 q 30 5 40 20 q -10 15 -40 20" fill="white" stroke="#333" stroke-width="2"></path>
+                        <circle cx="343" cy="220" r="3" fill="white" stroke="#333" stroke-width="2"></circle>
+                        <text x="310" y="225" font-size="10" font-family="monospace">NOR</text><line x1="346" y1="100" x2="500" y2="100" class="wire "></line><line x1="346" y1="220" x2="500" y2="220" class="wire active"></line><path d="M 400 100 v 40 h -120 v 70 h 20" fill="none" stroke="#9CA3AF" stroke-width="3"></path><path d="M 400 220 v -40 h -120 v -70 h 20" fill="none" stroke="#22C55E" stroke-width="3"></path><circle cx="520" cy="100" r="15" class="led-off "></circle><text x="545" y="105" font-family="monospace">Q</text><circle cx="520" cy="220" r="15" class="led-on "></circle><text x="545" y="225" font-family="monospace">Q'</text><text x="30" y="85" font-family="monospace">S</text><text x="30" y="225" font-family="monospace">R</text><text x="10" y="155" font-family="monospace">CLK</text></svg>
+
+                    <!-- Controls -->
+                    <div class="flex gap-8 mt-6">
+                        <div class="flex flex-col items-center gap-2">
+                            <span class="font-mono font-bold text-gray-700">S (Set)</span>
+                            <button id="btn-s-sr" onclick="toggleSwitch('s-sr')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                <div id="knob-s-sr" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                            </button>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <span class="font-mono font-bold text-gray-700">CLOCK</span>
+                            <button id="btn-clk-sr" onclick="toggleSwitch('clk-sr')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                <div id="knob-clk-sr" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                            </button>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <span class="font-mono font-bold text-gray-700">R (Reset)</span>
+                            <button id="btn-r-sr" onclick="toggleSwitch('r-sr')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                <div id="knob-r-sr" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="sr-status" class="mt-4 text-sm font-mono font-bold text-gray-500 h-6">Trạng thái: Giữ (Memory)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Basic JK & Racing -->
+        <div id="content-jk" class="hidden space-y-8 animate-fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Explanation -->
+                <div class="lg:col-span-1 space-y-4">
+                    <h2 class="text-2xl font-bold text-gray-900">Giai Đoạn 2: Sự Cố Racing</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        JK Flip-Flop cơ bản dùng "hồi tiếp" (feedback) để sửa lỗi S=1, R=1. Thay vì bị lỗi, nó sẽ <b>Đảo trạng thái (Toggle)</b>.
+                    </p>
+                    <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                        <h3 class="font-bold text-yellow-800 mb-1 flex items-center gap-2">
+                            <span class="material-symbols-outlined">bolt</span> Hiện Tượng Racing
+                        </h3>
+                        <p class="text-sm text-yellow-800">
+                            Trong thực tế, nếu xung Clock "mở" quá lâu (lâu hơn thời gian tín hiệu chạy vòng qua mạch), tín hiệu sẽ chạy vòng tròn liên tục: 0 -&gt; 1 -&gt; 0 -&gt; 1... tạo ra sự hỗn loạn.
+                        </p>
+                    </div>
+                    <div class="p-3 bg-blue-50 text-blue-800 text-sm rounded-md border border-blue-100">
+                        <span class="font-bold">Thử nghiệm:</span> Bật <b>J=1, K=1</b>. Sau đó bật <b>Clock</b>. Quan sát đèn LED và biểu đồ bên dưới.
+                    </div>
+                </div>
+
+                <!-- Simulation -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 flex flex-col items-center">
+                        <svg id="jk-canvas" width="600" height="300" viewBox="0 0 600 300" class="w-full h-auto select-none">
+                            <!-- JS will draw -->
+                        </svg>
+
+                        <!-- Controls -->
+                        <div class="flex gap-8 mt-6">
+                            <div class="flex flex-col items-center gap-2">
+                                <span class="font-mono font-bold text-gray-700">J</span>
+                                <button id="btn-j-jk" onclick="toggleSwitch('j-jk')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                    <div id="knob-j-jk" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                                </button>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <span class="font-mono font-bold text-gray-700">CLOCK (Level)</span>
+                                <button id="btn-clk-jk" onclick="toggleSwitch('clk-jk')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                    <div id="knob-clk-jk" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                                </button>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <span class="font-mono font-bold text-gray-700">K</span>
+                                <button id="btn-k-jk" onclick="toggleSwitch('k-jk')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                    <div id="knob-k-jk" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Oscilloscope View -->
+                    <div class="bg-gray-900 rounded-xl p-4 border-2 border-gray-700 relative overflow-hidden h-32 flex items-center justify-center">
+                        <canvas id="scope-canvas" width="600" height="100" class="w-full h-full"></canvas>
+                        <div class="absolute top-2 left-2 text-xs font-mono text-green-400">OSCILLOSCOPE VIEW: OUTPUT Q</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Master-Slave JK -->
+        <div id="content-ms" class="hidden space-y-8 animate-fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Explanation -->
+                <div class="lg:col-span-1 space-y-4">
+                    <h2 class="text-2xl font-bold text-gray-900">Giai Đoạn 3: Giải Pháp Master-Slave</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Để chặn đứng "Racing", ta dùng cấu trúc <b>Cửa Hai Lớp</b>.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-blue-600">login</span>
+                            <div>
+                                <b>1. Khi Clock = 1 (Cao):</b><br>
+                                Cổng vào Master MỞ. Master nhận dữ liệu J, K.<br>
+                                Cổng vào Slave ĐÓNG. Đầu ra Q chưa đổi.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-purple-600">logout</span>
+                            <div>
+                                <b>2. Khi Clock = 0 (Thấp):</b><br>
+                                Cổng vào Master ĐÓNG (Chốt dữ liệu).<br>
+                                Cổng vào Slave MỞ. Slave nhận lệnh từ Master và cập nhật Q.
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="p-3 bg-green-50 text-green-800 text-sm rounded-md border border-green-100">
+                        <span class="font-bold">Kết quả:</span> Dữ liệu chỉ thay đổi đúng 1 lần khi Clock sập xuống (Falling Edge). Hết sạch lỗi Racing!
+                    </div>
+                </div>
+
+                <!-- Interactive Simulation -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-lg border border-gray-200 p-6 flex flex-col items-center">
+                    <!-- Diagram Container -->
+                    <div class="relative w-full aspect-[2/1] bg-gray-50 rounded-lg border border-gray-200 mb-6 overflow-hidden">
+                        <svg id="ms-canvas" viewBox="0 0 800 400" class="w-full h-full"><rect x="150" y="50" width="200" height="300" rx="10" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2"></rect><rect x="450" y="50" width="200" height="300" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"></rect><line x1="50" y1="100" x2="150" y2="100" class="wire "></line><line x1="50" y1="300" x2="150" y2="300" class="wire "></line><text x="220" y="200" font-size="20" font-weight="bold" fill="#6B7280">MASTER</text><circle cx="250" cy="150" r="10" fill="#374151"></circle><line x1="350" y1="150" x2="450" y2="150" class="wire "></line><text x="530" y="200" font-size="20" font-weight="bold" fill="#6B21A8">SLAVE</text><line x1="650" y1="150" x2="750" y2="150" class="wire "></line><circle cx="760" cy="150" r="15" class="led-off"></circle><text x="760" y="190" text-anchor="middle" font-weight="bold">Q</text><path d="M 50 200 h 100" stroke="#9CA3AF" stroke-width="3"></path><path d="M 100 200 v 180 h 400 v -100" stroke="none" fill="none"></path><circle cx="450" cy="200" r="5" fill="white" stroke="black"></circle></svg>
+                        <!-- Labels for compartments -->
+                        <div class="absolute top-2 left-[25%] -translate-x-1/2 bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-bold border border-blue-200">MASTER (Phòng chờ)</div>
+                        <div class="absolute top-2 left-[75%] -translate-x-1/2 bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-bold border border-purple-200">SLAVE (Cửa ra)</div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="flex gap-8">
+                        <div class="flex flex-col items-center gap-2">
+                            <span class="font-mono font-bold text-gray-700">J</span>
+                            <button id="btn-j-ms" onclick="toggleSwitch('j-ms')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                <div id="knob-j-ms" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                            </button>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <span class="font-mono font-bold text-gray-700">CLOCK (Manual)</span>
+                            <!-- Push Button style for Clock to emphasize transitions -->
+                            <button id="btn-clk-ms" onmousedown="setClockMS(true)" onmouseup="setClockMS(false)" ontouchstart="setClockMS(true)" ontouchend="setClockMS(false)" class="px-6 py-2 bg-gray-800 text-white font-mono rounded shadow active:scale-95 transition-transform select-none">
+                                PRESS
+                            </button>
+                            <span id="clk-ms-status" class="text-xs font-mono text-gray-500">LOW</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <span class="font-mono font-bold text-gray-700">K</span>
+                            <button id="btn-k-ms" onclick="toggleSwitch('k-ms')" class="w-16 h-8 bg-gray-200 rounded-full relative transition-colors duration-200 focus:outline-none">
+                                <div id="knob-k-ms" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 shadow transition-transform duration-200"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: 74LS76 -->
+        <div id="content-chip" class="hidden space-y-8 animate-fade-in">
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">IC 74LS76 Thực Tế</h2>
+                    <p class="text-gray-600 mb-4">Đây là con chip chứa sẵn 2 bộ Master-Slave JK Flip-Flop độc lập. Nó được sử dụng rộng rãi trong các mạch đếm, chia tần số.</p>
+                    
+                    <div class="relative w-full h-64 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center border border-gray-300">
+                        <!-- Chip Visualization -->
+                        <div class="w-64 h-24 bg-gray-800 rounded-md shadow-2xl relative flex items-center justify-between px-4">
+                            <div class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 bg-gray-700 rounded-full border border-gray-600"></div> <!-- Notch -->
+                            <span class="text-gray-400 font-mono text-xl tracking-widest w-full text-center">74LS76</span>
+                            
+                            <!-- Pins Top -->
+                            <div class="absolute -top-3 left-6 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -top-3 left-12 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -top-3 left-18 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -top-3 left-24 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -top-3 left-30 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -top-3 right-24 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -top-3 right-18 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -top-3 right-12 w-2 h-4 bg-gray-400"></div>
+
+                            <!-- Pins Bottom -->
+                            <div class="absolute -bottom-3 left-6 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -bottom-3 left-12 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -bottom-3 left-18 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -bottom-3 left-24 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -bottom-3 left-30 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -bottom-3 right-24 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -bottom-3 right-18 w-2 h-4 bg-gray-400"></div>
+                            <div class="absolute -bottom-3 right-12 w-2 h-4 bg-gray-400"></div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center text-sm text-gray-500 italic">Mô phỏng hình dáng DIP-16</div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-bold text-gray-800">Thông Số Kỹ Thuật Chính</h3>
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <table class="w-full text-sm text-left text-gray-600">
+                            <thead class="bg-gray-50 text-gray-700 font-bold">
+                                <tr>
+                                    <th class="px-4 py-2 border-b">Đặc Điểm</th>
+                                    <th class="px-4 py-2 border-b">Mô Tả</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Cấu trúc</td>
+                                    <td class="px-4 py-2">Dual Master-Slave JK Flip-Flop (2 bộ trong 1 chip)</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="px-4 py-2 font-medium">Kích hoạt (Trigger)</td>
+                                    <td class="px-4 py-2 text-blue-600 font-bold">Sườn Âm (Falling Edge) <span class="material-symbols-outlined align-middle text-sm">arrow_downward</span></td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Chân Vcc / GND</td>
+                                    <td class="px-4 py-2">Pin 5 (Vcc), Pin 13 (GND)</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-2 font-medium">Chức năng phụ</td>
+                                    <td class="px-4 py-2">Preset &amp; Clear (Kích hoạt mức thấp - Active Low)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-4 bg-blue-50 text-blue-800 rounded-lg text-sm border border-blue-100 flex gap-2">
+                        <span class="material-symbols-outlined">info</span>
+                        <p>Lưu ý: Chân Clock có vòng tròn nhỏ (bubble) biểu thị kích hoạt khi tín hiệu chuyển từ <b>Cao xuống Thấp</b>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Attribution for datasheet data -->
+            <div class="mt-8 pt-4 border-t border-gray-200 text-xs text-gray-400 flex gap-2">
+                <span>Nguồn dữ liệu tham khảo:</span>
+                <a href="https://www.futurlec.com/74/IC7476.shtml" target="_blank" class="hover:text-blue-500 flex items-center"><span class="material-symbols-outlined text-xs">link</span> Datasheet</a>
+                <a href="https://www.allelcoelec.com/blog/a-comprehensive-guide-to-the-74ls76-ic.html" target="_blank" class="hover:text-blue-500 flex items-center"><span class="material-symbols-outlined text-xs">link</span> Allelco Guide</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- Download Functionality ---
+        function downloadSource() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'digital-logic-lab.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // --- State Management ---
+        const state = {
+            activeTab: 'sr',
+            sr: { s: 0, r: 0, clk: 0, q: 0, q_bar: 1, invalid: false },
+            jk: { j: 0, k: 0, clk: 0, q: 0, q_bar: 1, racing: false },
+            ms: { j: 0, k: 0, clk: 0, master_q: 0, master_q_bar: 1, slave_q: 0, slave_q_bar: 1 }
+        };
+
+        // --- Tab Switching ---
+        function switchTab(tabId) {
+            // Hide all contents
+            ['sr', 'jk', 'ms', 'chip'].forEach(id => {
+                document.getElementById(`content-${id}`).classList.add('hidden');
+                
+                // Desktop tabs
+                const dtBtn = document.getElementById(`tab-${id}`);
+                if (dtBtn) dtBtn.classList.remove('active', 'text-blue-600', 'border-blue-600');
+                
+                // Mobile tabs
+                const mbBtn = document.getElementById(`mob-tab-${id}`);
+                if (mbBtn) {
+                    mbBtn.classList.remove('bg-blue-100', 'text-blue-800');
+                    mbBtn.classList.add('bg-gray-100', 'text-gray-600');
+                }
+            });
+
+            // Show selected
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            
+            // Desktop Active
+            const btn = document.getElementById(`tab-${tabId}`);
+            if (btn) btn.classList.add('active');
+
+            // Mobile Active
+            const mbBtn = document.getElementById(`mob-tab-${tabId}`);
+            if (mbBtn) {
+                mbBtn.classList.remove('bg-gray-100', 'text-gray-600');
+                mbBtn.classList.add('bg-blue-100', 'text-blue-800');
+            }
+            
+            state.activeTab = tabId;
+            if (tabId === 'jk') startOscilloscope();
+        }
+
+        // --- Toggle Switch Logic ---
+        function toggleSwitch(id) {
+            const btn = document.getElementById(`btn-${id}`);
+            const type = id.split('-')[0]; // s, r, clk, j, k
+            const mode = id.split('-')[1]; // sr, jk, ms
+            
+            // Toggle value
+            let newVal = 0;
+            if (state[mode][type] === 0) {
+                state[mode][type] = 1;
+                btn.classList.remove('bg-gray-200');
+                btn.classList.add('bg-green-500', 'switch-active');
+            } else {
+                state[mode][type] = 0;
+                btn.classList.remove('bg-green-500', 'switch-active');
+                btn.classList.add('bg-gray-200');
+            }
+
+            updateLogic(mode);
+        }
+
+        function setClockMS(isPressed) {
+            const mode = 'ms';
+            const oldClk = state[mode].clk;
+            const newClk = isPressed ? 1 : 0;
+            state[mode].clk = newClk;
+
+            const label = document.getElementById('clk-ms-status');
+            const btn = document.getElementById('btn-clk-ms');
+
+            if(isPressed) {
+                label.textContent = "HIGH";
+                label.classList.add("text-green-600");
+                btn.classList.add("translate-y-1", "bg-gray-700");
+            } else {
+                label.textContent = "LOW";
+                label.classList.remove("text-green-600");
+                btn.classList.remove("translate-y-1", "bg-gray-700");
+            }
+
+            // Logic: Master Slave Trigger
+            // Master updates on High Level
+            if (newClk === 1) {
+                updateMasterStage();
+            }
+            // Slave updates on Falling Edge (1 -> 0)
+            if (oldClk === 1 && newClk === 0) {
+                updateSlaveStage();
+            }
+            drawMS();
+        }
+
+
+        // --- Logic Engines ---
+
+        function updateLogic(mode) {
+            if (mode === 'sr') {
+                const { s, r, clk } = state.sr;
+                
+                // Invalid state check
+                if (clk === 1 && s === 1 && r === 1) {
+                    state.sr.invalid = true;
+                    // In invalid state, usually Q and Q_bar go low (NOR based) or unstable
+                    state.sr.q = 0; 
+                    state.sr.q_bar = 0;
+                    document.getElementById('sr-status').innerHTML = '<span class="text-red-600 flex items-center gap-1"><span class="material-symbols-outlined text-sm">error</span> TRẠNG THÁI CẤM (INVALID)</span>';
+                } else {
+                    state.sr.invalid = false;
+                    if (clk === 1) {
+                        if (s === 1 && r === 0) {
+                            state.sr.q = 1;
+                            state.sr.q_bar = 0;
+                            document.getElementById('sr-status').textContent = "Trạng thái: Đặt (Set Q=1)";
+                        } else if (s === 0 && r === 1) {
+                            state.sr.q = 0;
+                            state.sr.q_bar = 1;
+                            document.getElementById('sr-status').textContent = "Trạng thái: Đặt lại (Reset Q=0)";
+                        } else {
+                            // No change (Memory)
+                             document.getElementById('sr-status').textContent = "Trạng thái: Giữ (Memory)";
+                        }
+                    } else {
+                        // Clock 0: Memory
+                        document.getElementById('sr-status').textContent = "Trạng thái: Giữ (Memory - Clock Low)";
+                    }
+                }
+                drawSR();
+            } 
+            else if (mode === 'jk') {
+                // Logic handled in render loop for racing effect
+            }
+        }
+
+        // --- Render Functions (SVG Manipulation) ---
+
+        // Helper to create SVG elements
+        function createLine(x1, y1, x2, y2, colorClass) {
+            return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="wire ${colorClass}" />`;
+        }
+        function createGate(type, x, y) {
+            // Simple gate drawings
+            if (type === 'AND') {
+                return `<path d="M ${x} ${y} v 40 h 30 a 20 20 0 0 0 0 -40 h -30 z" class="gate-body" />
+                        <text x="${x+10}" y="${y+25}" font-size="10" font-family="monospace">AND</text>`;
+            } else if (type === 'NOR') {
+                return `<path d="M ${x} ${y} v 40 q 10 -20 0 -40 M ${x} ${y} q 30 5 40 20 q -10 15 -40 20" fill="white" stroke="#333" stroke-width="2"/>
+                        <circle cx="${x+43}" cy="${y+20}" r="3" fill="white" stroke="#333" stroke-width="2"/>
+                        <text x="${x+10}" y="${y+25}" font-size="10" font-family="monospace">NOR</text>`;
+            }
+             else if (type === 'NAND') {
+                return `<path d="M ${x} ${y} v 40 h 30 a 20 20 0 0 0 0 -40 h -30 z" class="gate-body" />
+                        <circle cx="${x+53}" cy="${y+20}" r="3" fill="white" stroke="#333" stroke-width="2"/>
+                        <text x="${x+10}" y="${y+25}" font-size="10" font-family="monospace">NAND</text>`;
+            } else if (type === 'NOT') {
+                 return `<path d="M ${x} ${y} v 20 l 20 -10 z" class="gate-body" />
+                        <circle cx="${x+23}" cy="${y+10}" r="3" fill="white" stroke="#333" stroke-width="2"/>`;
+            }
+            return '';
+        }
+
+        function drawSR() {
+            const canvas = document.getElementById('sr-canvas');
+            const s = state.sr.s;
+            const r = state.sr.r;
+            const clk = state.sr.clk;
+            const q = state.sr.q;
+            const q_bar = state.sr.q_bar;
+            const invalid = state.sr.invalid;
+
+            // Simplified Diagram: 2 AND gates -> 2 NOR Gates
+            // Inputs: S(50,50), Clk(50, 150), R(50, 250)
+            
+            let html = '';
+            
+            // Wires - Inputs
+            html += createLine(50, 80, 150, 80, s ? 'active' : ''); // S wire
+            html += createLine(50, 220, 150, 220, r ? 'active' : ''); // R wire
+            html += createLine(50, 150, 100, 150, clk ? 'active' : ''); // Clk Main
+            html += createLine(100, 150, 100, 100, clk ? 'active' : ''); // Clk Up
+            html += createLine(100, 100, 150, 100, clk ? 'active' : ''); // Clk to Top AND
+            html += createLine(100, 150, 100, 200, clk ? 'active' : ''); // Clk Down
+            html += createLine(100, 200, 150, 200, clk ? 'active' : ''); // Clk to Bot AND
+
+            // Gates 1 (AND)
+            html += createGate('AND', 150, 70); // Top AND
+            html += createGate('AND', 150, 190); // Bot AND
+
+            // Wires - AND to NOR
+            // Top AND out (190, 90) -> Top NOR in (300, 90)
+            let topAndOut = (s && clk);
+            html += createLine(200, 90, 300, 90, topAndOut ? 'active' : '');
+            
+            // Bot AND out (190, 210) -> Bot NOR in (300, 210)
+            let botAndOut = (r && clk);
+            html += createLine(200, 210, 300, 210, botAndOut ? 'active' : '');
+
+            // Gates 2 (NOR Latch)
+            html += createGate('NOR', 300, 80); // Top NOR
+            html += createGate('NOR', 300, 200); // Bot NOR
+
+            // Feedback Wires (Cross)
+            // Top NOR out (346, 100) -> Q
+            html += createLine(346, 100, 500, 100, q ? 'active' : (invalid ? 'error' : ''));
+            // Bot NOR out (346, 220) -> Q_bar
+            html += createLine(346, 220, 500, 220, q_bar ? 'active' : (invalid ? 'error' : ''));
+
+            // Cross connections
+            // Q -> Bot NOR In
+            html += `<path d="M 400 100 v 40 h -120 v 70 h 20" fill="none" stroke="${q ? '#22C55E' : '#9CA3AF'}" stroke-width="3" />`;
+            // Q_bar -> Top NOR In
+            html += `<path d="M 400 220 v -40 h -120 v -70 h 20" fill="none" stroke="${q_bar ? '#22C55E' : '#9CA3AF'}" stroke-width="3" />`;
+
+            // Outputs LEDs
+            html += `<circle cx="520" cy="100" r="15" class="${q ? 'led-on' : 'led-off'} ${invalid ? 'animate-pulse' : ''}" />`;
+            html += `<text x="545" y="105" font-family="monospace">Q</text>`;
+
+            html += `<circle cx="520" cy="220" r="15" class="${q_bar ? 'led-on' : 'led-off'} ${invalid ? 'animate-pulse' : ''}" />`;
+            html += `<text x="545" y="225" font-family="monospace">Q'</text>`;
+
+            // Labels
+            html += `<text x="30" y="85" font-family="monospace">S</text>`;
+            html += `<text x="30" y="225" font-family="monospace">R</text>`;
+            html += `<text x="10" y="155" font-family="monospace">CLK</text>`;
+
+            canvas.innerHTML = html;
+        }
+
+        // --- Basic JK Animation Loop ---
+        let jkTime = 0;
+        let jkToggleState = 0; // For flashing
+        const scopeData = new Array(300).fill(0); // Scope history
+        
+        function drawJK() {
+            const canvas = document.getElementById('jk-canvas');
+            const { j, k, clk } = state.jk;
+            let { q, q_bar } = state.jk;
+            let isRacing = false;
+
+            // Simulate Racing: if J=1, K=1, Clk=1 -> Toggle rapidly
+            if (j === 1 && k === 1 && clk === 1) {
+                isRacing = true;
+                // Randomly toggle or oscillate based on time
+                q = (Math.floor(Date.now() / 50) % 2); 
+                q_bar = 1 - q;
+            } else if (clk === 1) {
+                 // Normal latch behavior when clock is stable high (simplified for visualization)
+                 if (j === 1 && k === 0) { q = 1; q_bar = 0; state.jk.q=1; state.jk.q_bar=0;}
+                 else if (j === 0 && k === 1) { q = 0; q_bar = 1; state.jk.q=0; state.jk.q_bar=1;}
+            }
+
+            // Update Scope Data
+            scopeData.shift();
+            scopeData.push(q);
+            drawOscilloscope(scopeData);
+
+            let html = '';
+            
+            // Visual Diagram (NAND gates based JK)
+            // Inputs J(50, 70), K(50, 230), Clk(50, 150)
+            
+            // Gates: 2x 3-Input NAND at input, 2x NAND for Latch
+            html += createGate('NAND', 150, 60); // Top Input NAND
+            html += createGate('NAND', 150, 200); // Bot Input NAND
+            html += createGate('NAND', 350, 60); // Top Latch NAND
+            html += createGate('NAND', 350, 200); // Bot Latch NAND
+
+            // Wires
+            html += createLine(50, 70, 150, 70, j ? 'active' : ''); // J
+            html += createLine(50, 230, 150, 230, k ? 'active' : ''); // K
+            html += createLine(50, 150, 120, 150, clk ? 'active' : ''); // Clk Main
+            html += createLine(120, 150, 120, 90, clk ? 'active' : ''); // Clk Top
+            html += createLine(120, 90, 150, 90, clk ? 'active' : ''); 
+            html += createLine(120, 150, 120, 210, clk ? 'active' : ''); // Clk Bot
+            html += createLine(120, 210, 150, 210, clk ? 'active' : ''); 
+
+            // Feedback Lines (The culprit of racing!)
+            // Q back to K-NAND (Bot)
+            let qColor = q ? '#22C55E' : '#9CA3AF';
+            if(isRacing) qColor = '#EF4444'; // Red for racing
+            html += `<path d="M 500 80 h 20 v 200 h -400 v -60 h 30" fill="none" stroke="${qColor}" stroke-width="${isRacing ? 4 : 3}" class="${isRacing ? 'animate-pulse' : ''}" />`;
+
+            // Q' back to J-NAND (Top)
+            let qbColor = q_bar ? '#22C55E' : '#9CA3AF';
+            if(isRacing) qbColor = '#EF4444';
+            html += `<path d="M 500 220 h 40 v -200 h -440 v 60 h 50" fill="none" stroke="${qbColor}" stroke-width="${isRacing ? 4 : 3}" class="${isRacing ? 'animate-pulse' : ''}" stroke-dasharray="${isRacing ? '5,5' : 'none'}" />`;
+
+            // Connection to Latch
+            html += createLine(200, 80, 350, 80, ''); 
+            html += createLine(200, 220, 350, 220, '');
+
+            // Latch Cross
+            html += `<path d="M 400 80 v 40 h -40 v 90 h 20" fill="none" stroke="#9CA3AF" stroke-width="3" />`;
+            html += `<path d="M 400 220 v -40 h -40 v -90 h 20" fill="none" stroke="#9CA3AF" stroke-width="3" />`;
+
+             // Outputs
+            html += createLine(400, 80, 520, 80, q ? 'active' : '');
+            html += createLine(400, 220, 520, 220, q_bar ? 'active' : '');
+
+            html += `<circle cx="540" cy="80" r="15" class="${q ? 'led-on' : 'led-off'}" />`;
+            html += `<text x="560" y="85" font-family="monospace">Q</text>`;
+            html += `<circle cx="540" cy="220" r="15" class="${q_bar ? 'led-on' : 'led-off'}" />`;
+            html += `<text x="560" y="225" font-family="monospace">Q'</text>`;
+
+            canvas.innerHTML = html;
+        }
+
+        function drawOscilloscope(data) {
+            const canvas = document.getElementById('scope-canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#111827';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Grid
+            ctx.strokeStyle = '#374151';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            for(let i=0; i<canvas.width; i+=50) { ctx.moveTo(i,0); ctx.lineTo(i, canvas.height); }
+            for(let i=0; i<canvas.height; i+=25) { ctx.moveTo(0,i); ctx.lineTo(canvas.width, i); }
+            ctx.stroke();
+
+            // Clock Line (Yellow)
+            ctx.strokeStyle = '#FBBF24';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            let clkVal = state.jk.clk;
+            let yClk = clkVal ? 20 : 80;
+            ctx.moveTo(0, yClk);
+            ctx.lineTo(canvas.width, yClk); // Simplified constant line for current state
+            // Ideally we track clock history too but for simplicity let's just show signal noise
+            ctx.stroke();
+
+            // Signal Line (Green)
+            ctx.strokeStyle = '#22C55E';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            for (let i = 0; i < data.length; i++) {
+                const x = i * (canvas.width / data.length);
+                const y = data[i] ? 20 : 80; // High=20, Low=80
+                if (i===0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+        }
+
+        function startOscilloscope() {
+            if (state.activeTab === 'jk') {
+                drawJK();
+                requestAnimationFrame(startOscilloscope);
+            }
+        }
+        
+        // --- Master Slave Logic ---
+        function updateMasterStage() {
+            // Master follows inputs when Clock is HIGH
+            const { j, k } = state.ms;
+            // JK logic for Master
+            // If J=1 K=0 -> Set 1
+            // If J=0 K=1 -> Set 0
+            // If J=1 K=1 -> Toggle (Flip current Master State relative to Slave Output)
+            // Wait.. strictly speaking, Master Feedback comes from Slave Output Q in standard MS JK.
+            
+            const currentSlaveQ = state.ms.slave_q;
+            
+            if (j === 1 && k === 0) {
+                state.ms.master_q = 1; state.ms.master_q_bar = 0;
+            } else if (j === 0 && k === 1) {
+                state.ms.master_q = 0; state.ms.master_q_bar = 1;
+            } else if (j === 1 && k === 1) {
+                // Toggle relative to current SLAVE output
+                state.ms.master_q = 1 - currentSlaveQ;
+                state.ms.master_q_bar = 1 - state.ms.master_q;
+            } else {
+                // Hold (J=0, K=0) - keep previous Master state? 
+                // Actually Master holds previous state if no J/K active
+            }
+        }
+
+        function updateSlaveStage() {
+            // Slave copies Master when Clock goes LOW
+            state.ms.slave_q = state.ms.master_q;
+            state.ms.slave_q_bar = state.ms.master_q_bar;
+        }
+
+        function drawMS() {
+            const canvas = document.getElementById('ms-canvas');
+            const { clk, master_q, slave_q, j, k } = state.ms;
+
+            let html = '';
+            
+            // Draw Box Areas
+            // Master Area
+            html += `<rect x="150" y="50" width="200" height="300" rx="10" fill="${clk ? '#DBEAFE' : '#F3F4F6'}" stroke="${clk ? '#3B82F6' : '#D1D5DB'}" stroke-width="2"/>`;
+            // Slave Area
+            html += `<rect x="450" y="50" width="200" height="300" rx="10" fill="${!clk ? '#F3E8FF' : '#F3F4F6'}" stroke="${!clk ? '#9333EA' : '#D1D5DB'}" stroke-width="2"/>`;
+
+            // Data Path Lines
+            // Input to Master
+            html += createLine(50, 100, 150, 100, clk && j ? 'active' : ''); // J
+            html += createLine(50, 300, 150, 300, clk && k ? 'active' : ''); // K
+            
+            // Internal Master State Visual
+            html += `<text x="220" y="200" font-size="20" font-weight="bold" fill="${clk ? '#1E40AF' : '#6B7280'}">MASTER</text>`;
+            html += `<circle cx="250" cy="150" r="10" fill="${master_q ? '#22C55E' : '#374151'}"/>`;
+
+            // Master to Slave (The Bridge)
+            // Active when Clock is LOW
+            html += createLine(350, 150, 450, 150, !clk && master_q ? 'active' : '');
+
+            // Internal Slave State
+            html += `<text x="530" y="200" font-size="20" font-weight="bold" fill="${!clk ? '#6B21A8' : '#6B7280'}">SLAVE</text>`;
+            
+            // Output Lines
+            html += createLine(650, 150, 750, 150, slave_q ? 'active' : ''); // Q
+
+            // Output LEDs
+            html += `<circle cx="760" cy="150" r="15" class="${slave_q ? 'led-on' : 'led-off'}" />`;
+            html += `<text x="760" y="190" text-anchor="middle" font-weight="bold">Q</text>`;
+
+            // Clock Line logic
+            // To Master (Direct)
+            html += `<path d="M 50 200 h 100" stroke="${clk ? '#22C55E' : '#9CA3AF'}" stroke-width="3"/>`;
+            // To Slave (Inverted)
+            html += `<path d="M 100 200 v 180 h 400 v -100" stroke="none" fill="none"/>`; // complex wiring skipped for clarity, focused on blocks
+            // Just draw indicator on Slave box
+            html += `<circle cx="450" cy="200" r="5" fill="white" stroke="black"/>`; // Bubble on Slave input
+
+            canvas.innerHTML = html;
+        }
+
+        // Init
+        drawSR();
+        drawMS();
+
+    </script>
+
+
+</body></html>

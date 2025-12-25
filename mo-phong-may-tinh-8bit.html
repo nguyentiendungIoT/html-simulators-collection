@@ -1,0 +1,669 @@
+<html lang="vi"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô phỏng Máy tính 8-bit: Bus &amp; Output (Có Tải Mã Nguồn)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        
+        /* LED Styles */
+        .led {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #374151; /* Gray-700 off */
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+            transition: all 0.1s ease;
+        }
+        .led.on {
+            background-color: #ef4444; /* Red-500 on */
+            box-shadow: 0 0 6px #ef4444, inset 0 1px 2px rgba(0,0,0,0.2);
+        }
+        .led.blue.on {
+            background-color: #3b82f6;
+            box-shadow: 0 0 6px #3b82f6;
+        }
+
+        /* Wire/Bus Styles */
+        .bus-line {
+            height: 8px;
+            background-color: #374151;
+            transition: background-color 0.2s;
+        }
+        .bus-line.active {
+            background-color: #fbbf24; /* Amber-400 */
+            box-shadow: 0 0 8px #fbbf24;
+        }
+
+        /* 7-Segment Display */
+        .segment { fill: #374151; transition: fill 0.1s; }
+        .segment.on { fill: #ef4444; filter: drop-shadow(0 0 2px #ef4444); }
+
+        /* Tutorial Pointer Animation */
+        @keyframes bounce-x {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+        .pointer-arrow {
+            position: absolute;
+            z-index: 50;
+            color: #fbbf24;
+            font-size: 2rem;
+            animation: bounce-x 1s infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+            pointer-events: none;
+            transition: top 0.5s ease, left 0.5s ease, opacity 0.3s;
+        }
+
+        /* Highlight pulse */
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); border-color: #fbbf24; }
+            70% { box-shadow: 0 0 0 10px rgba(251, 191, 36, 0); border-color: #fbbf24; }
+            100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); border-color: transparent; }
+        }
+        .highlight-step {
+            animation: pulse-border 2s infinite;
+            border: 2px solid #fbbf24 !important;
+            border-radius: 8px;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.-top-3{top:-0.75rem}.left-0{left:0px}.left-4{left:1rem}.top-0{top:0px}.top-2{top:0.5rem}.top-4{top:1rem}.z-10{z-index:10}.z-40{z-index:40}.-mt-2{margin-top:-0.5rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mr-1{margin-right:0.25rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-auto{margin-top:auto}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-2{height:0.5rem}.h-20{height:5rem}.h-6{height:1.5rem}.h-full{height:100%}.h-3{height:0.75rem}.h-4{height:1rem}.h-8{height:2rem}.min-h-screen{min-height:100vh}.w-1{width:0.25rem}.w-2{width:0.5rem}.w-20{width:5rem}.w-full{width:100%}.w-3{width:0.75rem}.max-w-6xl{max-width:72rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-sm{border-radius:0.125rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-x{border-left-width:1px;border-right-width:1px}.border-y-2{border-top-width:2px;border-bottom-width:2px}.border-l-4{border-left-width:4px}.border-amber-500{--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.border-amber-900\/30{border-color:rgb(120 53 15 / 0.3)}.border-green-900\/50{border-color:rgb(20 83 45 / 0.5)}.border-slate-500{--tw-border-opacity:1;border-color:rgb(100 116 139 / var(--tw-border-opacity, 1))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-slate-800\/50{border-color:rgb(30 41 59 / 0.5)}.border-slate-900{--tw-border-opacity:1;border-color:rgb(15 23 42 / var(--tw-border-opacity, 1))}.border-yellow-900\/50{border-color:rgb(113 63 18 / 0.5)}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-green-900\/50{background-color:rgb(20 83 45 / 0.5)}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-900\/50{background-color:rgb(113 63 18 / 0.5)}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-blue-600{--tw-gradient-from:#2563eb var(--tw-gradient-from-position);--tw-gradient-to:rgb(37 99 235 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-blue-800{--tw-gradient-to:#1e40af var(--tw-gradient-to-position)}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.text-center{text-align:center}.align-bottom{vertical-align:bottom}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-pink-400{--tw-text-opacity:1;color:rgb(244 114 182 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-purple-900{--tw-text-opacity:1;color:rgb(88 28 135 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-teal-400{--tw-text-opacity:1;color:rgb(45 212 191 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-500{--tw-text-opacity:1;color:rgb(234 179 8 / var(--tw-text-opacity, 1))}.text-yellow-600{--tw-text-opacity:1;color:rgb(202 138 4 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_0_20px_rgba\(37\2c 99\2c 235\2c 0\.3\)\]{--tw-shadow:0 0 20px rgba(37,99,235,0.3);--tw-shadow-colored:0 0 20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[inset_0_0_20px_rgba\(0\2c 0\2c 0\2c 0\.8\)\]{--tw-shadow:inset 0 0 20px rgba(0,0,0,0.8);--tw-shadow-colored:inset 0 0 20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.drop-shadow-\[0_0_5px_rgba\(59\2c 130\2c 246\2c 0\.5\)\]{--tw-drop-shadow:drop-shadow(0 0 5px rgba(59,130,246,0.5));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0_0_5px_rgba\(99\2c 102\2c 241\2c 0\.5\)\]{--tw-drop-shadow:drop-shadow(0 0 5px rgba(99,102,241,0.5));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0_0_8px_rgba\(168\2c 85\2c 247\2c 0\.6\)\]{--tw-drop-shadow:drop-shadow(0 0 8px rgba(168,85,247,0.6));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:border-blue-900:hover{--tw-border-opacity:1;border-color:rgb(30 58 138 / var(--tw-border-opacity, 1))}.hover\:border-indigo-900:hover{--tw-border-opacity:1;border-color:rgb(49 46 129 / var(--tw-border-opacity, 1))}.hover\:border-teal-500:hover{--tw-border-opacity:1;border-color:rgb(20 184 166 / var(--tw-border-opacity, 1))}.hover\:bg-slate-600:hover{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:from-blue-500:hover{--tw-gradient-from:#3b82f6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(59 130 246 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-blue-700:hover{--tw-gradient-to:#1d4ed8 var(--tw-gradient-to-position)}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:active .group-active\:opacity-20{opacity:0.2}.group.active .group-\[\.active\]\:bg-green-400{--tw-bg-opacity:1;background-color:rgb(74 222 128 / var(--tw-bg-opacity, 1))}.group.active .group-\[\.active\]\:bg-yellow-400{--tw-bg-opacity:1;background-color:rgb(250 204 21 / var(--tw-bg-opacity, 1))}.group.active .group-\[\.active\]\:text-teal-400{--tw-text-opacity:1;color:rgb(45 212 191 / var(--tw-text-opacity, 1))}.group.active .group-\[\.active\]\:shadow-\[0_0_5px_\#4ade80\]{--tw-shadow:0 0 5px #4ade80;--tw-shadow-colored:0 0 5px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group.active .group-\[\.active\]\:shadow-\[0_0_5px_\#facc15\]{--tw-shadow:0 0 5px #facc15;--tw-shadow-colored:0 0 5px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:col-span-12{grid-column:span 12 / span 12}.md\:col-span-3{grid-column:span 3 / span 3}.md\:col-span-4{grid-column:span 4 / span 4}.md\:col-span-6{grid-column:span 6 / span 6}.md\:h-4{height:1rem}.md\:w-4{width:1rem}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:gap-6{gap:1.5rem}.md\:text-left{text-align:left}}</style></head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col items-center p-4">
+
+    <!-- Pointer Element for Tutorial -->
+    <div id="tutorial-pointer" class="pointer-arrow material-symbols-outlined" style="top: 648.5px; left: 1188.75px;">arrow_back</div>
+
+    <!-- Header -->
+    <header class="w-full max-w-6xl mb-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-center md:text-left">
+            <h1 class="text-3xl font-bold text-amber-400 mb-1">Giả lập Máy tính 8-bit: Bus &amp; Output</h1>
+            <p class="text-slate-400 text-sm">Điều khiển luồng dữ liệu thủ công để hiểu kiến trúc máy tính.</p>
+        </div>
+        <button onclick="downloadCode()" class="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded text-slate-300 transition shadow-lg">
+            <span class="material-symbols-outlined">download</span>
+            <span>Tải Mã Nguồn Về Máy</span>
+        </button>
+    </header>
+
+    <!-- Tutorial Box -->
+    <div class="w-full max-w-6xl bg-slate-800 border-l-4 border-amber-500 p-6 mb-6 rounded shadow-lg flex flex-col md:flex-row justify-between items-center gap-4 sticky top-2 z-40">
+        <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="bg-amber-500 text-slate-900 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">HƯỚNG DẪN</span>
+                <h3 class="font-bold text-lg text-white" id="step-title">Bước 1: Chuẩn bị dữ liệu</h3>
+            </div>
+            <p class="text-slate-300 text-lg leading-relaxed" id="tutorial-text">Để bắt đầu, ta cần đưa một con số vào hệ thống. Hãy bật <b>bit ngoài cùng bên phải</b> (bit 0) của bộ Manual Input để tạo số 1.</p>
+        </div>
+        <div class="flex gap-3 shrink-0">
+            <button class="px-4 py-2 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded text-sm font-bold transition" onclick="sim.resetSimulation()">
+                <span class="material-symbols-outlined align-bottom text-base mr-1">restart_alt</span>
+                Làm Lại
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Computer Board -->
+    <div class="relative w-full max-w-6xl bg-slate-950 rounded-xl p-6 shadow-2xl border border-slate-800 grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- TOP ROW: A Register & ALU (Span 8 cols) -->
+        <div class="md:col-span-4 bg-slate-900/50 p-4 rounded-lg border border-slate-800 relative group transition hover:border-blue-900" id="module-a">
+            <div class="absolute -top-3 left-4 bg-slate-950 px-2 text-xs text-blue-400 font-bold border border-slate-800 rounded">REGISTER A</div>
+            <!-- LEDs -->
+            <div class="flex justify-center gap-1 mb-4 mt-2" id="leds-a"><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-7"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-6"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-5"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-4"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-3"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-2"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-1"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-a-0"></div></div>
+            <div class="text-center font-mono text-3xl text-blue-400 mb-2 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]" id="val-a">0</div>
+            <div class="text-center text-xs text-slate-500 mb-4">Lưu trữ giá trị hiện tại</div>
+            <!-- Control Lines -->
+            <div class="mt-auto flex justify-between px-8">
+                <div class="flex flex-col items-center">
+                    <div class="h-6 w-1 bg-yellow-900/50 transition-colors duration-300" id="wire-ai"></div>
+                    <span class="text-[10px] text-yellow-600 font-bold mt-1">AI (Vào)</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="h-6 w-1 bg-green-900/50 transition-colors duration-300" id="wire-ao"></div>
+                    <span class="text-[10px] text-green-600 font-bold mt-1">AO (Ra)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-4 bg-slate-900/50 p-4 rounded-lg border border-slate-800 relative flex flex-col justify-between" id="module-alu">
+            <div class="absolute -top-3 left-4 bg-slate-950 px-2 text-xs text-purple-400 font-bold border border-slate-800 rounded">ALU (SUM)</div>
+            <div class="flex flex-col items-center justify-center h-full py-4">
+                <span class="text-xs text-slate-500 mb-2">A + B Logic</span>
+                <div class="font-mono text-4xl text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]" id="val-sum">0</div>
+                <span class="text-xs text-purple-900 mt-2 font-mono">Calculating...</span>
+            </div>
+            <div class="flex justify-center px-2">
+                <div class="flex flex-col items-center">
+                    <div class="h-6 w-1 bg-green-900/50 transition-colors duration-300" id="wire-eo"></div>
+                    <span class="text-[10px] text-green-600 font-bold mt-1">EO (Ra Bus)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-4 bg-slate-900/50 p-4 rounded-lg border border-slate-800 relative transition hover:border-indigo-900" id="module-b">
+            <div class="absolute -top-3 left-4 bg-slate-950 px-2 text-xs text-indigo-400 font-bold border border-slate-800 rounded">REGISTER B</div>
+            <div class="flex justify-center gap-1 mb-4 mt-2" id="leds-b"><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-7"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-6"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-5"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-4"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-3"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-2"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-1"></div><div class="led red w-3 h-3 md:w-4 md:h-4" id="led-b-0"></div></div>
+            <div class="text-center font-mono text-3xl text-indigo-400 mb-2 drop-shadow-[0_0_5px_rgba(99,102,241,0.5)]" id="val-b">0</div>
+            <div class="text-center text-xs text-slate-500 mb-4">Giá trị cộng thêm</div>
+            <div class="mt-auto flex justify-between px-8">
+                <div class="flex flex-col items-center">
+                    <div class="h-6 w-1 bg-yellow-900/50 transition-colors duration-300" id="wire-bi"></div>
+                    <span class="text-[10px] text-yellow-600 font-bold mt-1">BI (Vào)</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="h-6 w-1 bg-green-900/50 transition-colors duration-300" id="wire-bo"></div>
+                    <span class="text-[10px] text-green-600 font-bold mt-1">BO (Ra)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MIDDLE ROW: BUS -->
+        <div class="md:col-span-12 py-6 relative">
+            <div class="absolute top-0 left-0 w-full flex justify-center -mt-2 z-10">
+                <span class="bg-slate-950 px-4 text-xs text-amber-500 font-bold tracking-[0.2em] border border-amber-900/30 rounded-full">8-BIT BUS SYSTEM</span>
+            </div>
+            <!-- Main Bus Bar -->
+            <div class="h-10 bg-slate-900 border-y-2 border-slate-800 w-full flex items-center justify-center relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8)]" id="main-bus">
+                <div class="flex gap-3 md:gap-6" id="leds-bus"><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-7"></div><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-6"></div><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-5"></div><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-4"></div><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-3"></div><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-2"></div><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-1"></div><div class="led blue w-3 h-3 md:w-4 md:h-4" id="led-bus-0"></div></div>
+            </div>
+        </div>
+
+        <!-- BOTTOM ROW -->
+        <!-- Output Module -->
+        <div class="md:col-span-3 bg-slate-900/50 p-4 rounded-lg border border-slate-800 relative flex flex-col items-center" id="module-out">
+            <div class="absolute -top-3 left-4 bg-slate-950 px-2 text-xs text-red-400 font-bold border border-slate-800 rounded">OUTPUT</div>
+            <!-- 7 Segment -->
+            <div class="bg-black p-4 rounded-lg border-2 border-slate-700 mb-2 mt-4 shadow-inner">
+                <svg class="block" height="80" width="50" viewBox="0 0 50 80">
+                    <polygon class="segment on" id="seg-a" points="10,5 40,5 35,10 15,10"></polygon>
+                    <polygon class="segment on" id="seg-b" points="40,5 45,10 45,35 40,40 35,35 35,10"></polygon>
+                    <polygon class="segment on" id="seg-c" points="40,40 45,45 45,70 40,75 35,70 35,45"></polygon>
+                    <polygon class="segment on" id="seg-d" points="40,75 10,75 15,70 35,70"></polygon>
+                    <polygon class="segment on" id="seg-e" points="10,75 5,70 5,45 10,40 15,45 15,70"></polygon>
+                    <polygon class="segment on" id="seg-f" points="10,40 5,35 5,10 10,5 15,10 15,35"></polygon>
+                    <polygon class="segment" id="seg-g" points="10,40 15,35 35,35 40,40 35,45 15,45"></polygon>
+                </svg>
+            </div>
+            <div class="font-mono text-red-500 text-lg mb-2" id="output-val-dec">0</div>
+            <div class="mt-auto flex flex-col items-center">
+                <div class="h-6 w-1 bg-yellow-900/50 transition-colors duration-300" id="wire-oi"></div>
+                <span class="text-[10px] text-yellow-600 font-bold mt-1">OI (Vào)</span>
+            </div>
+        </div>
+
+        <!-- Control Unit -->
+        <div class="md:col-span-6 bg-slate-900/50 p-4 rounded-lg border border-slate-800 relative" id="control-unit">
+            <div class="absolute -top-3 left-4 bg-slate-950 px-2 text-xs text-pink-400 font-bold border border-slate-800 rounded">CONTROL LOGIC</div>
+            
+            <div class="grid grid-cols-3 gap-3 mt-2 h-full">
+                <!-- Left signals -->
+                <div class="flex flex-col gap-2">
+                    <button class="ctrl-btn group p-3 rounded bg-slate-800 border border-yellow-900/50 hover:bg-slate-700 flex justify-between items-center transition" id="btn-ai" onclick="sim.toggleSignal('AI')">
+                        <span class="text-xs font-bold text-yellow-500">AI</span>
+                        <div class="w-2 h-2 rounded-full bg-slate-950 group-[.active]:bg-yellow-400 group-[.active]:shadow-[0_0_5px_#facc15] transition"></div>
+                    </button>
+                    <button class="ctrl-btn group p-3 rounded bg-slate-800 border border-green-900/50 hover:bg-slate-700 flex justify-between items-center transition" id="btn-ao" onclick="sim.toggleSignal('AO')">
+                        <span class="text-xs font-bold text-green-500">AO</span>
+                        <div class="w-2 h-2 rounded-full bg-slate-950 group-[.active]:bg-green-400 group-[.active]:shadow-[0_0_5px_#4ade80] transition"></div>
+                    </button>
+                </div>
+
+                <!-- Clock Center -->
+                <div class="flex flex-col items-center justify-center border-x border-slate-800/50">
+                    <button class="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 active:scale-95 shadow-[0_0_20px_rgba(37,99,235,0.3)] border-4 border-slate-900 flex items-center justify-center transition-all group relative" id="btn-clock">
+                        <span class="material-symbols-outlined text-white text-4xl drop-shadow-md">schedule</span>
+                        <div class="absolute inset-0 rounded-full bg-white opacity-0 group-active:opacity-20 transition"></div>
+                    </button>
+                    <span class="text-[10px] text-slate-400 mt-3 font-bold uppercase tracking-widest">CLOCK PULSE</span>
+                </div>
+
+                <!-- Right signals -->
+                <div class="grid grid-cols-1 gap-2">
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="ctrl-btn group p-2 rounded bg-slate-800 border border-yellow-900/50 hover:bg-slate-700 flex justify-between items-center transition" id="btn-bi" onclick="sim.toggleSignal('BI')">
+                            <span class="text-xs font-bold text-yellow-500">BI</span>
+                            <div class="w-2 h-2 rounded-full bg-slate-950 group-[.active]:bg-yellow-400 group-[.active]:shadow-[0_0_5px_#facc15] transition"></div>
+                        </button>
+                        <button class="ctrl-btn group p-2 rounded bg-slate-800 border border-green-900/50 hover:bg-slate-700 flex justify-between items-center transition" id="btn-bo" onclick="sim.toggleSignal('BO')">
+                            <span class="text-xs font-bold text-green-500">BO</span>
+                            <div class="w-2 h-2 rounded-full bg-slate-950 group-[.active]:bg-green-400 group-[.active]:shadow-[0_0_5px_#4ade80] transition"></div>
+                        </button>
+                    </div>
+                    <button class="ctrl-btn group p-2 rounded bg-slate-800 border border-green-900/50 hover:bg-slate-700 flex justify-between items-center transition" id="btn-eo" onclick="sim.toggleSignal('EO')">
+                        <span class="text-xs font-bold text-green-500">EO (SUM)</span>
+                        <div class="w-2 h-2 rounded-full bg-slate-950 group-[.active]:bg-green-400 group-[.active]:shadow-[0_0_5px_#4ade80] transition"></div>
+                    </button>
+                    <button class="ctrl-btn group p-2 rounded bg-slate-800 border border-yellow-900/50 hover:bg-slate-700 flex justify-between items-center transition" id="btn-oi" onclick="sim.toggleSignal('OI')">
+                        <span class="text-xs font-bold text-yellow-500">OI</span>
+                        <div class="w-2 h-2 rounded-full bg-slate-950 group-[.active]:bg-yellow-400 group-[.active]:shadow-[0_0_5px_#facc15] transition"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manual Input -->
+        <div class="md:col-span-3 bg-slate-900/50 p-4 rounded-lg border border-slate-800 relative flex flex-col items-center" id="module-manual">
+            <div class="absolute -top-3 left-4 bg-slate-950 px-2 text-xs text-teal-400 font-bold border border-slate-800 rounded">MANUAL INPUT</div>
+            <div class="flex gap-1 mb-4 mt-6 highlight-step" id="manual-switches"><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="7"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-7"></div></div></div><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="6"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-6"></div></div></div><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="5"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-5"></div></div></div><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="4"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-4"></div></div></div><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="3"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-3"></div></div></div><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="2"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-2"></div></div></div><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="1"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-1"></div></div></div><div class="flex flex-col items-center gap-1"><div class="w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500" data-bit="0"><div class="absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4" id="man-sw-0"></div></div></div></div>
+            <div class="text-teal-400 font-mono text-xl mb-4" id="manual-val">0</div>
+            <button class="w-full mt-auto py-3 rounded bg-slate-800 text-slate-400 text-xs font-bold border border-slate-700 hover:bg-slate-700 hover:text-white transition flex items-center justify-center gap-2 group" id="btn-manual-enable">
+                <span class="material-symbols-outlined text-lg group-[.active]:text-teal-400">toggle_off</span>
+                BUS ENABLE
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // Download Function
+        function downloadCode() {
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'mo-phong-may-tinh-8bit.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        class ComputerSim {
+            constructor() {
+                // Initial State
+                this.regA = 0;
+                this.regB = 0;
+                this.output = 0;
+                this.manualVal = 0;
+                this.manualEnable = false;
+                
+                // Signals
+                this.signals = { AI: false, AO: false, BI: false, BO: false, EO: false, OI: false };
+
+                // Tutorial
+                this.tutorialStep = 0;
+                this.initDOM();
+                this.renderTutorial();
+            }
+
+            initDOM() {
+                // Generate LEDs
+                this.generateLEDs('leds-a', 'led-a');
+                this.generateLEDs('leds-b', 'led-b');
+                this.generateLEDs('leds-bus', 'led-bus', 'blue');
+
+                // Generate Manual Switches
+                const manualContainer = document.getElementById('manual-switches');
+                for(let i=7; i>=0; i--) {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'flex flex-col items-center gap-1';
+                    
+                    const sw = document.createElement('div');
+                    sw.className = 'w-3 h-8 bg-slate-800 border border-slate-600 cursor-pointer rounded-sm relative transition hover:border-teal-500';
+                    sw.dataset.bit = i;
+                    sw.onclick = () => this.toggleManualBit(i);
+                    
+                    const knob = document.createElement('div');
+                    knob.className = 'absolute left-0 w-full h-4 bg-slate-500 shadow-sm transition-all top-4'; // Default 0
+                    knob.id = `man-sw-${i}`;
+                    
+                    sw.appendChild(knob);
+                    wrap.appendChild(sw);
+                    manualContainer.appendChild(wrap);
+                }
+
+                // Bind Controls
+                document.getElementById('btn-manual-enable').onclick = () => this.toggleManualEnable();
+                document.getElementById('btn-clock').onclick = () => this.pulseClock();
+                
+                // Initial update
+                this.updateVisuals();
+            }
+
+            generateLEDs(containerId, classPrefix, color='red') {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                for (let i = 7; i >= 0; i--) {
+                    const led = document.createElement('div');
+                    led.className = `led ${color} w-3 h-3 md:w-4 md:h-4`;
+                    led.id = `${classPrefix}-${i}`;
+                    container.appendChild(led);
+                }
+            }
+
+            // Logic Helpers
+            toggleSignal(sig) {
+                this.signals[sig] = !this.signals[sig];
+                // Visual Button Update
+                const btn = document.getElementById(`btn-${sig.toLowerCase()}`);
+                if (this.signals[sig]) btn.classList.add('active', 'border-white');
+                else btn.classList.remove('active', 'border-white');
+                
+                this.updateVisuals();
+                this.checkTutorialProgress();
+            }
+
+            toggleManualBit(bit) {
+                this.manualVal ^= (1 << bit);
+                this.updateVisuals();
+                this.checkTutorialProgress();
+            }
+
+            toggleManualEnable() {
+                this.manualEnable = !this.manualEnable;
+                this.updateVisuals();
+                this.checkTutorialProgress();
+            }
+
+            getBusValue() {
+                let sources = 0;
+                let val = 0;
+                if (this.signals.AO) { sources++; val = this.regA; }
+                if (this.signals.BO) { sources++; val = this.regB; }
+                if (this.signals.EO) { sources++; val = (this.regA + this.regB) & 0xFF; }
+                if (this.manualEnable) { sources++; val = this.manualVal; }
+
+                if (sources === 0) return 0; // Pulled down
+                if (sources > 1) return -1; // Collision
+                return val;
+            }
+
+            pulseClock() {
+                const busVal = this.getBusValue();
+                // Load data on rising edge
+                if (busVal !== -1) {
+                    if (this.signals.AI) this.regA = busVal;
+                    if (this.signals.BI) this.regB = busVal;
+                    if (this.signals.OI) this.output = busVal;
+                }
+                
+                // Animation
+                const btn = document.getElementById('btn-clock');
+                btn.classList.add('scale-95', 'ring-4', 'ring-blue-400');
+                setTimeout(() => btn.classList.remove('scale-95', 'ring-4', 'ring-blue-400'), 100);
+
+                this.updateVisuals();
+                this.checkTutorialProgress(true);
+            }
+
+            updateVisuals() {
+                const busVal = this.getBusValue();
+                const sumVal = (this.regA + this.regB) & 0xFF;
+
+                // Texts
+                document.getElementById('val-a').textContent = this.regA;
+                document.getElementById('val-b').textContent = this.regB;
+                document.getElementById('val-sum').textContent = sumVal;
+                document.getElementById('manual-val').textContent = this.manualVal;
+                document.getElementById('output-val-dec').textContent = this.output;
+
+                // LEDs
+                this.setLEDs('led-a', this.regA);
+                this.setLEDs('led-b', this.regB);
+                
+                // Bus LEDs & Style
+                const busEl = document.getElementById('main-bus');
+                if (busVal === -1) {
+                    busEl.className = 'h-10 border-y-2 w-full flex items-center justify-center relative bg-red-900 border-red-500 animate-pulse';
+                    this.setLEDs('led-bus', 0);
+                } else {
+                    busEl.className = 'h-10 bg-slate-900 border-y-2 border-slate-800 w-full flex items-center justify-center relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8)]';
+                    this.setLEDs('led-bus', busVal);
+                }
+
+                // Wires Coloring (Active if signal ON AND valid data flowing)
+                const isBusActive = busVal !== -1 && busVal !== 0; // Just visual preference, or always show if connected
+                // Actually, wires should glow if the Signal is ON, regardless of data 0
+                this.setWire('wire-ai', this.signals.AI, 'yellow');
+                this.setWire('wire-bi', this.signals.BI, 'yellow');
+                this.setWire('wire-oi', this.signals.OI, 'yellow');
+                this.setWire('wire-ao', this.signals.AO, 'green');
+                this.setWire('wire-bo', this.signals.BO, 'green');
+                this.setWire('wire-eo', this.signals.EO, 'green');
+
+                // Manual Switches Visual
+                for(let i=0; i<8; i++) {
+                    const k = document.getElementById(`man-sw-${i}`);
+                    if ((this.manualVal >> i) & 1) {
+                        k.className = 'absolute left-0 w-full h-4 shadow-sm transition-all top-0 bg-teal-400 shadow-[0_0_5px_#2dd4bf]';
+                    } else {
+                        k.className = 'absolute left-0 w-full h-4 bg-slate-600 shadow-sm transition-all top-4';
+                    }
+                }
+                // Manual Enable Btn
+                const mBtn = document.getElementById('btn-manual-enable');
+                const mIcon = mBtn.querySelector('span');
+                if(this.manualEnable) {
+                    mBtn.classList.add('bg-teal-900', 'text-teal-300', 'border-teal-500', 'active');
+                    mBtn.classList.remove('bg-slate-800', 'text-slate-400');
+                    mIcon.textContent = 'toggle_on';
+                } else {
+                    mBtn.classList.remove('bg-teal-900', 'text-teal-300', 'border-teal-500', 'active');
+                    mBtn.classList.add('bg-slate-800', 'text-slate-400');
+                    mIcon.textContent = 'toggle_off';
+                }
+
+                // 7 Segment (Last Digit)
+                this.update7Segment(this.output);
+            }
+
+            setLEDs(prefix, val) {
+                for(let i=0; i<8; i++) {
+                    const el = document.getElementById(`${prefix}-${i}`);
+                    if ((val >> i) & 1) el.classList.add('on');
+                    else el.classList.remove('on');
+                }
+            }
+
+            setWire(id, active, color) {
+                const el = document.getElementById(id);
+                if (active) {
+                    el.classList.remove('bg-yellow-900/50', 'bg-green-900/50');
+                    el.classList.add(color === 'yellow' ? 'bg-yellow-400' : 'bg-green-400');
+                    el.classList.add('shadow-[0_0_10px_currentColor]');
+                } else {
+                    el.classList.add(color === 'yellow' ? 'bg-yellow-900/50' : 'bg-green-900/50');
+                    el.classList.remove('bg-yellow-400', 'bg-green-400', 'shadow-[0_0_10px_currentColor]');
+                }
+            }
+
+            update7Segment(val) {
+                // Map simply for 0-9. For >9, we'll just show 'E' or glitchy style, 
+                // but let's stick to last digit for the graphic to be clean.
+                const digit = val % 10;
+                const segments = {
+                    0: [1,1,1,1,1,1,0], 1: [0,1,1,0,0,0,0], 2: [1,1,0,1,1,0,1],
+                    3: [1,1,1,1,0,0,1], 4: [0,1,1,0,0,1,1], 5: [1,0,1,1,0,1,1],
+                    6: [1,0,1,1,1,1,1], 7: [1,1,1,0,0,0,0], 8: [1,1,1,1,1,1,1],
+                    9: [1,1,1,1,0,1,1]
+                };
+                const map = segments[digit];
+                ['seg-a','seg-b','seg-c','seg-d','seg-e','seg-f','seg-g'].forEach((id, i) => {
+                    const el = document.getElementById(id);
+                    if(map[i]) el.classList.add('on'); else el.classList.remove('on');
+                });
+            }
+
+            // Tutorial System
+            renderTutorial() {
+                const steps = [
+                    {
+                        title: "Bước 1: Chuẩn bị dữ liệu",
+                        text: "Để bắt đầu, ta cần đưa một con số vào hệ thống. Hãy bật <b>bit ngoài cùng bên phải</b> (bit 0) của bộ Manual Input để tạo số 1.",
+                        check: () => this.manualVal === 1,
+                        target: 'manual-switches'
+                    },
+                    {
+                        title: "Bước 2: Chiếm quyền Bus",
+                        text: "Dữ liệu đang chờ ở Manual Input nhưng chưa vào Bus. Hãy bật công tắc <b>BUS ENABLE</b> để đưa số 1 lên đường truyền chung.",
+                        check: () => this.manualEnable === true,
+                        target: 'btn-manual-enable'
+                    },
+                    {
+                        title: "Bước 3: Mở cổng vào Register B",
+                        text: "Ta muốn lưu số 1 này vào thanh ghi B (số hạng thứ hai). Hãy kích hoạt tín hiệu <b>BI (Register B In)</b>.",
+                        check: () => this.signals.BI === true,
+                        target: 'btn-bi'
+                    },
+                    {
+                        title: "Bước 4: Lưu dữ liệu (Latch)",
+                        text: "Mọi thứ đã sẵn sàng. Hãy nhấn nút <b>CLOCK</b> (ở giữa) để Register B 'chụp' lấy dữ liệu từ Bus ngay lập tức.",
+                        check: (clk) => clk && this.regB === 1,
+                        target: 'btn-clock'
+                    },
+                    {
+                        title: "Bước 5: Giải phóng Bus",
+                        text: "Register B đã nhớ số 1. Giờ hãy tắt <b>BI</b> và tắt <b>BUS ENABLE</b> để Bus trống, chuẩn bị cho phép tính.",
+                        check: () => !this.signals.BI && !this.manualEnable,
+                        target: 'control-unit' // General area check
+                    },
+                    {
+                        title: "Bước 6: Xuất kết quả phép cộng",
+                        text: "ALU luôn tính A + B. Hiện tại A=0, B=1, nên ALU đang giữ số 1. Hãy bật <b>EO (Sum Out)</b> để đưa kết quả này ra Bus.",
+                        check: () => this.signals.EO,
+                        target: 'btn-eo'
+                    },
+                    {
+                        title: "Bước 7: Chuẩn bị nạp lại vào A",
+                        text: "Ta muốn tạo vòng lặp: Kết quả mới sẽ thay thế số cũ trong A. Hãy bật <b>AI (Register A In)</b>.",
+                        check: () => this.signals.AI,
+                        target: 'btn-ai'
+                    },
+                    {
+                        title: "Bước 8: Hiển thị ra màn hình",
+                        text: "Đồng thời, ta muốn nhìn thấy kết quả này. Hãy bật <b>OI (Output In)</b> để màn hình LED nhận dữ liệu.",
+                        check: () => this.signals.OI,
+                        target: 'btn-oi'
+                    },
+                    {
+                        title: "Bước 9: THỰC THI (Tăng lên 1)",
+                        text: "Nhấn <b>CLOCK</b>! Giá trị 1 từ ALU sẽ được nạp vào A và Màn hình.",
+                        check: (clk) => clk && this.regA === 1,
+                        target: 'btn-clock'
+                    },
+                    {
+                        title: "Bước 10: TIẾP TỤC (Tăng lên 2)",
+                        text: "A bây giờ là 1, B vẫn là 1. ALU đang tính 1+1=2. Nhấn <b>CLOCK</b> lần nữa để nạp số 2 vào A.",
+                        check: (clk) => clk && this.regA === 2,
+                        target: 'btn-clock'
+                    },
+                    {
+                        title: "Hoàn thành!",
+                        text: "Bạn đã xây dựng thành công bộ đếm! Cứ mỗi lần nhấn Clock, máy tính sẽ lấy A hiện tại cộng với B (1) và lưu lại vào A. Hãy thử tiếp tục!",
+                        check: () => false,
+                        target: null
+                    }
+                ];
+
+                // Clear Old Highlights
+                document.querySelectorAll('.highlight-step').forEach(el => el.classList.remove('highlight-step'));
+                const pointer = document.getElementById('tutorial-pointer');
+                pointer.classList.add('hidden');
+
+                const current = steps[this.tutorialStep];
+                if (!current) return;
+
+                // Update Text
+                document.getElementById('step-title').textContent = current.title;
+                document.getElementById('tutorial-text').innerHTML = current.text;
+
+                // Highlight & Point
+                if (current.target) {
+                    const el = document.getElementById(current.target);
+                    if (el) {
+                        el.classList.add('highlight-step');
+                        
+                        // Position Pointer
+                        pointer.classList.remove('hidden');
+                        const rect = el.getBoundingClientRect();
+                        // Adjust for scroll
+                        const scrollX = window.scrollX; 
+                        const scrollY = window.scrollY;
+                        
+                        // Point from right side
+                        pointer.style.top = (rect.top + scrollY + rect.height/2 - 20) + 'px'; // Center vertically
+                        pointer.style.left = (rect.right + scrollX + 10) + 'px'; // 10px to the right
+                    }
+                }
+            }
+
+            checkTutorialProgress(isClockEvent = false) {
+                const steps = [
+                    () => this.manualVal === 1,
+                    () => this.manualEnable === true,
+                    () => this.signals.BI === true,
+                    () => isClockEvent && this.regB === 1,
+                    () => !this.signals.BI && !this.manualEnable,
+                    () => this.signals.EO === true,
+                    () => this.signals.AI === true,
+                    () => this.signals.OI === true,
+                    () => isClockEvent && this.regA === 1,
+                    () => isClockEvent && this.regA === 2
+                ];
+
+                if (this.tutorialStep < steps.length) {
+                    if (steps[this.tutorialStep]()) {
+                        this.tutorialStep++;
+                        setTimeout(() => this.renderTutorial(), 300); // Small delay for effect
+                    }
+                }
+            }
+
+            resetSimulation() {
+                this.regA = 0; this.regB = 0; this.output = 0; this.manualVal = 0; this.manualEnable = false;
+                this.signals = { AI: false, AO: false, BI: false, BO: false, EO: false, OI: false };
+                this.tutorialStep = 0;
+                
+                document.querySelectorAll('.active').forEach(e => e.classList.remove('active', 'border-white'));
+                this.updateVisuals();
+                this.renderTutorial();
+            }
+        }
+
+        const sim = new ComputerSim();
+    </script>
+
+
+</body></html>

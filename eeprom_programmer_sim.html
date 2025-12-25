@@ -1,0 +1,724 @@
+<html lang="vi" class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô phỏng Máy nạp EEPROM Arduino (Ben Eater Style)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/css">:host,:root{--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Solid";--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Regular";--fa-font-light:normal 300 1em/1 "Font Awesome 6 Light";--fa-font-thin:normal 100 1em/1 "Font Awesome 6 Thin";--fa-font-duotone:normal 900 1em/1 "Font Awesome 6 Duotone";--fa-font-sharp-solid:normal 900 1em/1 "Font Awesome 6 Sharp";--fa-font-sharp-regular:normal 400 1em/1 "Font Awesome 6 Sharp";--fa-font-sharp-light:normal 300 1em/1 "Font Awesome 6 Sharp";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands"}svg:not(:host).svg-inline--fa,svg:not(:root).svg-inline--fa{overflow:visible;box-sizing:content-box}.svg-inline--fa{display:var(--fa-display,inline-block);height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-2xs{vertical-align:.1em}.svg-inline--fa.fa-xs{vertical-align:0}.svg-inline--fa.fa-sm{vertical-align:-.0714285705em}.svg-inline--fa.fa-lg{vertical-align:-.2em}.svg-inline--fa.fa-xl{vertical-align:-.25em}.svg-inline--fa.fa-2xl{vertical-align:-.3125em}.svg-inline--fa.fa-pull-left{margin-right:var(--fa-pull-margin,.3em);width:auto}.svg-inline--fa.fa-pull-right{margin-left:var(--fa-pull-margin,.3em);width:auto}.svg-inline--fa.fa-li{width:var(--fa-li-width,2em);top:.25em}.svg-inline--fa.fa-fw{width:var(--fa-fw-width,1.25em)}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:var(--fa-counter-background-color,#ff253a);border-radius:var(--fa-counter-border-radius,1em);box-sizing:border-box;color:var(--fa-inverse,#fff);line-height:var(--fa-counter-line-height,1);max-width:var(--fa-counter-max-width,5em);min-width:var(--fa-counter-min-width,1.5em);overflow:hidden;padding:var(--fa-counter-padding,.25em .5em);right:var(--fa-right,0);text-overflow:ellipsis;top:var(--fa-top,0);-webkit-transform:scale(var(--fa-counter-scale,.25));transform:scale(var(--fa-counter-scale,.25));-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:var(--fa-bottom,0);right:var(--fa-right,0);top:auto;-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:var(--fa-bottom,0);left:var(--fa-left,0);right:auto;top:auto;-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{top:var(--fa-top,0);right:var(--fa-right,0);-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:var(--fa-left,0);right:auto;top:var(--fa-top,0);-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:top left;transform-origin:top left}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-2xs{font-size:.625em;line-height:.1em;vertical-align:.225em}.fa-xs{font-size:.75em;line-height:.0833333337em;vertical-align:.125em}.fa-sm{font-size:.875em;line-height:.0714285718em;vertical-align:.0535714295em}.fa-lg{font-size:1.25em;line-height:.05em;vertical-align:-.075em}.fa-xl{font-size:1.5em;line-height:.0416666682em;vertical-align:-.125em}.fa-2xl{font-size:2em;line-height:.03125em;vertical-align:-.1875em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:var(--fa-li-margin,2.5em);padding-left:0}.fa-ul>li{position:relative}.fa-li{left:calc(var(--fa-li-width,2em) * -1);position:absolute;text-align:center;width:var(--fa-li-width,2em);line-height:inherit}.fa-border{border-color:var(--fa-border-color,#eee);border-radius:var(--fa-border-radius,.1em);border-style:var(--fa-border-style,solid);border-width:var(--fa-border-width,.08em);padding:var(--fa-border-padding,.2em .25em .15em)}.fa-pull-left{float:left;margin-right:var(--fa-pull-margin,.3em)}.fa-pull-right{float:right;margin-left:var(--fa-pull-margin,.3em)}.fa-beat{-webkit-animation-name:fa-beat;animation-name:fa-beat;-webkit-animation-delay:var(--fa-animation-delay,0s);animation-delay:var(--fa-animation-delay,0s);-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,1s);animation-duration:var(--fa-animation-duration,1s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,ease-in-out);animation-timing-function:var(--fa-animation-timing,ease-in-out)}.fa-bounce{-webkit-animation-name:fa-bounce;animation-name:fa-bounce;-webkit-animation-delay:var(--fa-animation-delay,0s);animation-delay:var(--fa-animation-delay,0s);-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,1s);animation-duration:var(--fa-animation-duration,1s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,cubic-bezier(.28,.84,.42,1));animation-timing-function:var(--fa-animation-timing,cubic-bezier(.28,.84,.42,1))}.fa-fade{-webkit-animation-name:fa-fade;animation-name:fa-fade;-webkit-animation-delay:var(--fa-animation-delay,0s);animation-delay:var(--fa-animation-delay,0s);-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,1s);animation-duration:var(--fa-animation-duration,1s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,cubic-bezier(.4,0,.6,1));animation-timing-function:var(--fa-animation-timing,cubic-bezier(.4,0,.6,1))}.fa-beat-fade{-webkit-animation-name:fa-beat-fade;animation-name:fa-beat-fade;-webkit-animation-delay:var(--fa-animation-delay,0s);animation-delay:var(--fa-animation-delay,0s);-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,1s);animation-duration:var(--fa-animation-duration,1s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,cubic-bezier(.4,0,.6,1));animation-timing-function:var(--fa-animation-timing,cubic-bezier(.4,0,.6,1))}.fa-flip{-webkit-animation-name:fa-flip;animation-name:fa-flip;-webkit-animation-delay:var(--fa-animation-delay,0s);animation-delay:var(--fa-animation-delay,0s);-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,1s);animation-duration:var(--fa-animation-duration,1s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,ease-in-out);animation-timing-function:var(--fa-animation-timing,ease-in-out)}.fa-shake{-webkit-animation-name:fa-shake;animation-name:fa-shake;-webkit-animation-delay:var(--fa-animation-delay,0s);animation-delay:var(--fa-animation-delay,0s);-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,1s);animation-duration:var(--fa-animation-duration,1s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,linear);animation-timing-function:var(--fa-animation-timing,linear)}.fa-spin{-webkit-animation-name:fa-spin;animation-name:fa-spin;-webkit-animation-delay:var(--fa-animation-delay,0s);animation-delay:var(--fa-animation-delay,0s);-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,2s);animation-duration:var(--fa-animation-duration,2s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,linear);animation-timing-function:var(--fa-animation-timing,linear)}.fa-spin-reverse{--fa-animation-direction:reverse}.fa-pulse,.fa-spin-pulse{-webkit-animation-name:fa-spin;animation-name:fa-spin;-webkit-animation-direction:var(--fa-animation-direction,normal);animation-direction:var(--fa-animation-direction,normal);-webkit-animation-duration:var(--fa-animation-duration,1s);animation-duration:var(--fa-animation-duration,1s);-webkit-animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-iteration-count:var(--fa-animation-iteration-count,infinite);-webkit-animation-timing-function:var(--fa-animation-timing,steps(8));animation-timing-function:var(--fa-animation-timing,steps(8))}@media (prefers-reduced-motion:reduce){.fa-beat,.fa-beat-fade,.fa-bounce,.fa-fade,.fa-flip,.fa-pulse,.fa-shake,.fa-spin,.fa-spin-pulse{-webkit-animation-delay:-1ms;animation-delay:-1ms;-webkit-animation-duration:1ms;animation-duration:1ms;-webkit-animation-iteration-count:1;animation-iteration-count:1;-webkit-transition-delay:0s;transition-delay:0s;-webkit-transition-duration:0s;transition-duration:0s}}@-webkit-keyframes fa-beat{0%,90%{-webkit-transform:scale(1);transform:scale(1)}45%{-webkit-transform:scale(var(--fa-beat-scale,1.25));transform:scale(var(--fa-beat-scale,1.25))}}@keyframes fa-beat{0%,90%{-webkit-transform:scale(1);transform:scale(1)}45%{-webkit-transform:scale(var(--fa-beat-scale,1.25));transform:scale(var(--fa-beat-scale,1.25))}}@-webkit-keyframes fa-bounce{0%{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0)}10%{-webkit-transform:scale(var(--fa-bounce-start-scale-x,1.1),var(--fa-bounce-start-scale-y,.9)) translateY(0);transform:scale(var(--fa-bounce-start-scale-x,1.1),var(--fa-bounce-start-scale-y,.9)) translateY(0)}30%{-webkit-transform:scale(var(--fa-bounce-jump-scale-x,.9),var(--fa-bounce-jump-scale-y,1.1)) translateY(var(--fa-bounce-height,-.5em));transform:scale(var(--fa-bounce-jump-scale-x,.9),var(--fa-bounce-jump-scale-y,1.1)) translateY(var(--fa-bounce-height,-.5em))}50%{-webkit-transform:scale(var(--fa-bounce-land-scale-x,1.05),var(--fa-bounce-land-scale-y,.95)) translateY(0);transform:scale(var(--fa-bounce-land-scale-x,1.05),var(--fa-bounce-land-scale-y,.95)) translateY(0)}57%{-webkit-transform:scale(1,1) translateY(var(--fa-bounce-rebound,-.125em));transform:scale(1,1) translateY(var(--fa-bounce-rebound,-.125em))}64%{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0)}100%{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0)}}@keyframes fa-bounce{0%{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0)}10%{-webkit-transform:scale(var(--fa-bounce-start-scale-x,1.1),var(--fa-bounce-start-scale-y,.9)) translateY(0);transform:scale(var(--fa-bounce-start-scale-x,1.1),var(--fa-bounce-start-scale-y,.9)) translateY(0)}30%{-webkit-transform:scale(var(--fa-bounce-jump-scale-x,.9),var(--fa-bounce-jump-scale-y,1.1)) translateY(var(--fa-bounce-height,-.5em));transform:scale(var(--fa-bounce-jump-scale-x,.9),var(--fa-bounce-jump-scale-y,1.1)) translateY(var(--fa-bounce-height,-.5em))}50%{-webkit-transform:scale(var(--fa-bounce-land-scale-x,1.05),var(--fa-bounce-land-scale-y,.95)) translateY(0);transform:scale(var(--fa-bounce-land-scale-x,1.05),var(--fa-bounce-land-scale-y,.95)) translateY(0)}57%{-webkit-transform:scale(1,1) translateY(var(--fa-bounce-rebound,-.125em));transform:scale(1,1) translateY(var(--fa-bounce-rebound,-.125em))}64%{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0)}100%{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0)}}@-webkit-keyframes fa-fade{50%{opacity:var(--fa-fade-opacity,.4)}}@keyframes fa-fade{50%{opacity:var(--fa-fade-opacity,.4)}}@-webkit-keyframes fa-beat-fade{0%,100%{opacity:var(--fa-beat-fade-opacity,.4);-webkit-transform:scale(1);transform:scale(1)}50%{opacity:1;-webkit-transform:scale(var(--fa-beat-fade-scale,1.125));transform:scale(var(--fa-beat-fade-scale,1.125))}}@keyframes fa-beat-fade{0%,100%{opacity:var(--fa-beat-fade-opacity,.4);-webkit-transform:scale(1);transform:scale(1)}50%{opacity:1;-webkit-transform:scale(var(--fa-beat-fade-scale,1.125));transform:scale(var(--fa-beat-fade-scale,1.125))}}@-webkit-keyframes fa-flip{50%{-webkit-transform:rotate3d(var(--fa-flip-x,0),var(--fa-flip-y,1),var(--fa-flip-z,0),var(--fa-flip-angle,-180deg));transform:rotate3d(var(--fa-flip-x,0),var(--fa-flip-y,1),var(--fa-flip-z,0),var(--fa-flip-angle,-180deg))}}@keyframes fa-flip{50%{-webkit-transform:rotate3d(var(--fa-flip-x,0),var(--fa-flip-y,1),var(--fa-flip-z,0),var(--fa-flip-angle,-180deg));transform:rotate3d(var(--fa-flip-x,0),var(--fa-flip-y,1),var(--fa-flip-z,0),var(--fa-flip-angle,-180deg))}}@-webkit-keyframes fa-shake{0%{-webkit-transform:rotate(-15deg);transform:rotate(-15deg)}4%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}24%,8%{-webkit-transform:rotate(-18deg);transform:rotate(-18deg)}12%,28%{-webkit-transform:rotate(18deg);transform:rotate(18deg)}16%{-webkit-transform:rotate(-22deg);transform:rotate(-22deg)}20%{-webkit-transform:rotate(22deg);transform:rotate(22deg)}32%{-webkit-transform:rotate(-12deg);transform:rotate(-12deg)}36%{-webkit-transform:rotate(12deg);transform:rotate(12deg)}100%,40%{-webkit-transform:rotate(0);transform:rotate(0)}}@keyframes fa-shake{0%{-webkit-transform:rotate(-15deg);transform:rotate(-15deg)}4%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}24%,8%{-webkit-transform:rotate(-18deg);transform:rotate(-18deg)}12%,28%{-webkit-transform:rotate(18deg);transform:rotate(18deg)}16%{-webkit-transform:rotate(-22deg);transform:rotate(-22deg)}20%{-webkit-transform:rotate(22deg);transform:rotate(22deg)}32%{-webkit-transform:rotate(-12deg);transform:rotate(-12deg)}36%{-webkit-transform:rotate(12deg);transform:rotate(12deg)}100%,40%{-webkit-transform:rotate(0);transform:rotate(0)}}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}.fa-rotate-by{-webkit-transform:rotate(var(--fa-rotate-angle,none));transform:rotate(var(--fa-rotate-angle,none))}.fa-stack{display:inline-block;vertical-align:middle;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0;z-index:var(--fa-stack-z-index,auto)}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:var(--fa-inverse,#fff)}.fa-sr-only,.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.fa-sr-only-focusable:not(:focus),.sr-only-focusable:not(:focus){position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fa-duotone.fa-inverse,.fad.fa-inverse{color:var(--fa-inverse,#fff)}</style><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+        .led-on { background-color: #39ff14; box-shadow: 0 0 8px #39ff14; } /* Neon Green */
+        .led-off { background-color: #1f2937; } /* Gray-800 */
+        .led-red-on { background-color: #ff3939; box-shadow: 0 0 8px #ff3939; } /* Neon Red */
+        .pin-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .wire-active { stroke: #39ff14; stroke-width: 2; filter: drop-shadow(0 0 2px #39ff14); }
+        .wire-inactive { stroke: #374151; stroke-width: 1; }
+        .component-box { background: #111827; border: 1px solid #374151; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); }
+        .code-highlight { background-color: #374151; border-left: 4px solid #39ff14; color: white; transition: all 0.2s; }
+        
+        /* Custom scrollbar for code block */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+        ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.-top-3{top:-0.75rem}.bottom-0{bottom:0px}.left-\[30\%\]{left:30%}.left-\[45\%\]{left:45%}.right-2{right:0.5rem}.right-4{right:1rem}.right-\[28\%\]{right:28%}.top-2{top:0.5rem}.top-4{top:1rem}.z-10{z-index:10}.col-span-1{grid-column:span 1 / span 1}.col-span-2{grid-column:span 2 / span 2}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-\[-10px\]{margin-bottom:-10px}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-2{height:0.5rem}.h-24{height:6rem}.h-3{height:0.75rem}.h-32{height:8rem}.h-4{height:1rem}.h-48{height:12rem}.h-64{height:16rem}.h-8{height:2rem}.h-\[600px\]{height:600px}.h-full{height:100%}.h-screen{height:100vh}.w-12{width:3rem}.w-2{width:0.5rem}.w-24{width:6rem}.w-3{width:0.75rem}.w-4{width:1rem}.w-40{width:10rem}.w-48{width:12rem}.w-64{width:16rem}.w-96{width:24rem}.w-full{width:100%}.max-w-4xl{max-width:56rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.origin-top{transform-origin:top}.scale-95{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.appearance-none{-webkit-appearance:none;appearance:none}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-8{grid-template-columns:repeat(8, minmax(0, 1fr))}.grid-rows-4{grid-template-rows:repeat(4, minmax(0, 1fr))}.flex-row-reverse{flex-direction:row-reverse}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-12{gap:3rem}.gap-16{gap:4rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-x-8{column-gap:2rem}.gap-y-2{row-gap:0.5rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-sm{border-radius:0.125rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-gray-500{--tw-border-opacity:1;border-color:rgb(107 114 128 / var(--tw-border-opacity, 1))}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-red-800{--tw-border-opacity:1;border-color:rgb(153 27 27 / var(--tw-border-opacity, 1))}.border-yellow-800{--tw-border-opacity:1;border-color:rgb(133 77 14 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-gray-400{--tw-bg-opacity:1;background-color:rgb(156 163 175 / var(--tw-bg-opacity, 1))}.bg-gray-600{--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-gray-950{--tw-bg-opacity:1;background-color:rgb(3 7 18 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234 / var(--tw-bg-opacity, 1))}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.bg-red-900{--tw-bg-opacity:1;background-color:rgb(127 29 29 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-2{padding-bottom:0.5rem}.pl-2{padding-left:0.5rem}.pt-2{padding-top:0.5rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-\[10px\]{font-size:10px}.text-\[9px\]{font-size:9px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[8px\]{font-size:8px}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-5{line-height:1.25rem}.tracking-widest{letter-spacing:0.1em}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-300{--tw-text-opacity:1;color:rgb(253 224 71 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-yellow-500{--tw-text-opacity:1;color:rgb(234 179 8 / var(--tw-text-opacity, 1))}.opacity-80{opacity:0.8}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_0_5px_\#22c55e\]{--tw-shadow:0 0 5px #22c55e;--tw-shadow-colored:0 0 5px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-blue-900\/50{--tw-shadow-color:rgb(30 58 138 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.shadow-green-900\/50{--tw-shadow-color:rgb(20 83 45 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-100{transition-duration:100ms}.hover\:bg-blue-500:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:bg-green-500:hover{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-500:hover{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.hover\:bg-red-500:hover{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:opacity-100:hover{opacity:1}.focus\:border-blue-500:focus{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.focus\:border-green-500:focus{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}</style></head>
+<body class="bg-gray-900 text-gray-200 h-screen flex flex-col overflow-hidden">
+
+    <!-- Header -->
+    <header class="bg-gray-800 border-b border-gray-700 p-4 flex justify-between items-center shrink-0 z-10">
+        <div class="flex items-center space-x-3">
+            <div class="bg-blue-600 p-2 rounded-lg"><svg class="svg-inline--fa fa-microchip text-white" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="microchip" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V176h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H176V24zM160 128H352c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160V352H352V160z"></path></svg><!-- <i class="fa-solid fa-microchip text-white"></i> Font Awesome fontawesome.com --></div>
+            <div>
+                <h1 class="text-xl font-bold text-white">EEPROM Programmer Simulator</h1>
+                <p class="text-xs text-gray-400">Mô phỏng chi tiết cơ chế Arduino + 74HC595</p>
+            </div>
+        </div>
+        <div class="flex space-x-3">
+            <button onclick="resetSimulation()" class="px-3 py-1 bg-red-600 hover:bg-red-500 rounded text-sm font-semibold transition"><svg class="svg-inline--fa fa-rotate-right mr-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rotate-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"></path></svg><!-- <i class="fa-solid fa-rotate-right mr-1"></i> Font Awesome fontawesome.com --> Reset</button>
+            <button onclick="downloadSource()" class="px-3 py-1 bg-green-600 hover:bg-green-500 rounded text-sm font-semibold transition"><svg class="svg-inline--fa fa-download mr-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg><!-- <i class="fa-solid fa-download mr-1"></i> Font Awesome fontawesome.com --> Tải HTML</button>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="flex-1 flex overflow-hidden">
+        
+        <!-- Left Column: Visual Simulation Area -->
+        <section class="flex-1 bg-gray-950 relative overflow-auto p-6 flex flex-col items-center">
+            
+            <!-- Connection Status / Bus View -->
+            <div class="absolute top-4 right-4 bg-gray-900 p-3 rounded border border-gray-700 opacity-80 text-xs font-mono pointer-events-none">
+                <div class="mb-1 text-gray-400 font-bold">BUS STATUS</div>
+                <div class="flex justify-between w-48"><span>ADDR BUS:</span> <span id="bus-addr-val" class="text-yellow-400">0x0000</span></div>
+                <div class="flex justify-between w-48"><span>DATA BUS:</span> <span id="bus-data-val" class="text-blue-400">0x00</span></div>
+                <div class="flex justify-between w-48"><span>CONTROL:</span> <span id="bus-ctrl-val" class="text-red-400">IDLE</span></div>
+            </div>
+
+            <!-- THE BOARD -->
+            <div class="relative w-full max-w-4xl h-[600px] flex flex-col justify-center items-center gap-12 select-none scale-95 origin-top">
+                
+                <!-- TOP ROW: Arduino & Shift Registers -->
+                <div class="flex justify-center gap-16 items-start w-full">
+                    
+                    <!-- Component: ARDUINO NANO -->
+                    <div class="component-box w-40 p-2 rounded-xl relative flex flex-col items-center group">
+                        <div class="absolute -top-3 bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded font-bold">ARDUINO NANO</div>
+                        <!-- USB Port -->
+                        <div class="w-12 h-4 bg-gray-400 mb-4 rounded-sm border border-gray-500"></div>
+                        
+                        <!-- Pins Grid -->
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-2 w-full px-2">
+                            <!-- Left Side (Simulated partial) -->
+                            <div class="flex items-center gap-2 flex-row-reverse">
+                                <span class="pin-label text-gray-500">D2</span>
+                                <div id="pin-d2" class="w-3 h-3 rounded-full led-off border border-gray-600 transition-colors duration-100"></div>
+                            </div>
+                            <div class="col-span-1"></div> <!-- Spacer -->
+
+                            <div class="flex items-center gap-2 flex-row-reverse">
+                                <span class="pin-label text-gray-500">D3</span>
+                                <div id="pin-d3" class="w-3 h-3 rounded-full led-off border border-gray-600 transition-colors duration-100"></div>
+                            </div>
+                            <div class="col-span-1"></div>
+
+                            <div class="flex items-center gap-2 flex-row-reverse">
+                                <span class="pin-label text-gray-500">D4</span>
+                                <div id="pin-d4" class="w-3 h-3 rounded-full led-off border border-gray-600 transition-colors duration-100"></div>
+                            </div>
+                            <div class="col-span-1"></div>
+
+                            <!-- Data Pins D5-D12 -->
+                            <div class="flex items-center gap-2 flex-row-reverse col-span-2 justify-center border-t border-gray-800 pt-2 mt-1">
+                                <span class="pin-label text-blue-400">DATA (D5-D12)</span>
+                            </div>
+                            <!-- Just showing a representative block for Data pins to save space -->
+                            <div class="col-span-2 flex justify-center gap-1">
+                                <div id="pin-d12" class="w-2 h-2 rounded-full led-off" title="D12"></div>
+                                <div id="pin-d11" class="w-2 h-2 rounded-full led-off" title="D11"></div>
+                                <div id="pin-d10" class="w-2 h-2 rounded-full led-off" title="D10"></div>
+                                <div id="pin-d9" class="w-2 h-2 rounded-full led-off" title="D9"></div>
+                                <div id="pin-d8" class="w-2 h-2 rounded-full led-off" title="D8"></div>
+                                <div id="pin-d7" class="w-2 h-2 rounded-full led-off" title="D7"></div>
+                                <div id="pin-d6" class="w-2 h-2 rounded-full led-off" title="D6"></div>
+                                <div id="pin-d5" class="w-2 h-2 rounded-full led-off" title="D5"></div>
+                            </div>
+
+                            <!-- Control Pin D13 -->
+                            <div class="flex items-center gap-2 flex-row-reverse col-span-2 justify-center pt-2">
+                                <span class="pin-label text-red-500">WE (D13)</span>
+                                <div id="pin-d13" class="w-3 h-3 rounded-full border border-gray-600 led-on"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Component: SHIFT REGISTERS (Grouped visually) -->
+                    <div class="flex flex-col gap-4">
+                        <div class="text-center text-xs text-gray-400 font-mono mb-[-10px]">SHIFT REGISTERS (74HC595 x2)</div>
+                        <div class="flex gap-2">
+                            <!-- SR 2 (High Byte) -->
+                            <div class="component-box w-24 h-48 relative rounded p-2 flex flex-col items-center justify-between">
+                                <div class="text-[10px] font-bold text-yellow-500">SR #2 (High)</div>
+                                <div class="flex flex-col gap-1 w-full px-2">
+                                    <div class="flex justify-between items-center text-[9px] text-gray-500"><span>Q7</span><div id="sr2-q7" class="w-2 h-2 bg-gray-800 rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-gray-500"><span>Q6</span><div id="sr2-q6" class="w-2 h-2 bg-gray-800 rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-gray-500"><span>Q5</span><div id="sr2-q5" class="w-2 h-2 bg-gray-800 rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-gray-500"><span>Q4</span><div id="sr2-q4" class="w-2 h-2 bg-gray-800 rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-gray-500"><span>Q3</span><div id="sr2-q3" class="w-2 h-2 bg-gray-800 rounded-full"></div></div>
+                                    <!-- Active Outputs connected to EEPROM -->
+                                    <div class="flex justify-between items-center text-[9px] text-white font-bold"><span>Q2 (OE)</span><div id="sr2-q2" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q1 (A9)</span><div id="sr2-q1" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q0 (A8)</span><div id="sr2-q0" class="w-2 h-2 led-off rounded-full"></div></div>
+                                </div>
+                            </div>
+
+                            <!-- SR 1 (Low Byte) -->
+                            <div class="component-box w-24 h-48 relative rounded p-2 flex flex-col items-center justify-between">
+                                <div class="text-[10px] font-bold text-yellow-500">SR #1 (Low)</div>
+                                <div class="flex flex-col gap-1 w-full px-2">
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q7 (A7)</span><div id="sr1-q7" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q6 (A6)</span><div id="sr1-q6" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q5 (A5)</span><div id="sr1-q5" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q4 (A4)</span><div id="sr1-q4" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q3 (A3)</span><div id="sr1-q3" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q2 (A2)</span><div id="sr1-q2" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q1 (A1)</span><div id="sr1-q1" class="w-2 h-2 led-off rounded-full"></div></div>
+                                    <div class="flex justify-between items-center text-[9px] text-yellow-300"><span>Q0 (A0)</span><div id="sr1-q0" class="w-2 h-2 led-off rounded-full"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Wires Logic Text -->
+                        <div class="text-[10px] text-gray-500 text-center mt-2">
+                            Arduino D2 → SER<br>
+                            Arduino D3 → SRCLK<br>
+                            Arduino D4 → RCLK
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MIDDLE: Visual Arrows/Flow -->
+                <div class="w-full flex justify-center items-center h-8 relative">
+                    <!-- Address Bus Flow -->
+                    <div class="absolute right-[28%] text-yellow-500 text-xs animate-pulse font-mono">
+                        <svg class="svg-inline--fa fa-arrow-down" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg><!-- <i class="fa-solid fa-arrow-down"></i> Font Awesome fontawesome.com --> ADDRESS BUS (11-bit)
+                    </div>
+                     <!-- Data Bus Flow -->
+                     <div class="absolute left-[30%] text-blue-500 text-xs font-mono">
+                        <svg class="svg-inline--fa fa-arrow-down-up" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><g class="missing"><path fill="currentColor" d="M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z"></path><circle fill="currentColor" cx="256" cy="364" r="28"><animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="r" values="28;14;28;28;14;28;"></animate><animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="1;0;1;1;0;1;"></animate></circle><path fill="currentColor" opacity="1" d="M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z"><animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="1;0;0;0;0;1;"></animate></path><path fill="currentColor" opacity="0" d="M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z"><animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="0;0;1;1;0;0;"></animate></path></g></svg><!-- <i class="fa-solid fa-arrow-down-up"></i> Font Awesome fontawesome.com --> DATA BUS (8-bit)
+                    </div>
+                    <!-- Control Line -->
+                    <div class="absolute left-[45%] text-red-500 text-xs font-mono">
+                        <svg class="svg-inline--fa fa-bolt" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bolt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"></path></svg><!-- <i class="fa-solid fa-bolt"></i> Font Awesome fontawesome.com --> WE
+                    </div>
+                </div>
+
+                <!-- BOTTOM ROW: EEPROM -->
+                <div class="component-box w-64 h-64 rounded-lg relative flex flex-col items-center pt-6 shadow-2xl border-2 border-gray-600">
+                    <!-- Chip Label -->
+                    <div class="absolute top-2 text-gray-300 font-bold tracking-widest text-lg">AT28C16</div>
+                    <div class="absolute top-2 right-2 text-[10px] text-gray-500">2K x 8 EEPROM</div>
+                    
+                    <!-- Internal Memory Grid Visual (Partial) -->
+                    <div class="w-48 h-24 bg-gray-900 border border-gray-700 mt-4 grid grid-cols-8 grid-rows-4 gap-1 p-1" id="eeprom-grid-visual"><div id="mem-0" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-1" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-2" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-3" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-4" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-5" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-6" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-7" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-8" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-9" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-10" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-11" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-12" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-13" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-14" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-15" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-16" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-17" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-18" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-19" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-20" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-21" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-22" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-23" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-24" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-25" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-26" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-27" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-28" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-29" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-30" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div><div id="mem-31" class="bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700">FF</div></div>
+                    <div class="text-[10px] text-gray-500 mt-1">Vùng nhớ (Mô phỏng 32 bytes đầu)</div>
+
+                    <!-- Pins Status Bottom -->
+                    <div class="w-full absolute bottom-0 flex justify-between px-4 pb-2">
+                        <div class="flex flex-col items-center">
+                            <span class="text-[9px] text-red-400 font-bold mb-1">WE</span>
+                            <div id="eeprom-we" class="w-4 h-4 rounded-full bg-red-900 border border-red-800 transition-all"></div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-[9px] text-yellow-400 font-bold mb-1">OE</span>
+                            <div id="eeprom-oe" class="w-4 h-4 rounded-full bg-gray-800 border border-yellow-800 transition-all"></div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-[9px] text-green-400 font-bold mb-1">CE</span>
+                            <div class="w-4 h-4 rounded-full bg-green-500 shadow-[0_0_5px_#22c55e]"></div> <!-- Always Active -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Log Output -->
+            <div class="w-full max-w-4xl mt-4 bg-black rounded border border-gray-700 h-32 overflow-y-auto p-2 font-mono text-xs text-green-400" id="sim-log">
+                <div>&gt; System Ready.</div>
+                <div>&gt; EEPROM initialized (All 0xFF).</div>
+            </div>
+
+        </section>
+
+        <!-- Right Column: Controls & Code -->
+        <aside class="w-96 bg-gray-800 border-l border-gray-700 flex flex-col overflow-hidden">
+            
+            <!-- Controls Tabs -->
+            <div class="flex border-b border-gray-700">
+                <button onclick="switchTab('control')" id="tab-control" class="flex-1 py-3 text-sm font-semibold bg-gray-700 text-white border-b-2 border-blue-500">Điều khiển</button>
+                <button onclick="switchTab('code')" id="tab-code" class="flex-1 py-3 text-sm font-semibold text-gray-400 hover:bg-gray-700 hover:text-white transition">Code Arduino</button>
+            </div>
+
+            <!-- CONTROL PANEL -->
+            <div id="panel-control" class="p-6 flex flex-col gap-6 overflow-y-auto h-full">
+                
+                <!-- Speed Control -->
+                <div>
+                    <label class="text-xs font-bold text-gray-400 uppercase mb-2 block">Tốc độ Mô phỏng</label>
+                    <input type="range" id="sim-speed" min="1" max="100" value="50" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-[10px] text-gray-500 mt-1">
+                        <span>Chậm (Soi Bit)</span>
+                        <span>Nhanh (Thực tế)</span>
+                    </div>
+                </div>
+
+                <!-- Manual Operation -->
+                <div class="bg-gray-700 p-4 rounded-lg border border-gray-600">
+                    <h3 class="text-sm font-bold text-white mb-3 flex items-center"><svg class="svg-inline--fa fa-pen-to-square mr-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"></path></svg><!-- <i class="fa-solid fa-pen-to-square mr-2"></i> Font Awesome fontawesome.com --> Ghi Byte (Write)</h3>
+                    <div class="grid grid-cols-2 gap-3 mb-3">
+                        <div>
+                            <label class="text-[10px] text-gray-300 block mb-1">ADDRESS (0-2047)</label>
+                            <input type="number" id="input-addr" value="0" min="0" max="2047" class="w-full bg-gray-900 border border-gray-500 rounded px-2 py-1 text-white text-sm font-mono focus:border-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="text-[10px] text-gray-300 block mb-1">DATA (0-255)</label>
+                            <input type="number" id="input-data" value="85" min="0" max="255" class="w-full bg-gray-900 border border-gray-500 rounded px-2 py-1 text-white text-sm font-mono focus:border-blue-500 outline-none">
+                        </div>
+                    </div>
+                    <button id="btn-write" onclick="startWriteSequence()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded transition shadow-lg shadow-blue-900/50 text-sm">
+                        Thực hiện Ghi (Write Cycle)
+                    </button>
+                </div>
+
+                <div class="bg-gray-700 p-4 rounded-lg border border-gray-600">
+                    <h3 class="text-sm font-bold text-white mb-3 flex items-center"><svg class="svg-inline--fa fa-eye mr-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"></path></svg><!-- <i class="fa-solid fa-eye mr-2"></i> Font Awesome fontawesome.com --> Đọc Byte (Read)</h3>
+                    <div class="mb-3">
+                        <label class="text-[10px] text-gray-300 block mb-1">ADDRESS TO READ</label>
+                        <input type="number" id="read-addr" value="0" min="0" max="2047" class="w-full bg-gray-900 border border-gray-500 rounded px-2 py-1 text-white text-sm font-mono focus:border-green-500 outline-none">
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="btn-read" onclick="startReadSequence()" class="flex-1 bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded transition shadow-lg shadow-green-900/50 text-sm">
+                            Đọc (Read Cycle)
+                        </button>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <span class="text-xs text-gray-400">Kết quả: </span>
+                        <span id="read-result" class="font-mono text-lg font-bold text-white">-</span>
+                    </div>
+                </div>
+
+                 <!-- Bulk Demo -->
+                 <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 opacity-80 hover:opacity-100 transition">
+                    <h3 class="text-sm font-bold text-white mb-2">Chế độ Demo Tự động</h3>
+                    <p class="text-[10px] text-gray-300 mb-3">Tự động ghi dãy số Fibonacci vào 5 ô nhớ đầu tiên.</p>
+                    <button onclick="runBulkDemo()" class="w-full bg-purple-600 hover:bg-purple-500 text-white py-1.5 rounded text-xs font-bold">Chạy Demo Hàng Loạt</button>
+                </div>
+
+            </div>
+
+            <!-- CODE PANEL -->
+            <div id="panel-code" class="flex-1 bg-gray-900 overflow-y-auto hidden text-xs font-mono p-4 text-gray-300 leading-5">
+<pre id="code-block">/* Defines */
+#define SHIFT_DATA 2
+#define SHIFT_CLK 3
+#define SHIFT_LATCH 4
+#define EEPROM_D0 5
+#define EEPROM_D7 12
+#define WRITE_EN 13
+
+/* 1. Set Address &amp; OE */
+void setAddress(int address, bool outputEnable) {
+  <span id="line-shiftOut" class="pl-2 block">shiftOut(SHIFT_DATA, SHIFT_CLK, MSBFIRST, 
+           (address &gt;&gt; 8) | (outputEnable ? 0x00 : 0x80));</span>
+  <span id="line-shiftOut2" class="pl-2 block">shiftOut(SHIFT_DATA, SHIFT_CLK, MSBFIRST, 
+           address);</span>
+  
+  <span id="line-latch" class="pl-2 block">digitalWrite(SHIFT_LATCH, LOW);</span>
+  <span id="line-latch-high" class="pl-2 block">digitalWrite(SHIFT_LATCH, HIGH);</span>
+  <span id="line-latch-end" class="pl-2 block">digitalWrite(SHIFT_LATCH, LOW);</span>
+}
+
+/* 2. Write Byte */
+void writeEEPROM(int address, byte data) {
+  // Set Address, Disable Output (OE High)
+  <span id="line-write-setaddr" class="pl-2 block">setAddress(address, false);</span>
+  
+  // Set Data Pins to OUTPUT
+  <span id="line-pinmode-out" class="pl-2 block">for (int pin = EEPROM_D0; pin &lt;= EEPROM_D7; pin++) 
+    pinMode(pin, OUTPUT);</span>
+  
+  // Write Data to Bus
+  <span id="line-write-data" class="pl-2 block">for (int pin = EEPROM_D0; pin &lt;= EEPROM_D7; pin++) 
+    digitalWrite(pin, data &amp; (1 &lt;&lt; (pin - 5)));</span>
+
+  // Pulse Write Enable
+  <span id="line-we-low" class="pl-2 block">digitalWrite(WRITE_EN, LOW);</span>
+  <span id="line-we-wait" class="pl-2 block">delayMicroseconds(1);</span>
+  <span id="line-we-high" class="pl-2 block">digitalWrite(WRITE_EN, HIGH);</span>
+  
+  // Write Cycle Time
+  <span id="line-delay" class="pl-2 block">delay(10);</span>
+}
+
+/* 3. Read Byte */
+byte readEEPROM(int address) {
+  // Set Address, Enable Output (OE Low)
+  <span id="line-read-setaddr" class="pl-2 block">setAddress(address, true);</span>
+  
+  // Set Data Pins to INPUT
+  <span id="line-pinmode-in" class="pl-2 block">for (int pin = EEPROM_D0; pin &lt;= EEPROM_D7; pin++) 
+    pinMode(pin, INPUT);</span>
+    
+  // Read Data Bus
+  <span id="line-read-bus" class="pl-2 block">byte data = 0;
+  for (int pin = EEPROM_D0; pin &lt;= EEPROM_D7; pin++)
+    if (digitalRead(pin)) data += (1 &lt;&lt; (pin - 5));</span>
+    
+  return data;
+}
+</pre>
+            </div>
+        </aside>
+
+    </main>
+
+    <script>
+        // --- Simulation State ---
+        const MEM_SIZE = 2048;
+        const eepromData = new Uint8Array(MEM_SIZE).fill(0xFF); // Erased state is usually FF
+        let isRunning = false;
+        
+        // --- Visual Elements Cache ---
+        const els = {
+            pinD2: document.getElementById('pin-d2'), // Data
+            pinD3: document.getElementById('pin-d3'), // Clock
+            pinD4: document.getElementById('pin-d4'), // Latch
+            pinD13: document.getElementById('pin-d13'), // WE
+            eepromWE: document.getElementById('eeprom-we'),
+            eepromOE: document.getElementById('eeprom-oe'),
+            busAddr: document.getElementById('bus-addr-val'),
+            busData: document.getElementById('bus-data-val'),
+            busCtrl: document.getElementById('bus-ctrl-val'),
+            log: document.getElementById('sim-log'),
+            grid: document.getElementById('eeprom-grid-visual'),
+            readResult: document.getElementById('read-result'),
+            btnWrite: document.getElementById('btn-write'),
+            btnRead: document.getElementById('btn-read'),
+            speed: document.getElementById('sim-speed')
+        };
+
+        // Cache Data Pins
+        const dataPins = [];
+        for(let i=5; i<=12; i++) dataPins.push(document.getElementById(`pin-d${i}`));
+
+        // Cache SR LEDs
+        const sr1Leds = [];
+        const sr2Leds = [];
+        for(let i=0; i<8; i++) {
+            sr1Leds.push(document.getElementById(`sr1-q${i}`));
+            sr2Leds.push(document.getElementById(`sr2-q${i}`));
+        }
+
+        // --- Helper Functions ---
+
+        function log(msg) {
+            const div = document.createElement('div');
+            div.textContent = `> ${msg}`;
+            div.className = "hover:text-white";
+            els.log.appendChild(div);
+            els.log.scrollTop = els.log.scrollHeight;
+        }
+
+        async function sleep(baseMs) {
+            // Speed logic: 100 = 0 delay (instant), 1 = max delay
+            const factor = (101 - els.speed.value); 
+            // If factor is small, speed is fast.
+            // BaseMs is the "structural" delay of the simulation.
+            // When slider is at 100, we want near 0ms.
+            // When slider is at 1, we want baseMs * 5.
+            const ms = baseMs * (factor / 10);
+            return new Promise(r => setTimeout(r, ms));
+        }
+
+        function highlightLine(id) {
+            document.querySelectorAll('.code-highlight').forEach(el => {
+                el.classList.remove('code-highlight');
+                el.classList.remove('pl-4');
+                el.classList.add('pl-2');
+            });
+            if (!id) return;
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.add('code-highlight');
+                el.classList.remove('pl-2');
+                el.classList.add('pl-4');
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function setLed(el, state, colorClass = 'led-on') {
+            if (state) {
+                el.classList.remove('led-off');
+                el.classList.add(colorClass);
+            } else {
+                el.classList.remove(colorClass);
+                el.classList.add('led-off');
+            }
+        }
+
+        // Initialize EEPROM Grid
+        function initGrid() {
+            els.grid.innerHTML = '';
+            for (let i = 0; i < 32; i++) {
+                const cell = document.createElement('div');
+                cell.id = `mem-${i}`;
+                cell.className = "bg-gray-800 text-[8px] text-gray-400 flex items-center justify-center font-mono border border-gray-700";
+                cell.textContent = "FF";
+                els.grid.appendChild(cell);
+            }
+        }
+        initGrid();
+
+        function updateGrid(addr, val) {
+            if (addr < 32) {
+                const cell = document.getElementById(`mem-${addr}`);
+                if (cell) {
+                    cell.textContent = val.toString(16).toUpperCase().padStart(2, '0');
+                    cell.classList.add('bg-blue-900', 'text-white');
+                    setTimeout(() => cell.classList.remove('bg-blue-900', 'text-white'), 1000);
+                }
+            }
+            eepromData[addr] = val;
+        }
+
+        // --- Core Simulation Logic ---
+
+        // Simulates shiftOut()
+        async function simShiftOut(val, lineId) {
+            highlightLine(lineId);
+            // We simulate 8 bits shifting
+            for (let i = 7; i >= 0; i--) {
+                const bit = (val >> i) & 1;
+                
+                // 1. Set Data Pin
+                setLed(els.pinD2, bit); // SER
+                
+                // 2. Pulse Clock
+                setLed(els.pinD3, true); // CLK HIGH
+                await sleep(50); // Visual wait
+                setLed(els.pinD3, false); // CLK LOW
+                
+                // Logic: In a real 595, bits shift on rising edge.
+                // We won't simulate the internal buffer shift animation pixel by pixel for simplicity 
+                // unless requested, but we will "flicker" the SR logic if we want high realism.
+                // For this UI, we just update the final state after latch, 
+                // OR we can update a "buffer" visual.
+                // Let's keep it simple: the user sees the Arduino flashing.
+            }
+            setLed(els.pinD2, false);
+        }
+
+        // Simulates setAddress(address, outputEnable)
+        async function simSetAddress(address, outputEnable) {
+            log(`Setting Address: ${address} (OE: ${outputEnable})`);
+            
+            // Calculate the two bytes
+            // Byte 1: High address bits + OE bit (usually bit 7 of 2nd register)
+            // Note: The prompt describes 16 outputs. 
+            // Register 2 Q0-Q? -> Address High bits.
+            // One bit controls OE. Usually OE is active LOW.
+            // If outputEnable is TRUE (we want to output), OE pin should be LOW.
+            // Ben Eater Design: The Shift Register bit connected to OE is often Q7 of the second register (or similar).
+            // Let's assume standard Ben Eater code logic: `(address >> 8) | (outputEnable ? 0x00 : 0x80)`
+            // This implies the MSB of the second byte controls OE. 
+            // If outputEnable is true, we send 0 (Active Low OE). If false, send 1 (High Z).
+            
+            const highByte = (address >> 8) | (outputEnable ? 0x00 : 0x80);
+            const lowByte = address & 0xFF;
+
+            // Shift Out High Byte
+            await simShiftOut(highByte, 'line-shiftOut');
+            
+            // Shift Out Low Byte
+            await simShiftOut(lowByte, 'line-shiftOut2');
+
+            // Latch
+            highlightLine('line-latch');
+            setLed(els.pinD4, false);
+            await sleep(50);
+            
+            highlightLine('line-latch-high');
+            setLed(els.pinD4, true); // Latch Pulse
+            
+            // --- UPDATE SHIFT REGISTER VISUALS INSTANTLY ON LATCH ---
+            // Update SR1 (Low Byte)
+            for(let i=0; i<8; i++) setLed(sr1Leds[i], (lowByte >> i) & 1);
+            // Update SR2 (High Byte)
+            for(let i=0; i<8; i++) setLed(sr2Leds[i], (highByte >> i) & 1);
+
+            // Update EEPROM Control Lines derived from SR
+            // SR2 Q7 is OE (based on logic above 0x80)
+            const oeState = (highByte >> 7) & 1; 
+            // If oeState is 1, OE pin is High (Disable). If 0, OE pin is Low (Enable).
+            // Note: OE is active low.
+            const isOutputEnabled = oeState === 0;
+            
+            // Visual for EEPROM OE Pin
+            if (isOutputEnabled) {
+                // Enabled (Low) -> Green or "Active"
+                els.eepromOE.classList.remove('bg-gray-800');
+                els.eepromOE.classList.add('bg-green-500', 'shadow-[0_0_5px_#22c55e]'); // Green = Active Low logic engaged
+                els.busCtrl.textContent = "READ MODE";
+                els.busCtrl.className = "text-green-400";
+            } else {
+                // Disabled (High) -> Off
+                els.eepromOE.classList.remove('bg-green-500', 'shadow-[0_0_5px_#22c55e]');
+                els.eepromOE.classList.add('bg-gray-800');
+                els.busCtrl.textContent = "WRITE/IDLE";
+                els.busCtrl.className = "text-gray-400";
+            }
+
+            els.busAddr.textContent = `0x${address.toString(16).toUpperCase().padStart(4, '0')}`;
+
+            await sleep(50);
+            highlightLine('line-latch-end');
+            setLed(els.pinD4, false);
+        }
+
+        async function startWriteSequence() {
+            if (isRunning) return;
+            isRunning = true;
+            toggleControls(false);
+
+            const addr = parseInt(document.getElementById('input-addr').value);
+            const data = parseInt(document.getElementById('input-data').value);
+
+            log(`--- Starting WRITE Cycle: [0x${addr.toString(16)}] = 0x${data.toString(16)} ---`);
+
+            // 1. Set Address (Disable Output)
+            highlightLine('line-write-setaddr');
+            await simSetAddress(addr, false); // false = OE High (Output Disabled)
+
+            // 2. Set Data Pins Output
+            highlightLine('line-pinmode-out');
+            await sleep(100);
+
+            // 3. Write Data to Bus
+            highlightLine('line-write-data');
+            log(`Arduino outputting data: ${data}`);
+            els.busData.textContent = `0x${data.toString(16).toUpperCase().padStart(2, '0')}`;
+            
+            // Update Arduino Data LEDs
+            for(let i=0; i<8; i++) {
+                const bit = (data >> i) & 1;
+                setLed(dataPins[i], bit, 'led-on'); // Blue/Green for data
+            }
+            await sleep(200);
+
+            // 4. Pulse WE
+            log("Pulsing Write Enable...");
+            highlightLine('line-we-low');
+            setLed(els.pinD13, false); // Low (Active)
+            setLed(els.eepromWE, true, 'led-red-on'); // Visual Red for Write
+            els.busCtrl.textContent = "WRITING...";
+            els.busCtrl.className = "text-red-500 font-bold animate-pulse";
+            
+            await sleep(200); // The 1us delay (slowed down)
+
+            highlightLine('line-we-high');
+            setLed(els.pinD13, true); // High (Inactive)
+            setLed(els.eepromWE, false);
+            
+            // Actually commit data to memory model
+            updateGrid(addr, data);
+            
+            // 5. Delay 10ms
+            highlightLine('line-delay');
+            log("Waiting 10ms for internal write cycle...");
+            els.busCtrl.textContent = "BUSY (Internal)";
+            await sleep(300); // Visual delay for the 10ms
+
+            // Cleanup visuals
+            for(let i=0; i<8; i++) setLed(dataPins[i], false);
+            els.busCtrl.textContent = "IDLE";
+            els.busData.textContent = "0x00";
+            highlightLine(null);
+            
+            log("Write Complete.");
+            isRunning = false;
+            toggleControls(true);
+        }
+
+        async function startReadSequence() {
+            if (isRunning) return;
+            isRunning = true;
+            toggleControls(false);
+            els.readResult.textContent = "...";
+
+            const addr = parseInt(document.getElementById('read-addr').value);
+            log(`--- Starting READ Cycle: [0x${addr.toString(16)}] ---`);
+
+            // 1. Set Address (Enable Output)
+            highlightLine('line-read-setaddr');
+            await simSetAddress(addr, true); // true = OE Low (Active)
+
+            // 2. Set Arduino Pins to Input
+            highlightLine('line-pinmode-in');
+            log("Arduino pins set to INPUT (Listening...)");
+            await sleep(100);
+
+            // 3. Read Bus
+            highlightLine('line-read-bus');
+            const storedData = eepromData[addr];
+            els.busData.textContent = `0x${storedData.toString(16).toUpperCase().padStart(2, '0')}`;
+            
+            // Visualize Data flowing FROM EEPROM TO ARDUINO
+            // (We light up the Arduino pins as if they are sensing voltage)
+            for(let i=0; i<8; i++) {
+                const bit = (storedData >> i) & 1;
+                setLed(dataPins[i], bit);
+            }
+
+            await sleep(300);
+
+            els.readResult.textContent = `Dec: ${storedData} | Hex: 0x${storedData.toString(16).toUpperCase()}`;
+            log(`Read value: ${storedData}`);
+
+            // Cleanup
+            for(let i=0; i<8; i++) setLed(dataPins[i], false);
+            highlightLine(null);
+            
+            isRunning = false;
+            toggleControls(true);
+        }
+
+        async function runBulkDemo() {
+            if(isRunning) return;
+            // Fibonacci Sequence: 1, 1, 2, 3, 5
+            const sequence = [1, 1, 2, 3, 5];
+            
+            for(let i=0; i<sequence.length; i++) {
+                document.getElementById('input-addr').value = i;
+                document.getElementById('input-data').value = sequence[i];
+                await startWriteSequence();
+                await sleep(200); // Pause between writes
+            }
+        }
+
+        function toggleControls(enable) {
+            els.btnWrite.disabled = !enable;
+            els.btnRead.disabled = !enable;
+            if(!enable) {
+                els.btnWrite.classList.add('opacity-50', 'cursor-not-allowed');
+                els.btnRead.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                els.btnWrite.classList.remove('opacity-50', 'cursor-not-allowed');
+                els.btnRead.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function switchTab(tab) {
+            if(tab === 'control') {
+                document.getElementById('panel-control').classList.remove('hidden');
+                document.getElementById('panel-code').classList.add('hidden');
+                document.getElementById('tab-control').classList.add('border-b-2', 'border-blue-500', 'text-white');
+                document.getElementById('tab-control').classList.remove('text-gray-400');
+                document.getElementById('tab-code').classList.remove('border-b-2', 'border-blue-500', 'text-white');
+                document.getElementById('tab-code').classList.add('text-gray-400');
+            } else {
+                document.getElementById('panel-control').classList.add('hidden');
+                document.getElementById('panel-code').classList.remove('hidden');
+                document.getElementById('tab-code').classList.add('border-b-2', 'border-blue-500', 'text-white');
+                document.getElementById('tab-code').classList.remove('text-gray-400');
+                document.getElementById('tab-control').classList.remove('border-b-2', 'border-blue-500', 'text-white');
+                document.getElementById('tab-control').classList.add('text-gray-400');
+            }
+        }
+
+        function resetSimulation() {
+            if(confirm("Reset toàn bộ bộ nhớ EEPROM?")) {
+                eepromData.fill(0xFF);
+                initGrid();
+                log("EEPROM Reset to 0xFF.");
+            }
+        }
+
+        function downloadSource() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], {type: 'text/html'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'eeprom_programmer_sim.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Init Pin D13 high (inactive WE)
+        setLed(els.pinD13, true); 
+    </script>
+
+
+</body></html>
