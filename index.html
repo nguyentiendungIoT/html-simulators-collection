@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML Simulators Collection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 py-8">
+      <h1 class="text-2xl font-bold">HTML Simulators Collection</h1>
+      <p class="text-slate-400 mt-2">Interactive demos for Embedded Systems / FreeRTOS / Digital Logic (single-file HTML).</p>
+      <p class="text-slate-500 mt-1 text-sm">Tip: open via a local server (e.g. <span class="font-mono">python -m http.server</span>) for best results.</p>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-10">
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">FreeRTOS / Cortex‑M</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_simulation.html">FreeRTOS Heartbeat Simulator</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_systick_pendsv.html">SysTick &amp; PendSV (Pillar 3.2)</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_tick_sim.html">Tick Simulator</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos-context-switch.html">Context Switch</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_heap4_sim.html">heap_4 Simulator</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/FreeRTOS_Heap_Sim.html">Heap Visualizer</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_queue_sim.html">Queue Simulator</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_queue_visualizer.html">Queue Visualizer</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_lists_scheduler.html">Lists &amp; Scheduler</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_scheduler_sim.html">Scheduler Simulator</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_tcb_visualizer.html">TCB Visualizer</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos_vportfree_sim.html">vPortFree Simulator</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos-ready-list-viz.html">Ready List Visualization</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/freertos-semaphore-principles.html">Semaphore Principles</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/xPortSysTickHandler_Visualization.html">xPortSysTickHandler Visualization</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/mo_phong_stm32_queue.html">STM32 Queue Demo</a></li>
+        <li><a class="text-sky-300 hover:text-sky-200 underline" href="freertos/mo_phong_freertos_heap4.html">FreeRTOS heap_4 (Vietnamese)</a></li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">8-bit Computer</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        <li><a class="text-emerald-300 hover:text-emerald-200 underline" href="8bit/8bit-pc-sim.html">8-bit PC Simulator</a></li>
+        <li><a class="text-emerald-300 hover:text-emerald-200 underline" href="8bit/mo-phong-8bit-bus.html">8-bit Bus Demo</a></li>
+        <li><a class="text-emerald-300 hover:text-emerald-200 underline" href="8bit/mo-phong-dong-ho-8bit.html">8-bit Clock Demo</a></li>
+        <li><a class="text-emerald-300 hover:text-emerald-200 underline" href="8bit/mo-phong-may-tinh-8bit.html">8-bit Computer Demo</a></li>
+        <li><a class="text-emerald-300 hover:text-emerald-200 underline" href="8bit/ben-eater-alu-sim.html">Ben Eater ALU Simulator</a></li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">EEPROM</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        <li><a class="text-amber-300 hover:text-amber-200 underline" href="eeprom/AT28C16_Lab.html">AT28C16 Lab</a></li>
+        <li><a class="text-amber-300 hover:text-amber-200 underline" href="eeprom/eeprom_programmer_sim.html">EEPROM Programmer Simulator</a></li>
+        <li><a class="text-amber-300 hover:text-amber-200 underline" href="eeprom/eeprom_simulator.html">EEPROM Simulator</a></li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Logic</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        <li><a class="text-fuchsia-300 hover:text-fuchsia-200 underline" href="logic/digital-logic-lab.html">Digital Logic Lab</a></li>
+        <li><a class="text-fuchsia-300 hover:text-fuchsia-200 underline" href="logic/display-decoder-8bit.html">Display Decoder (8-bit)</a></li>
+        <li><a class="text-fuchsia-300 hover:text-fuchsia-200 underline" href="logic/mo_phong_logic_tuan_tu.html">Sequential Logic Demo (VN)</a></li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Memory</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        <li><a class="text-cyan-300 hover:text-cyan-200 underline" href="memory/ram-simulation.html">RAM Simulation</a></li>
+        <li><a class="text-cyan-300 hover:text-cyan-200 underline" href="memory/rtos_memory_explorer.html">RTOS Memory Explorer</a></li>
+        <li><a class="text-cyan-300 hover:text-cyan-200 underline" href="memory/mo_phong_memory_map.html">Memory Map Demo (VN)</a></li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Database (Docs/Proposal)</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        <li><a class="text-slate-300 hover:text-slate-200 underline" href="database/BLTN_MySQL_Proposal.html">MySQL Proposal</a></li>
+        <li><a class="text-slate-300 hover:text-slate-200 underline" href="database/De_Xuat_MySQL_BLTN_Simulator.html">MySQL Simulator Proposal</a></li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Extras</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        <li><a class="text-slate-300 hover:text-slate-200 underline" href="cs/giai-phau-linked-list (3).html">Linked List (VN)</a></li>
+        <li><a class="text-slate-500 hover:text-slate-300 underline" href="archive/">Archive (duplicates/backups)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-slate-500">
+      Built by nguyentiendungIoT • Repo: <a class="underline hover:text-slate-300" href="https://github.com/nguyentiendungIoT/html-simulators-collection">html-simulators-collection</a>
+    </div>
+  </footer>
+</body>
+</html>
