@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -37,7 +37,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Mô phỏng pxReadyTasksLists FreeRTOS</title>
+<title>MÃ´ phá»ng pxReadyTasksLists FreeRTOS</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
@@ -93,15 +93,13 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 </div>
 <div class="flex flex-wrap gap-2 justify-center">
 <button class="px-4 py-2 rounded bg-blue-600 text-white font-medium hover:bg-blue-500 transition shadow-lg ring-2 ring-blue-400 ring-offset-2 ring-offset-slate-800 flex items-center gap-2" id="btn-viz" onclick="switchView('visualizer')">
-<span class="material-symbols-outlined text-sm">play_circle</span> Mô phỏng
+<span class="material-symbols-outlined text-sm">play_circle</span> MÃ´ phá»ng
         </button>
 <button class="px-4 py-2 rounded bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition flex items-center gap-2" id="btn-comp" onclick="switchView('comparison')">
-<span class="material-symbols-outlined text-sm">compare_arrows</span> So sánh 2D Array
+<span class="material-symbols-outlined text-sm">compare_arrows</span> So sÃ¡nh 2D Array
         </button>
 <!-- New Download Button -->
-<button class="px-4 py-2 rounded bg-emerald-700 text-emerald-100 font-medium hover:bg-emerald-600 transition flex items-center gap-2 border border-emerald-600 ml-2" onclick="downloadSource()">
-<span class="material-symbols-outlined text-sm">download</span> Tải mã nguồn
-        </button>
+
 </div>
 </div>
 </header>
@@ -112,11 +110,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 <div class="p-4 bg-slate-800/90 border-b border-slate-700 flex justify-between items-center sticky top-0 z-10 backdrop-blur-sm">
 <h2 class="font-semibold text-lg flex items-center gap-2">
 <span class="material-symbols-outlined text-yellow-400">view_list</span>
-          Cấu trúc trong RAM
+          Cáº¥u trÃºc trong RAM
         </h2>
 <div class="text-xs text-slate-400 flex items-center gap-1">
-<span class="w-3 h-3 bg-blue-500 rounded block"></span> Mảng (Array)
-          <span class="w-3 h-3 bg-green-600 rounded block ml-2"></span> Danh sách (Linked List)
+<span class="w-3 h-3 bg-blue-500 rounded block"></span> Máº£ng (Array)
+          <span class="w-3 h-3 bg-green-600 rounded block ml-2"></span> Danh sÃ¡ch (Linked List)
         </div>
 </div>
 <!-- The Array of Lists Container -->
@@ -133,41 +131,41 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 <!-- LEFT HIDDEN: Comparison Panel -->
 <section class="hidden lg:col-span-2 bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden flex flex-col" id="view-comparison">
 <div class="p-6 overflow-y-auto">
-<h2 class="text-2xl font-bold mb-4 text-white">Tại sao KHÔNG dùng mảng 2 chiều?</h2>
+<h2 class="text-2xl font-bold mb-4 text-white">Táº¡i sao KHÃ”NG dÃ¹ng máº£ng 2 chiá»u?</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
 <!-- The Bad Way -->
 <div class="bg-red-900/10 border border-red-500/30 rounded-lg p-4">
 <h3 class="text-red-400 font-bold mb-2 flex items-center gap-2">
 <span class="material-symbols-outlined">cancel</span>
-              Cách tồi: Mảng 2 Chiều (2D Array)
+              CÃ¡ch tá»“i: Máº£ng 2 Chiá»u (2D Array)
             </h3>
 <p class="text-sm text-slate-300 mb-4"><code>Task_t tasks[PRIORITY][MAX_TASKS]</code></p>
 <div class="grid grid-cols-5 gap-1 text-xs opacity-75">
 <!-- Grid viz -->
 <div class="col-span-5 text-center bg-slate-700 p-1 rounded-t">Priority 0</div>
 <div class="bg-green-700 h-8 rounded center-content">Task</div>
-<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trống</div>
-<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trống</div>
-<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trống</div>
-<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trống</div>
+<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trá»‘ng</div>
+<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trá»‘ng</div>
+<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trá»‘ng</div>
+<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trá»‘ng</div>
 <div class="col-span-5 text-center bg-slate-700 p-1 rounded-t mt-2">Priority 1</div>
 <div class="bg-green-700 h-8 rounded center-content">Task</div>
 <div class="bg-green-700 h-8 rounded center-content">Task</div>
-<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trống</div>
-<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trống</div>
-<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trống</div>
+<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trá»‘ng</div>
+<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trá»‘ng</div>
+<div class="bg-red-900/40 h-8 rounded center-content border border-red-500/20 text-red-500/50">Trá»‘ng</div>
 </div>
 <ul class="list-disc list-inside mt-4 text-sm text-red-200 space-y-1">
-<li>Lãng phí RAM cho các ô trống (Trống).</li>
-<li>Giới hạn số lượng Task cứng (Max 5).</li>
-<li>Khó thay đổi cấu hình.</li>
+<li>LÃ£ng phÃ­ RAM cho cÃ¡c Ã´ trá»‘ng (Trá»‘ng).</li>
+<li>Giá»›i háº¡n sá»‘ lÆ°á»£ng Task cá»©ng (Max 5).</li>
+<li>KhÃ³ thay Ä‘á»•i cáº¥u hÃ¬nh.</li>
 </ul>
 </div>
 <!-- The Good Way -->
 <div class="bg-green-900/10 border border-green-500/30 rounded-lg p-4">
 <h3 class="text-green-400 font-bold mb-2 flex items-center gap-2">
 <span class="material-symbols-outlined">check_circle</span>
-              FreeRTOS: Mảng các List
+              FreeRTOS: Máº£ng cÃ¡c List
             </h3>
 <p class="text-sm text-slate-300 mb-4"><code>List_t pxReadyTasksLists[PRIORITY]</code></p>
 <div class="flex flex-col gap-3 text-xs opacity-90">
@@ -181,21 +179,21 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 <div class="w-16 bg-blue-800 p-1 rounded text-center">Pri 1</div>
 <div class="flex-grow flex gap-1">
 <div class="bg-green-600 px-2 py-1 rounded">Task B</div>
-<div class="bg-slate-600 px-1 py-1 rounded text-[10px]">→</div>
+<div class="bg-slate-600 px-1 py-1 rounded text-[10px]">â†’</div>
 <div class="bg-green-600 px-2 py-1 rounded">Task C</div>
 </div>
 </div>
 <div class="flex items-center gap-2">
 <div class="w-16 bg-blue-800 p-1 rounded text-center">Pri 2</div>
 <div class="flex-grow flex gap-1 italic text-slate-500">
-                  (Không tốn RAM thừa)
+                  (KhÃ´ng tá»‘n RAM thá»«a)
                 </div>
 </div>
 </div>
 <ul class="list-disc list-inside mt-4 text-sm text-green-200 space-y-1">
-<li>Chỉ tốn RAM cho Task thực tế.</li>
-<li>Số lượng Task không giới hạn (đến hết RAM).</li>
-<li>Thao tác thêm/xoá cực nhanh (O(1)).</li>
+<li>Chá»‰ tá»‘n RAM cho Task thá»±c táº¿.</li>
+<li>Sá»‘ lÆ°á»£ng Task khÃ´ng giá»›i háº¡n (Ä‘áº¿n háº¿t RAM).</li>
+<li>Thao tÃ¡c thÃªm/xoÃ¡ cá»±c nhanh (O(1)).</li>
 </ul>
 </div>
 </div>
@@ -207,18 +205,18 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 <div class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700">
 <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
 <span class="material-symbols-outlined text-blue-400">add_task</span>
-          Thêm Task Mới (Create Task)
+          ThÃªm Task Má»›i (Create Task)
         </h2>
 <div class="space-y-4">
 <div>
-<label class="block text-sm text-slate-400 mb-1">Tên Task (Name)</label>
+<label class="block text-sm text-slate-400 mb-1">TÃªn Task (Name)</label>
 <div class="flex items-center bg-slate-900 rounded border border-slate-600 px-3">
 <span class="material-symbols-outlined text-slate-500 mr-2">badge</span>
 <input class="bg-transparent border-none outline-none text-white py-2 w-full code-font" id="task-name" placeholder="Task A" type="text" value="Task 1">
 </div>
 </div>
 <div>
-<label class="block text-sm text-slate-400 mb-1">Mức ưu tiên (Priority): <span class="text-yellow-400 font-bold code-font" id="prio-val">1</span></label>
+<label class="block text-sm text-slate-400 mb-1">Má»©c Æ°u tiÃªn (Priority): <span class="text-yellow-400 font-bold code-font" id="prio-val">1</span></label>
 <input class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500" id="task-prio" max="4" min="0" type="range" value="1">
 <div class="flex justify-between text-xs text-slate-500 mt-1 code-font">
 <span>0 (Idle)</span>
@@ -227,7 +225,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 </div>
 <button class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg shadow-lg transform active:scale-95 transition flex items-center justify-center gap-2" onclick="addTask()">
 <span class="material-symbols-outlined">add</span>
-            Gọi prvAddNewTaskToReadyList()
+            Gá»i prvAddNewTaskToReadyList()
           </button>
 </div>
 </div>
@@ -240,10 +238,10 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 font-mono text-xs leading-relaxed text-slate-400 overflow-x-auto">
 <p class="mb-2"><span class="text-blue-400">void</span> <span class="text-yellow-300">prvAddNewTaskToReadyList</span>( TCB_t *pxNewTCB )</p>
 <p class="pl-4">{</p>
-<p class="pl-8 text-slate-500">// 1. Xác định hàng đợi dựa trên Priority</p>
+<p class="pl-8 text-slate-500">// 1. XÃ¡c Ä‘á»‹nh hÃ ng Ä‘á»£i dá»±a trÃªn Priority</p>
 <p class="pl-8"><span class="text-pink-400">uxPriority</span> = pxNewTCB-&gt;uxPriority;</p>
 <br>
-<p class="pl-8 text-slate-500">// 2. Chèn vào cuối danh sách liên kết</p>
+<p class="pl-8 text-slate-500">// 2. ChÃ¨n vÃ o cuá»‘i danh sÃ¡ch liÃªn káº¿t</p>
 <p class="pl-8"><span class="text-yellow-300">vListInsertEnd</span>(</p>
 <p class="pl-12">&amp;(<span class="text-green-400">pxReadyTasksLists</span>[ <span class="text-pink-400">uxPriority</span> ]),</p>
 <p class="pl-12">&amp;( pxNewTCB-&gt;xStateListItem )</p>
@@ -254,10 +252,10 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 <p class="flex items-start gap-2">
 <span class="material-symbols-outlined text-lg mt-0.5">info</span>
 <span>
-              Đây là <strong>Mảng các Danh Sách</strong> (Array of Lists), không phải mảng 2 chiều.
+              ÄÃ¢y lÃ  <strong>Máº£ng cÃ¡c Danh SÃ¡ch</strong> (Array of Lists), khÃ´ng pháº£i máº£ng 2 chiá»u.
               <br><br>
-<span class="text-slate-400 text-xs">- Chiều dọc (Mảng): Cố định theo số mức ưu tiên.</span><br>
-<span class="text-slate-400 text-xs">- Chiều ngang (List): Mở rộng động khi thêm Task.</span>
+<span class="text-slate-400 text-xs">- Chiá»u dá»c (Máº£ng): Cá»‘ Ä‘á»‹nh theo sá»‘ má»©c Æ°u tiÃªn.</span><br>
+<span class="text-slate-400 text-xs">- Chiá»u ngang (List): Má»Ÿ rá»™ng Ä‘á»™ng khi thÃªm Task.</span>
 </span>
 </p>
 </div>
@@ -461,18 +459,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
     }
     
     // Download Functionality
-    function downloadSource() {
-        const htmlContent = document.documentElement.outerHTML;
-        const blob = new Blob([htmlContent], { type: 'text/html' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'freertos-ready-list-viz.html';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    }
 
     // Start
     init();

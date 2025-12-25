@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -37,7 +37,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Mô Phỏng RAM 16-Byte Máy Tính 8-Bit</title>
+    <title>MÃ´ Phá»ng RAM 16-Byte MÃ¡y TÃ­nh 8-Bit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
@@ -131,7 +131,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         </div>
         <div>
             <h1 class="text-xl font-bold tracking-tight text-white">RAM 16-Byte <span class="text-amber-500">Visualization</span></h1>
-            <p class="text-xs text-slate-400">Mô phỏng kiến trúc máy tính 8-bit (Ben Eater Design)</p>
+            <p class="text-xs text-slate-400">MÃ´ phá»ng kiáº¿n trÃºc mÃ¡y tÃ­nh 8-bit (Ben Eater Design)</p>
         </div>
     </div>
     <div class="flex items-center gap-4">
@@ -139,11 +139,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse transition-colors duration-300" id="mode-indicator"></div>
             <span class="font-bold text-green-400 uppercase tracking-wider" id="mode-text">Program Mode</span>
         </div>
-        
-        <button class="flex items-center gap-2 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-500 rounded text-xs font-bold text-slate-300 hover:text-white transition-all shadow-sm" onclick="downloadSource()" title="Tải toàn bộ mã nguồn HTML">
-            <span class="material-symbols-outlined text-sm">download</span>
-            <span>Tải Code</span>
-        </button>
 
         <button class="text-slate-400 hover:text-amber-500 transition-colors" onclick="document.getElementById('help-modal').classList.remove('hidden')">
             <span class="material-symbols-outlined text-2xl">help</span>
@@ -236,7 +231,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         <!-- Live Flow Log Panel -->
         <div class="absolute top-4 left-4 right-4 z-20 pointer-events-none flex justify-center">
              <div class="bg-black/60 backdrop-blur-md text-amber-400 text-xs font-mono py-2 px-4 rounded-full border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.2)] transition-all duration-300 transform translate-y-0 opacity-100" id="flow-log">
-                Hệ thống sẵn sàng. Chọn chế độ để bắt đầu.
+                Há»‡ thá»‘ng sáºµn sÃ ng. Chá»n cháº¿ Ä‘á»™ Ä‘á»ƒ báº¯t Ä‘áº§u.
              </div>
         </div>
 
@@ -276,10 +271,10 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <div class="col-span-2 row-start-2 row-span-2 bg-slate-800 border border-slate-600 rounded-xl p-2 flex flex-col items-center justify-between shadow-lg group relative">
                     <div class="text-[10px] font-bold text-slate-400">MUX 74LS157</div>
                     <span class="material-symbols-outlined text-slate-600 group-hover:text-amber-500 transition-colors text-3xl">alt_route</span>
-                    <div class="text-[9px] text-slate-500 text-center">Chọn Nguồn</div>
+                    <div class="text-[9px] text-slate-500 text-center">Chá»n Nguá»“n</div>
                     <!-- Tooltip -->
                     <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-black/90 text-slate-200 text-xs p-2 rounded -bottom-20 left-0 w-48 border border-slate-600 z-50 pointer-events-none">
-                        Chuyển mạch giữa "Nhập tay" (Program) và "Bus máy tính" (Run).
+                        Chuyá»ƒn máº¡ch giá»¯a "Nháº­p tay" (Program) vÃ  "Bus mÃ¡y tÃ­nh" (Run).
                     </div>
                 </div>
 
@@ -302,7 +297,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                              <div class="flex justify-between items-center font-mono">
                                 <span class="text-blue-400 text-sm" id="chip-addr-disp">0000</span>
                                 <span class="material-symbols-outlined text-[10px] text-slate-600">arrow_forward</span>
-                                <span class="text-red-400 line-through decoration-slate-500 text-sm" id="chip-data-disp" title="Lưu trữ đảo ngược">11111111</span>
+                                <span class="text-red-400 line-through decoration-slate-500 text-sm" id="chip-data-disp" title="LÆ°u trá»¯ Ä‘áº£o ngÆ°á»£c">11111111</span>
                              </div>
                         </div>
                     </div>
@@ -319,8 +314,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <span class="text-[8px] font-bold text-slate-400 mb-1">NOT</span>
                         <span class="material-symbols-outlined text-amber-500 text-xl">change_circle</span>
                         <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-black/90 text-slate-200 text-xs p-2 rounded -top-24 -left-20 w-48 border border-slate-600 z-50 pointer-events-none">
-                            <strong>Cổng Đảo (Inverter):</strong><br>
-                            RAM lưu ngược (0), cổng này đảo lại lần nữa (1) để ra dữ liệu đúng.
+                            <strong>Cá»•ng Äáº£o (Inverter):</strong><br>
+                            RAM lÆ°u ngÆ°á»£c (0), cá»•ng nÃ y Ä‘áº£o láº¡i láº§n ná»¯a (1) Ä‘á»ƒ ra dá»¯ liá»‡u Ä‘Ãºng.
                         </div>
                     </div>
                 </div>
@@ -363,7 +358,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             
             <!-- Floating Description for current flow -->
             <div class="absolute bottom-4 left-6 right-80 text-slate-500 text-[10px] italic">
-                *Các đường tín hiệu màu vàng thể hiện dòng dữ liệu đang hoạt động.
+                *CÃ¡c Ä‘Æ°á»ng tÃ­n hiá»‡u mÃ u vÃ ng thá»ƒ hiá»‡n dÃ²ng dá»¯ liá»‡u Ä‘ang hoáº¡t Ä‘á»™ng.
             </div>
         </div>
 
@@ -521,11 +516,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 
                 <button class="w-full py-4 bg-gradient-to-br from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 active:scale-[0.98] text-white font-bold rounded-lg shadow-lg shadow-red-900/50 transition-all flex items-center justify-center gap-3 border border-red-500/50" id="write-btn">
                     <span class="material-symbols-outlined animate-pulse">radio_button_checked</span>
-                    <span>NẠP DỮ LIỆU (WRITE)</span>
+                    <span>Náº P Dá»® LIá»†U (WRITE)</span>
                 </button>
                 <div class="mt-2 flex items-center gap-1 text-[9px] text-slate-500">
                     <span class="material-symbols-outlined text-[10px]">timer</span>
-                    <span>Sử dụng mạch RC Edge Detector (Xung ngắn)</span>
+                    <span>Sá»­ dá»¥ng máº¡ch RC Edge Detector (Xung ngáº¯n)</span>
                 </div>
             </div>
 
@@ -549,8 +544,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         <div class="p-8">
             <div class="flex justify-between items-start mb-6">
                 <div>
-                    <h2 class="text-3xl font-bold text-white mb-1">Mô Hình RAM 16-Byte</h2>
-                    <p class="text-slate-400 text-sm">Kiến trúc dựa trên mạch breadboard 8-bit computer.</p>
+                    <h2 class="text-3xl font-bold text-white mb-1">MÃ´ HÃ¬nh RAM 16-Byte</h2>
+                    <p class="text-slate-400 text-sm">Kiáº¿n trÃºc dá»±a trÃªn máº¡ch breadboard 8-bit computer.</p>
                 </div>
                 <button class="p-2 hover:bg-slate-800 rounded-full transition-colors text-slate-400 hover:text-white" onclick="document.getElementById('help-modal').classList.add('hidden')">
                     <span class="material-symbols-outlined">close</span>
@@ -561,13 +556,13 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <!-- Concept 1 -->
                 <section class="flex gap-6 items-start">
                     <div class="w-24 h-24 shrink-0 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700 text-4xl">
-                        🏭
+                        ðŸ­
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-amber-500 mb-2">1. Tổng Quan: "Nhà Kho" 16 Ngăn</h3>
+                        <h3 class="text-lg font-bold text-amber-500 mb-2">1. Tá»•ng Quan: "NhÃ  Kho" 16 NgÄƒn</h3>
                         <p class="text-sm leading-relaxed text-slate-400">
-                            RAM giống như một tủ đồ có 16 ngăn (Địa chỉ 0-15). Mỗi ngăn chứa một "gói hàng" 8-bit.
-                            Đây là loại <strong>SRAM (Static RAM)</strong>, dữ liệu được giữ bằng các chốt điện tử (flip-flops) bền vững miễn là còn cấp điện.
+                            RAM giá»‘ng nhÆ° má»™t tá»§ Ä‘á»“ cÃ³ 16 ngÄƒn (Äá»‹a chá»‰ 0-15). Má»—i ngÄƒn chá»©a má»™t "gÃ³i hÃ ng" 8-bit.
+                            ÄÃ¢y lÃ  loáº¡i <strong>SRAM (Static RAM)</strong>, dá»¯ liá»‡u Ä‘Æ°á»£c giá»¯ báº±ng cÃ¡c chá»‘t Ä‘iá»‡n tá»­ (flip-flops) bá»n vá»¯ng miá»…n lÃ  cÃ²n cáº¥p Ä‘iá»‡n.
                         </p>
                     </div>
                 </section>
@@ -575,18 +570,18 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <!-- Concept 2 -->
                 <section class="flex gap-6 items-start">
                     <div class="w-24 h-24 shrink-0 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700 text-4xl">
-                        🔄
+                        ðŸ”„
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-amber-500 mb-2">2. Quy Trình "Nạp" (Write)</h3>
+                        <h3 class="text-lg font-bold text-amber-500 mb-2">2. Quy TrÃ¬nh "Náº¡p" (Write)</h3>
                         <p class="text-sm leading-relaxed text-slate-400 mb-2">
-                            Khi bạn nhấn nút <strong>WRITE</strong>:
+                            Khi báº¡n nháº¥n nÃºt <strong>WRITE</strong>:
                         </p>
                         <ol class="list-decimal list-inside text-sm text-slate-400 space-y-1 ml-1">
-                            <li>Dữ liệu từ công tắc đi qua bộ chọn (Multiplexer).</li>
-                            <li>Tín hiệu chạy vào chip nhớ 74LS189.</li>
-                            <li><strong>Quan trọng:</strong> Chip này lưu dữ liệu ở dạng <em>đảo ngược</em> (VD: Nhập 1, lưu 0).</li>
-                            <li>Một xung điện cực ngắn (từ mạch RC) chốt dữ liệu lại.</li>
+                            <li>Dá»¯ liá»‡u tá»« cÃ´ng táº¯c Ä‘i qua bá»™ chá»n (Multiplexer).</li>
+                            <li>TÃ­n hiá»‡u cháº¡y vÃ o chip nhá»› 74LS189.</li>
+                            <li><strong>Quan trá»ng:</strong> Chip nÃ y lÆ°u dá»¯ liá»‡u á»Ÿ dáº¡ng <em>Ä‘áº£o ngÆ°á»£c</em> (VD: Nháº­p 1, lÆ°u 0).</li>
+                            <li>Má»™t xung Ä‘iá»‡n cá»±c ngáº¯n (tá»« máº¡ch RC) chá»‘t dá»¯ liá»‡u láº¡i.</li>
                         </ol>
                     </div>
                 </section>
@@ -594,17 +589,17 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <!-- Concept 3 -->
                 <section class="flex gap-6 items-start">
                     <div class="w-24 h-24 shrink-0 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700 text-4xl">
-                        📤
+                        ðŸ“¤
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-amber-500 mb-2">3. Quy Trình "Xả" (Read)</h3>
+                        <h3 class="text-lg font-bold text-amber-500 mb-2">3. Quy TrÃ¬nh "Xáº£" (Read)</h3>
                         <p class="text-sm leading-relaxed text-slate-400 mb-2">
-                            Để lấy dữ liệu ra dùng (hiển thị lên LED hoặc Bus):
+                            Äá»ƒ láº¥y dá»¯ liá»‡u ra dÃ¹ng (hiá»ƒn thá»‹ lÃªn LED hoáº·c Bus):
                         </p>
                         <ul class="list-disc list-inside text-sm text-slate-400 space-y-1 ml-1">
-                            <li>Chip nhớ xuất dữ liệu (đang ở dạng đảo ngược).</li>
-                            <li>Dữ liệu đi qua cổng <strong>NOT (Inverter)</strong> để lật ngược lại lần nữa (0 thành 1) -&gt; Về đúng giá trị gốc.</li>
-                            <li>Đi qua cổng kiểm soát (Buffer 74LS245) để ra ngoài an toàn.</li>
+                            <li>Chip nhá»› xuáº¥t dá»¯ liá»‡u (Ä‘ang á»Ÿ dáº¡ng Ä‘áº£o ngÆ°á»£c).</li>
+                            <li>Dá»¯ liá»‡u Ä‘i qua cá»•ng <strong>NOT (Inverter)</strong> Ä‘á»ƒ láº­t ngÆ°á»£c láº¡i láº§n ná»¯a (0 thÃ nh 1) -&gt; Vá» Ä‘Ãºng giÃ¡ trá»‹ gá»‘c.</li>
+                            <li>Äi qua cá»•ng kiá»ƒm soÃ¡t (Buffer 74LS245) Ä‘á»ƒ ra ngoÃ i an toÃ n.</li>
                         </ul>
                     </div>
                 </section>
@@ -612,7 +607,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
             <div class="mt-8 pt-6 border-t border-slate-700 flex justify-end">
                 <button class="px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-bold shadow-lg shadow-amber-900/20 transition-all" onclick="document.getElementById('help-modal').classList.add('hidden')">
-                    Bắt đầu Mô phỏng
+                    Báº¯t Ä‘áº§u MÃ´ phá»ng
                 </button>
             </div>
         </div>
@@ -783,7 +778,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             els.marBlock.classList.remove('opacity-50');
             els.marBlock.classList.add('opacity-100', 'shadow-[0_0_15px_rgba(34,197,94,0.3)]');
             
-            els.flowLog.textContent = "Chế độ chạy tự động: Đọc dữ liệu từ RAM ra Bus.";
+            els.flowLog.textContent = "Cháº¿ Ä‘á»™ cháº¡y tá»± Ä‘á»™ng: Äá»c dá»¯ liá»‡u tá»« RAM ra Bus.";
             
             mar = manualAddress; // Handover
             startRunLoop();
@@ -802,7 +797,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             els.marBlock.classList.add('opacity-50');
             els.marBlock.classList.remove('opacity-100', 'shadow-[0_0_15px_rgba(34,197,94,0.3)]');
             
-            els.flowLog.textContent = "Chế độ Lập trình: Sẵn sàng nạp dữ liệu (Nhấn Write).";
+            els.flowLog.textContent = "Cháº¿ Ä‘á»™ Láº­p trÃ¬nh: Sáºµn sÃ ng náº¡p dá»¯ liá»‡u (Nháº¥n Write).";
 
             stopRunLoop();
         }
@@ -818,7 +813,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         memory[manualAddress] = manualData;
         
         // Visuals
-        els.flowLog.innerHTML = `<span class="text-white">Đang nạp:</span> Switch (${manualData.toString(16).toUpperCase()}) ➔ MUX ➔ <span class="text-red-400">RAM (Lưu ${(~manualData & 0xFF).toString(16).toUpperCase()})</span>`;
+        els.flowLog.innerHTML = `<span class="text-white">Äang náº¡p:</span> Switch (${manualData.toString(16).toUpperCase()}) âž” MUX âž” <span class="text-red-400">RAM (LÆ°u ${(~manualData & 0xFF).toString(16).toUpperCase()})</span>`;
         els.flowLog.className = "bg-red-900/80 backdrop-blur-md text-white text-xs font-mono py-2 px-4 rounded-full border border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.5)] transition-all transform scale-105";
 
         // Memory Cell Pulse
@@ -841,7 +836,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         els.ramBlock.classList.remove('scale-105', 'border-red-500', 'shadow-red-900/50');
         
         els.flowLog.className = "bg-black/60 backdrop-blur-md text-amber-400 text-xs font-mono py-2 px-4 rounded-full border border-amber-500/30 transition-all";
-        els.flowLog.textContent = "Đã nạp xong. Chờ lệnh tiếp theo.";
+        els.flowLog.textContent = "ÄÃ£ náº¡p xong. Chá» lá»‡nh tiáº¿p theo.";
 
         updateUI();
     }
@@ -944,7 +939,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             playTone("F3", "64n");
             
             // Update Flow Text for Run Mode
-            els.flowLog.innerHTML = `Đang đọc Addr <span class="text-amber-400 font-bold">${mar.toString(16).toUpperCase()}</span>: RAM ➔ Inverter ➔ Buffer ➔ Bus`;
+            els.flowLog.innerHTML = `Äang Ä‘á»c Addr <span class="text-amber-400 font-bold">${mar.toString(16).toUpperCase()}</span>: RAM âž” Inverter âž” Buffer âž” Bus`;
             
             updateUI();
         }, 1200); // Slower for observation
@@ -952,19 +947,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     function stopRunLoop() {
         clearInterval(runTimer);
-    }
-
-    function downloadSource() {
-        const htmlContent = document.documentElement.outerHTML;
-        const blob = new Blob([htmlContent], { type: 'text/html' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'ram-simulation.html';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
     }
 
     // Start

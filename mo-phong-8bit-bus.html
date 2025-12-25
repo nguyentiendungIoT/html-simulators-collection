@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -37,7 +37,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Mô Phỏng Thanh Ghi &amp; Bus 8-Bit</title>
+    <title>MÃ´ Phá»ng Thanh Ghi &amp; Bus 8-Bit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
@@ -109,19 +109,16 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         <div>
             <h1 class="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
                 <span class="material-symbols-outlined text-green-500 text-4xl">memory</span>
-                Mô Phỏng Thanh Ghi &amp; Bus 8-Bit
+                MÃ´ Phá»ng Thanh Ghi &amp; Bus 8-Bit
             </h1>
-            <p class="text-gray-400 mt-2">Trực quan hóa hoạt động của thanh ghi 74LS173 và 74LS245 theo kiến trúc máy tính cơ bản.</p>
+            <p class="text-gray-400 mt-2">Trá»±c quan hÃ³a hoáº¡t Ä‘á»™ng cá»§a thanh ghi 74LS173 vÃ  74LS245 theo kiáº¿n trÃºc mÃ¡y tÃ­nh cÆ¡ báº£n.</p>
         </div>
         <div class="flex gap-2">
             <button class="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold transition shadow-lg" onclick="startTutorial()">
                 <span class="material-symbols-outlined">school</span>
-                Chạy Hướng Dẫn
+                Cháº¡y HÆ°á»›ng Dáº«n
             </button>
-            <button class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold transition shadow-lg border border-gray-500" onclick="downloadSource()">
-                <span class="material-symbols-outlined">download</span>
-                Tải Mã Nguồn
-            </button>
+
         </div>
     </div>
 </header>
@@ -138,7 +135,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     <span class="text-xs font-mono text-gray-500">SYSTEM CLOCK</span>
                     <div class="led led-blue off" id="clock-led"></div>
                 </div>
-                <div class="font-mono text-lg transition-colors text-gray-500" id="message-display">Bus đang ở trạng thái High-Z (Trống).</div>
+                <div class="font-mono text-lg transition-colors text-gray-500" id="message-display">Bus Ä‘ang á»Ÿ tráº¡ng thÃ¡i High-Z (Trá»‘ng).</div>
             </div>
             <!-- THE BUS (Visual Centerpiece) -->
             <div class="relative bg-gray-900 rounded-lg p-4 mb-10 border border-gray-700">
@@ -225,7 +222,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         <!-- Contextual Help (Dynamic) -->
         <div class="bg-indigo-900/50 border border-indigo-500/50 p-4 rounded-lg animate-pulse hidden" id="dynamic-help">
             <h4 class="text-indigo-300 font-bold flex items-center gap-2 mb-1">
-                <span class="material-symbols-outlined text-sm">info</span> Trạng Thái Hiện Tại
+                <span class="material-symbols-outlined text-sm">info</span> Tráº¡ng ThÃ¡i Hiá»‡n Táº¡i
             </h4>
             <p class="text-sm text-indigo-100" id="help-text">...</p>
         </div>
@@ -235,16 +232,16 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
                 <button class="w-full px-4 py-3 bg-gray-750 flex justify-between items-center hover:bg-gray-700 transition" onclick="toggleCard('card-bus')">
                     <span class="font-bold text-red-400 flex items-center gap-2">
-                        <span class="material-symbols-outlined">linear_scale</span> 1. Bus (Đường truyền chung)
+                        <span class="material-symbols-outlined">linear_scale</span> 1. Bus (ÄÆ°á»ng truyá»n chung)
                     </span>
                     <span class="material-symbols-outlined transform transition-transform" id="icon-card-bus">expand_more</span>
                 </button>
                 <div class="hidden px-4 py-4 text-sm text-gray-300 bg-gray-900/50" id="card-bus">
-                    <p class="mb-2">Bus giống như đường cao tốc 8 làn xe. Tất cả các thành phần (Register A, B, Memory...) đều nối vào đây.</p>
+                    <p class="mb-2">Bus giá»‘ng nhÆ° Ä‘Æ°á»ng cao tá»‘c 8 lÃ n xe. Táº¥t cáº£ cÃ¡c thÃ nh pháº§n (Register A, B, Memory...) Ä‘á»u ná»‘i vÃ o Ä‘Ã¢y.</p>
                     <ul class="list-disc pl-5 space-y-1 text-gray-400">
-                        <li><strong class="text-white">Quy tắc vàng:</strong> Chỉ <strong>một</strong> thiết bị được xuất tín hiệu (Enable) lên Bus tại một thời điểm.</li>
-                        <li>Nếu hai thiết bị cùng xuất, sẽ gây xung đột điện (Short circuit).</li>
-                        <li>Trên giao diện mô phỏng, đường Bus là hàng LED đỏ ở giữa.</li>
+                        <li><strong class="text-white">Quy táº¯c vÃ ng:</strong> Chá»‰ <strong>má»™t</strong> thiáº¿t bá»‹ Ä‘Æ°á»£c xuáº¥t tÃ­n hiá»‡u (Enable) lÃªn Bus táº¡i má»™t thá»i Ä‘iá»ƒm.</li>
+                        <li>Náº¿u hai thiáº¿t bá»‹ cÃ¹ng xuáº¥t, sáº½ gÃ¢y xung Ä‘á»™t Ä‘iá»‡n (Short circuit).</li>
+                        <li>TrÃªn giao diá»‡n mÃ´ phá»ng, Ä‘Æ°á»ng Bus lÃ  hÃ ng LED Ä‘á» á»Ÿ giá»¯a.</li>
                     </ul>
                 </div>
             </div>
@@ -252,16 +249,16 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
                 <button class="w-full px-4 py-3 bg-gray-750 flex justify-between items-center hover:bg-gray-700 transition" onclick="toggleCard('card-reg')">
                     <span class="font-bold text-yellow-400 flex items-center gap-2">
-                        <span class="material-symbols-outlined">memory</span> 2. Cấu tạo Thanh Ghi (Register)
+                        <span class="material-symbols-outlined">memory</span> 2. Cáº¥u táº¡o Thanh Ghi (Register)
                     </span>
                     <span class="material-symbols-outlined transform transition-transform" id="icon-card-reg">expand_more</span>
                 </button>
                 <div class="hidden px-4 py-4 text-sm text-gray-300 bg-gray-900/50" id="card-reg">
-                    <p class="mb-2">Sử dụng chip <strong>74LS173</strong> (4-bit D Flip-Flop) để lưu trữ.</p>
+                    <p class="mb-2">Sá»­ dá»¥ng chip <strong>74LS173</strong> (4-bit D Flip-Flop) Ä‘á»ƒ lÆ°u trá»¯.</p>
                     <ul class="list-disc pl-5 space-y-1 text-gray-400">
-                        <li><strong>LOAD (Nạp):</strong> Khi bật LOAD, chip sẽ nhận dữ liệu từ Bus vào bộ nhớ của nó khi có xung Clock (cạnh lên).</li>
-                        <li><strong>Đèn LED:</strong> Luôn hiển thị giá trị đang lưu trong thanh ghi (đầu ra Q), bất kể có đang xuất ra Bus hay không.</li>
-                        <li>Trong thực tế, chân LOAD thường là Active Low (kích hoạt ở mức 0V).</li>
+                        <li><strong>LOAD (Náº¡p):</strong> Khi báº­t LOAD, chip sáº½ nháº­n dá»¯ liá»‡u tá»« Bus vÃ o bá»™ nhá»› cá»§a nÃ³ khi cÃ³ xung Clock (cáº¡nh lÃªn).</li>
+                        <li><strong>ÄÃ¨n LED:</strong> LuÃ´n hiá»ƒn thá»‹ giÃ¡ trá»‹ Ä‘ang lÆ°u trong thanh ghi (Ä‘áº§u ra Q), báº¥t ká»ƒ cÃ³ Ä‘ang xuáº¥t ra Bus hay khÃ´ng.</li>
+                        <li>Trong thá»±c táº¿, chÃ¢n LOAD thÆ°á»ng lÃ  Active Low (kÃ­ch hoáº¡t á»Ÿ má»©c 0V).</li>
                     </ul>
                 </div>
             </div>
@@ -269,19 +266,19 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
                 <button class="w-full px-4 py-3 bg-gray-750 flex justify-between items-center hover:bg-gray-700 transition" onclick="toggleCard('card-tri')">
                     <span class="font-bold text-blue-400 flex items-center gap-2">
-                        <span class="material-symbols-outlined">gate</span> 3. Logic 3 Trạng Thái &amp; 74LS245
+                        <span class="material-symbols-outlined">gate</span> 3. Logic 3 Tráº¡ng ThÃ¡i &amp; 74LS245
                     </span>
                     <span class="material-symbols-outlined transform transition-transform" id="icon-card-tri">expand_more</span>
                 </button>
                 <div class="hidden px-4 py-4 text-sm text-gray-300 bg-gray-900/50" id="card-tri">
-                    <p class="mb-2">Để bảo vệ Bus, chúng ta dùng chip đệm <strong>74LS245</strong>.</p>
+                    <p class="mb-2">Äá»ƒ báº£o vá»‡ Bus, chÃºng ta dÃ¹ng chip Ä‘á»‡m <strong>74LS245</strong>.</p>
                     <ul class="list-disc pl-5 space-y-1 text-gray-400">
-                        <li><strong>Trạng thái 1 (High):</strong> 5V.</li>
-                        <li><strong>Trạng thái 0 (Low):</strong> 0V (GND).</li>
-                        <li><strong>Trạng thái 3 (High-Z):</strong> Ngắt kết nối. Như một công tắc mở, không ảnh hưởng đến Bus.</li>
+                        <li><strong>Tráº¡ng thÃ¡i 1 (High):</strong> 5V.</li>
+                        <li><strong>Tráº¡ng thÃ¡i 0 (Low):</strong> 0V (GND).</li>
+                        <li><strong>Tráº¡ng thÃ¡i 3 (High-Z):</strong> Ngáº¯t káº¿t ná»‘i. NhÆ° má»™t cÃ´ng táº¯c má»Ÿ, khÃ´ng áº£nh hÆ°á»Ÿng Ä‘áº¿n Bus.</li>
                     </ul>
                     <div class="mt-2 bg-gray-800 p-2 rounded border border-gray-600">
-                        <code class="text-xs text-green-300">ENABLE BẬT = Nối ra Bus<br>ENABLE TẮT = Ngắt khỏi Bus (High-Z)</code>
+                        <code class="text-xs text-green-300">ENABLE Báº¬T = Ná»‘i ra Bus<br>ENABLE Táº®T = Ngáº¯t khá»i Bus (High-Z)</code>
                     </div>
                 </div>
             </div>
@@ -289,15 +286,15 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
                 <button class="w-full px-4 py-3 bg-gray-750 flex justify-between items-center hover:bg-gray-700 transition" onclick="toggleCard('card-ctrl')">
                     <span class="font-bold text-purple-400 flex items-center gap-2">
-                        <span class="material-symbols-outlined">settings_remote</span> 4. Tín Hiệu Điều Khiển
+                        <span class="material-symbols-outlined">settings_remote</span> 4. TÃ­n Hiá»‡u Äiá»u Khiá»ƒn
                     </span>
                     <span class="material-symbols-outlined transform transition-transform" id="icon-card-ctrl">expand_more</span>
                 </button>
                 <div class="hidden px-4 py-4 text-sm text-gray-300 bg-gray-900/50" id="card-ctrl">
                     <ul class="list-disc pl-5 space-y-2 text-gray-400">
-                        <li><strong>CLOCK:</strong> Nhịp tim của hệ thống. Dữ liệu chỉ được lưu vào thanh ghi khi Clock chuyển từ Thấp lên Cao (Cạnh lên).</li>
-                        <li><strong>ENABLE (Out):</strong> Cho phép thanh ghi "nói" lên Bus.</li>
-                        <li><strong>LOAD (In):</strong> Cho phép thanh ghi "nghe" từ Bus.</li>
+                        <li><strong>CLOCK:</strong> Nhá»‹p tim cá»§a há»‡ thá»‘ng. Dá»¯ liá»‡u chá»‰ Ä‘Æ°á»£c lÆ°u vÃ o thanh ghi khi Clock chuyá»ƒn tá»« Tháº¥p lÃªn Cao (Cáº¡nh lÃªn).</li>
+                        <li><strong>ENABLE (Out):</strong> Cho phÃ©p thanh ghi "nÃ³i" lÃªn Bus.</li>
+                        <li><strong>LOAD (In):</strong> Cho phÃ©p thanh ghi "nghe" tá»« Bus.</li>
                     </ul>
                 </div>
             </div>
@@ -390,19 +387,19 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             if (activeSources > 1) {
                 state.busConflict = true;
                 state.busValue = 0; // Represents garbage/short
-                setMessage("CẢNH BÁO: Xung đột Bus! Hai thiết bị cùng xuất tín hiệu.", "text-red-500");
+                setMessage("Cáº¢NH BÃO: Xung Ä‘á»™t Bus! Hai thiáº¿t bá»‹ cÃ¹ng xuáº¥t tÃ­n hiá»‡u.", "text-red-500");
             } else if (activeSources === 0) {
                 state.busConflict = false;
                 state.busValue = null; // Floating / High-Z
-                setMessage("Bus đang ở trạng thái High-Z (Trống).", "text-gray-500");
+                setMessage("Bus Ä‘ang á»Ÿ tráº¡ng thÃ¡i High-Z (Trá»‘ng).", "text-gray-500");
             } else {
                 state.busConflict = false;
                 state.busValue = val;
                 
                 // Context messages
-                if (state.enableA) setMessage("Thanh ghi A đang xuất dữ liệu ra Bus.", "text-green-400");
-                if (state.enableB) setMessage("Thanh ghi B đang xuất dữ liệu ra Bus.", "text-cyan-400");
-                if (state.enableManual) setMessage("Manual Input đang xuất dữ liệu ra Bus.", "text-purple-400");
+                if (state.enableA) setMessage("Thanh ghi A Ä‘ang xuáº¥t dá»¯ liá»‡u ra Bus.", "text-green-400");
+                if (state.enableB) setMessage("Thanh ghi B Ä‘ang xuáº¥t dá»¯ liá»‡u ra Bus.", "text-cyan-400");
+                if (state.enableManual) setMessage("Manual Input Ä‘ang xuáº¥t dá»¯ liá»‡u ra Bus.", "text-purple-400");
             }
             updateUI();
         }
@@ -575,26 +572,26 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             
             const steps = [
                 {
-                    msg: "Bước 1: Cài đặt dữ liệu đầu vào. Ta bật Manual Input lên số 85 (01010101).",
+                    msg: "BÆ°á»›c 1: CÃ i Ä‘áº·t dá»¯ liá»‡u Ä‘áº§u vÃ o. Ta báº­t Manual Input lÃªn sá»‘ 85 (01010101).",
                     action: () => {
                         state.manualInput = 85; // 01010101
                         updateUI();
                     }
                 },
                 {
-                    msg: "Bước 2: Đưa dữ liệu lên Bus. Bật 'ENABLE TO BUS' của Manual Input.",
+                    msg: "BÆ°á»›c 2: ÄÆ°a dá»¯ liá»‡u lÃªn Bus. Báº­t 'ENABLE TO BUS' cá»§a Manual Input.",
                     action: () => {
                          document.getElementById('btn-enable-manual').click();
                     }
                 },
                 {
-                    msg: "Bước 3: Bus hiện đang mang giá trị 55 Hex. Chuẩn bị nạp vào Register A. Bật 'LOAD (In)' của Register A.",
+                    msg: "BÆ°á»›c 3: Bus hiá»‡n Ä‘ang mang giÃ¡ trá»‹ 55 Hex. Chuáº©n bá»‹ náº¡p vÃ o Register A. Báº­t 'LOAD (In)' cá»§a Register A.",
                     action: () => {
                         document.getElementById('btn-load-a').click();
                     }
                 },
                 {
-                    msg: "Bước 4: Thực hiện xung Clock (Cạnh lên) để lưu dữ liệu vào A.",
+                    msg: "BÆ°á»›c 4: Thá»±c hiá»‡n xung Clock (Cáº¡nh lÃªn) Ä‘á»ƒ lÆ°u dá»¯ liá»‡u vÃ o A.",
                     action: () => {
                         // Simulate clock press visually
                         const btn = document.getElementById('btn-clock');
@@ -606,26 +603,26 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     }
                 },
                 {
-                    msg: "Dữ liệu đã vào A! Giờ ta tắt kết nối Manual Input và tắt Load A.",
+                    msg: "Dá»¯ liá»‡u Ä‘Ã£ vÃ o A! Giá» ta táº¯t káº¿t ná»‘i Manual Input vÃ  táº¯t Load A.",
                     action: () => {
                         document.getElementById('btn-enable-manual').click();
                         document.getElementById('btn-load-a').click();
                     }
                 },
                 {
-                    msg: "Bước 5: Chuyển dữ liệu từ A sang B. Bật 'ENABLE (Out)' của A.",
+                    msg: "BÆ°á»›c 5: Chuyá»ƒn dá»¯ liá»‡u tá»« A sang B. Báº­t 'ENABLE (Out)' cá»§a A.",
                     action: () => {
                         document.getElementById('btn-enable-a').click();
                     }
                 },
                 {
-                    msg: "Bước 6: Bật 'LOAD (In)' của B để chuẩn bị nhận.",
+                    msg: "BÆ°á»›c 6: Báº­t 'LOAD (In)' cá»§a B Ä‘á»ƒ chuáº©n bá»‹ nháº­n.",
                     action: () => {
                         document.getElementById('btn-load-b').click();
                     }
                 },
                 {
-                    msg: "Bước 7: Clock! Dữ liệu sẽ sao chép từ Bus vào B.",
+                    msg: "BÆ°á»›c 7: Clock! Dá»¯ liá»‡u sáº½ sao chÃ©p tá»« Bus vÃ o B.",
                     action: () => {
                         const btn = document.getElementById('btn-clock');
                         btn.classList.add('scale-95');
@@ -636,7 +633,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     }
                 },
                 {
-                    msg: "Hoàn tất! Dữ liệu đã được copy từ A sang B. Hãy thử tự mình trải nghiệm!",
+                    msg: "HoÃ n táº¥t! Dá»¯ liá»‡u Ä‘Ã£ Ä‘Æ°á»£c copy tá»« A sang B. HÃ£y thá»­ tá»± mÃ¬nh tráº£i nghiá»‡m!",
                     action: () => {
                         document.getElementById('btn-enable-a').click();
                         document.getElementById('btn-load-b').click();
@@ -651,34 +648,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 await new Promise(r => setTimeout(r, 1500));
             }
             
-            els.helpText.innerText = "Chế độ hướng dẫn kết thúc.";
+            els.helpText.innerText = "Cháº¿ Ä‘á»™ hÆ°á»›ng dáº«n káº¿t thÃºc.";
             setTimeout(() => helpBox.classList.add('hidden'), 3000);
         }
 
         // --- Download Source Function ---
-        function downloadSource() {
-            // Get the full HTML of the current document
-            const htmlContent = document.documentElement.outerHTML;
-            
-            // Create a Blob from the HTML content
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            
-            // Create a URL for the Blob
-            const url = URL.createObjectURL(blob);
-            
-            // Create a temporary anchor element to trigger the download
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'mo-phong-8bit-bus.html'; // Filename for the download
-            document.body.appendChild(a); // Append to body (required for Firefox)
-            
-            // Trigger the click event
-            a.click();
-            
-            // Cleanup
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
 
         // Boot
         init();

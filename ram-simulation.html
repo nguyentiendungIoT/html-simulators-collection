@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -191,7 +191,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mô Phỏng RAM 16-Byte Máy Tính 8-Bit</title>
+    <title>MÃ´ Phá»ng RAM 16-Byte MÃ¡y TÃ­nh 8-Bit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
@@ -372,7 +372,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
             <span class="material-symbols-outlined text-amber-500 text-3xl">memory</span>
             <div>
                 <h1 class="text-xl font-bold tracking-tight text-white">RAM 16-Byte <span class="text-amber-500">8-Bit Visualization</span></h1>
-                <p class="text-xs text-slate-400">Dựa trên thiết kế breadboard 74LS series</p>
+                <p class="text-xs text-slate-400">Dá»±a trÃªn thiáº¿t káº¿ breadboard 74LS series</p>
             </div>
         </div>
         <div class="flex items-center gap-4">
@@ -382,10 +382,6 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
             </div>
             
             <!-- Added Download Button -->
-            <button onclick="downloadSource()" class="flex items-center gap-2 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 border border-slate-600 rounded text-xs font-bold text-slate-300 hover:text-white transition-colors" title="Tải toàn bộ mã nguồn HTML">
-                <span class="material-symbols-outlined text-sm">code</span>
-                <span>Tải Code</span>
-            </button>
 
             <button onclick="document.getElementById('help-modal').classList.remove('hidden')" class="text-slate-400 hover:text-white transition-colors">
                 <span class="material-symbols-outlined">help</span>
@@ -406,11 +402,11 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
             <div class="p-4 border-b border-slate-700 bg-slate-800/90 backdrop-blur z-10">
                 <h2 class="font-bold flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">inventory_2</span> 
-                    Nhà Kho (Memory)
+                    NhÃ  Kho (Memory)
                 </h2>
                 <div class="text-xs text-slate-400 mt-1 flex justify-between">
-                    <span>16 Ngăn (0-15)</span>
-                    <span>8-bit / Ngăn</span>
+                    <span>16 NgÄƒn (0-15)</span>
+                    <span>8-bit / NgÄƒn</span>
                 </div>
             </div>
             
@@ -447,8 +443,8 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                         <span class="material-symbols-outlined text-slate-600 group-hover:text-amber-500 transition-colors">alt_route</span>
                         <!-- Tooltip -->
                         <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-xs p-2 rounded -top-20 left-0 w-48 pointer-events-none border border-slate-600 z-50">
-                            <strong class="text-amber-500">Người bẻ ghi (Multiplexer):</strong><br>
-                            Quyết định dữ liệu vào RAM đến từ đâu: Công tắc tay (Program) hay Bus máy tính (Run).
+                            <strong class="text-amber-500">NgÆ°á»i báº» ghi (Multiplexer):</strong><br>
+                            Quyáº¿t Ä‘á»‹nh dá»¯ liá»‡u vÃ o RAM Ä‘áº¿n tá»« Ä‘Ã¢u: CÃ´ng táº¯c tay (Program) hay Bus mÃ¡y tÃ­nh (Run).
                         </div>
                     </div>
 
@@ -468,12 +464,12 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                             </div>
                         </div>
                         <div class="text-[10px] text-slate-500 text-center">
-                            Gã thủ kho khó tính:<br>Lưu ngược (0-&gt;1, 1-&gt;0)
+                            GÃ£ thá»§ kho khÃ³ tÃ­nh:<br>LÆ°u ngÆ°á»£c (0-&gt;1, 1-&gt;0)
                         </div>
                         <!-- Tooltip -->
                         <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-xs p-2 rounded -bottom-24 left-0 w-64 pointer-events-none border border-slate-600 z-50">
-                            <strong class="text-amber-500">Kho Chứa (SRAM):</strong><br>
-                            Lưu trữ 16 số 8-bit. Đặc điểm "quái chiêu": Đầu ra bị đảo ngược so với đầu vào (Inverted Output).
+                            <strong class="text-amber-500">Kho Chá»©a (SRAM):</strong><br>
+                            LÆ°u trá»¯ 16 sá»‘ 8-bit. Äáº·c Ä‘iá»ƒm "quÃ¡i chiÃªu": Äáº§u ra bá»‹ Ä‘áº£o ngÆ°á»£c so vá»›i Ä‘áº§u vÃ o (Inverted Output).
                         </div>
                     </div>
 
@@ -483,8 +479,8 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                             <span class="material-symbols-outlined text-amber-500">change_circle</span>
                             <div class="absolute -bottom-8 text-[10px] whitespace-nowrap">NOT Gates</div>
                             <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-xs p-2 rounded -top-16 -left-20 w-48 pointer-events-none border border-slate-600 z-50">
-                                <strong class="text-amber-500">Người phiên dịch (Inverter):</strong><br>
-                                Đảo ngược tín hiệu từ RAM để khôi phục dữ liệu gốc (0-&gt;1, 1-&gt;0).
+                                <strong class="text-amber-500">NgÆ°á»i phiÃªn dá»‹ch (Inverter):</strong><br>
+                                Äáº£o ngÆ°á»£c tÃ­n hiá»‡u tá»« RAM Ä‘á»ƒ khÃ´i phá»¥c dá»¯ liá»‡u gá»‘c (0-&gt;1, 1-&gt;0).
                             </div>
                         </div>
                     </div>
@@ -494,10 +490,10 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                         <div class="text-[10px] text-slate-400 font-bold">BUFFER</div>
                         <div class="text-xs text-amber-500 font-mono">74LS245</div>
                         <div id="gate-visual" class="w-8 h-8 border-2 border-slate-500 rounded bg-slate-900 flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-slate-500 text-sm">lock</span></div>
-                        <div class="text-[10px] text-slate-500 text-center">Cổng Bus</div>
+                        <div class="text-[10px] text-slate-500 text-center">Cá»•ng Bus</div>
                          <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-xs p-2 rounded -top-24 right-0 w-56 pointer-events-none border border-slate-600 z-50">
-                            <strong class="text-amber-500">Cánh Cổng (Tri-state Buffer):</strong><br>
-                            Kiểm soát việc xả dữ liệu ra Bus. Khi đóng (High Z), nó cách ly hoàn toàn RAM khỏi hệ thống.
+                            <strong class="text-amber-500">CÃ¡nh Cá»•ng (Tri-state Buffer):</strong><br>
+                            Kiá»ƒm soÃ¡t viá»‡c xáº£ dá»¯ liá»‡u ra Bus. Khi Ä‘Ã³ng (High Z), nÃ³ cÃ¡ch ly hoÃ n toÃ n RAM khá»i há»‡ thá»‘ng.
                         </div>
                     </div>
 
@@ -506,7 +502,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                         <div class="text-[10px] text-slate-400 font-bold">MUX (Addr)</div>
                         <div class="text-xs text-amber-500 font-mono">74LS157</div>
                         <span class="material-symbols-outlined text-slate-600 group-hover:text-amber-500 transition-colors">alt_route</span>
-                        <div class="text-[10px] text-slate-500 text-center">Chọn Địa Chỉ</div>
+                        <div class="text-[10px] text-slate-500 text-center">Chá»n Äá»‹a Chá»‰</div>
                     </div>
 
                     <!-- 74LS173 MAR -->
@@ -514,7 +510,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                         <div class="text-[10px] text-slate-400 font-bold">MAR</div>
                         <div class="text-xs text-amber-500 font-mono">74LS173</div>
                         <div id="mar-display" class="font-mono text-xl text-green-400">0000</div>
-                        <div class="text-[10px] text-slate-500 text-center">Thanh Ghi Địa Chỉ</div>
+                        <div class="text-[10px] text-slate-500 text-center">Thanh Ghi Äá»‹a Chá»‰</div>
                     </div>
 
                 </div>
@@ -527,7 +523,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
             <div class="p-4 border-b border-slate-700">
                 <h2 class="font-bold text-white flex items-center gap-2">
                     <span class="material-symbols-outlined text-amber-500">tune</span>
-                    Bảng Điều Khiển
+                    Báº£ng Äiá»u Khiá»ƒn
                 </h2>
             </div>
             
@@ -535,7 +531,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                 
                 <!-- Mode Switch -->
                 <div class="bg-slate-800 p-4 rounded-lg border border-slate-600">
-                    <label class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-2 block">Chế độ (Mode)</label>
+                    <label class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-2 block">Cháº¿ Ä‘á»™ (Mode)</label>
                     <div class="flex items-center justify-between">
                         <span class="text-sm font-bold text-amber-500">PROGRAM</span>
                         <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
@@ -549,7 +545,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                 <!-- Manual Address Inputs -->
                 <div id="manual-controls" class="bg-slate-800 p-4 rounded-lg border border-slate-600 transition-opacity duration-300">
                     <label class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3 block flex justify-between">
-                        <span>Địa Chỉ (Address)</span>
+                        <span>Äá»‹a Chá»‰ (Address)</span>
                         <span id="addr-hex-disp" class="text-amber-500 font-mono">0x0</span>
                     </label>
                     <div class="flex justify-center gap-2">
@@ -584,7 +580,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                 <!-- Data Inputs -->
                 <div id="data-controls" class="bg-slate-800 p-4 rounded-lg border border-slate-600 transition-opacity duration-300">
                     <label class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3 block flex justify-between">
-                        <span>Dữ Liệu (Data)</span>
+                        <span>Dá»¯ Liá»‡u (Data)</span>
                         <span id="data-hex-disp" class="text-red-500 font-mono">0x00</span>
                     </label>
                     <div class="flex justify-center gap-1">
@@ -609,7 +605,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                         WRITE (Ghi)
                     </button>
                     <div class="mt-2 text-[10px] text-slate-400 text-center">
-                        Sử dụng mạch RC Edge Detector để tạo xung ngắn an toàn.
+                        Sá»­ dá»¥ng máº¡ch RC Edge Detector Ä‘á»ƒ táº¡o xung ngáº¯n an toÃ n.
                     </div>
                 </div>
 
@@ -629,7 +625,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
         <div class="bg-slate-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-600 shadow-2xl">
             <div class="p-6">
                 <div class="flex justify-between items-start mb-4">
-                    <h2 class="text-2xl font-bold text-white">Hướng Dẫn: Nhà Kho Thông Minh (RAM)</h2>
+                    <h2 class="text-2xl font-bold text-white">HÆ°á»›ng Dáº«n: NhÃ  Kho ThÃ´ng Minh (RAM)</h2>
                     <button onclick="document.getElementById('help-modal').classList.add('hidden')" class="text-slate-400 hover:text-white">
                         <span class="material-symbols-outlined">close</span>
                     </button>
@@ -641,17 +637,17 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                             <img style="aspect-ratio: 1/1" src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" go-data-src="/gen?prompt=isometric+diagram+of+warehouse+shelves+numbered+1+to+16+with+packages&amp;aspect=1:1" alt="Warehouse Analogy" class="rounded-lg shadow-lg border border-slate-600">
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-amber-500 mb-2">1. Tổng Quan</h3>
-                            <p class="text-sm">Hãy hình dung mô-đun RAM này là một <strong>"nhà kho" với 16 ngăn tủ</strong> (địa chỉ 0-15). Mỗi ngăn chứa được một gói hàng 8-bit. Dữ liệu sẽ nằm yên đó miễn là còn điện (SRAM).</p>
+                            <h3 class="text-lg font-bold text-amber-500 mb-2">1. Tá»•ng Quan</h3>
+                            <p class="text-sm">HÃ£y hÃ¬nh dung mÃ´-Ä‘un RAM nÃ y lÃ  má»™t <strong>"nhÃ  kho" vá»›i 16 ngÄƒn tá»§</strong> (Ä‘á»‹a chá»‰ 0-15). Má»—i ngÄƒn chá»©a Ä‘Æ°á»£c má»™t gÃ³i hÃ ng 8-bit. Dá»¯ liá»‡u sáº½ náº±m yÃªn Ä‘Ã³ miá»…n lÃ  cÃ²n Ä‘iá»‡n (SRAM).</p>
                         </div>
                     </section>
 
                     <section class="border-t border-slate-700 pt-4">
-                        <h3 class="text-lg font-bold text-amber-500 mb-2">2. Chip 74LS189 &amp; "Tính Nết Kỳ Quặc"</h3>
-                        <p class="text-sm mb-2">Chip nhớ lưu dữ liệu ở dạng <strong>đảo ngược</strong>. Nếu bạn cất số "1", nó giữ số "0". Vì thế, chúng ta cần:</p>
+                        <h3 class="text-lg font-bold text-amber-500 mb-2">2. Chip 74LS189 &amp; "TÃ­nh Náº¿t Ká»³ Quáº·c"</h3>
+                        <p class="text-sm mb-2">Chip nhá»› lÆ°u dá»¯ liá»‡u á»Ÿ dáº¡ng <strong>Ä‘áº£o ngÆ°á»£c</strong>. Náº¿u báº¡n cáº¥t sá»‘ "1", nÃ³ giá»¯ sá»‘ "0". VÃ¬ tháº¿, chÃºng ta cáº§n:</p>
                         <ul class="list-disc list-inside text-sm pl-2 space-y-1">
-                            <li><strong>Đầu vào:</strong> Đi qua MUX vào thẳng chip.</li>
-                            <li><strong>Đầu ra:</strong> Đi qua các cổng <strong>NOT (Inverter)</strong> để "phiên dịch" lại thành số đúng trước khi ra Bus.</li>
+                            <li><strong>Äáº§u vÃ o:</strong> Äi qua MUX vÃ o tháº³ng chip.</li>
+                            <li><strong>Äáº§u ra:</strong> Äi qua cÃ¡c cá»•ng <strong>NOT (Inverter)</strong> Ä‘á»ƒ "phiÃªn dá»‹ch" láº¡i thÃ nh sá»‘ Ä‘Ãºng trÆ°á»›c khi ra Bus.</li>
                         </ul>
                     </section>
 
@@ -660,15 +656,15 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                              <img style="aspect-ratio: 1/1" src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+" go-data-src="/gen?prompt=railway+switch+tracks+splitting+path+schematic+drawing&amp;aspect=1:1" alt="Multiplexer Analogy" class="rounded-lg shadow-lg border border-slate-600">
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-amber-500 mb-2">3. Multiplexer (Người Bẻ Ghi)</h3>
-                            <p class="text-sm">Để chuyển đổi giữa chế độ <strong>Program</strong> (bạn nhập tay) và <strong>Run</strong> (máy tính chạy), ta dùng chip 74LS157.</p>
-                            <p class="text-sm mt-2">Nó giống như đường ray tàu hỏa: gạt công tắc để chọn đường ray từ "Công tắc tay" hoặc đường ray từ "Bus máy tính" nối vào nhà kho.</p>
+                            <h3 class="text-lg font-bold text-amber-500 mb-2">3. Multiplexer (NgÆ°á»i Báº» Ghi)</h3>
+                            <p class="text-sm">Äá»ƒ chuyá»ƒn Ä‘á»•i giá»¯a cháº¿ Ä‘á»™ <strong>Program</strong> (báº¡n nháº­p tay) vÃ  <strong>Run</strong> (mÃ¡y tÃ­nh cháº¡y), ta dÃ¹ng chip 74LS157.</p>
+                            <p class="text-sm mt-2">NÃ³ giá»‘ng nhÆ° Ä‘Æ°á»ng ray tÃ u há»a: gáº¡t cÃ´ng táº¯c Ä‘á»ƒ chá»n Ä‘Æ°á»ng ray tá»« "CÃ´ng táº¯c tay" hoáº·c Ä‘Æ°á»ng ray tá»« "Bus mÃ¡y tÃ­nh" ná»‘i vÃ o nhÃ  kho.</p>
                         </div>
                     </section>
                 </div>
             </div>
             <div class="p-4 bg-slate-900 border-t border-slate-700 flex justify-end">
-                <button onclick="document.getElementById('help-modal').classList.add('hidden')" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded font-bold">Đã Hiểu</button>
+                <button onclick="document.getElementById('help-modal').classList.add('hidden')" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded font-bold">ÄÃ£ Hiá»ƒu</button>
             </div>
         </div>
     </div>
@@ -980,24 +976,6 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
         }
 
         // --- Download Source Code Function ---
-        function downloadSource() {
-            // Get the full HTML content of the page
-            const htmlContent = document.documentElement.outerHTML;
-            // Create a Blob from the HTML content
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            // Create a URL for the Blob
-            const url = URL.createObjectURL(blob);
-            // Create a temporary anchor element
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'ram-simulation.html'; // Filename for download
-            // Append to body, click, and remove
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            // Clean up the URL
-            URL.revokeObjectURL(url);
-        }
 
         // Initialize
         init();

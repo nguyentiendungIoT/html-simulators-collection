@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -37,7 +37,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mô Phỏng FreeRTOS xQueueGenericSend</title>
+    <title>MÃ´ Phá»ng FreeRTOS xQueueGenericSend</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
@@ -65,14 +65,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <span class="material-symbols-outlined text-blue-600 text-3xl">memory</span>
                 <div>
                     <h1 class="text-xl font-bold text-slate-800">FreeRTOS: xQueueGenericSend() Visualizer</h1>
-                    <p class="text-xs text-slate-500">Giải phẫu "Cửa vào vạn năng" - Fast Path, Slow Path &amp; Circular Buffer</p>
+                    <p class="text-xs text-slate-500">Giáº£i pháº«u "Cá»­a vÃ o váº¡n nÄƒng" - Fast Path, Slow Path &amp; Circular Buffer</p>
                 </div>
             </div>
             <div class="flex gap-2">
-                 <button onclick="downloadSource()" class="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors">
-                    <span class="material-symbols-outlined text-sm">code</span>
-                    Tải Mã Nguồn
-                </button>
+
             </div>
         </div>
     </header>
@@ -87,7 +84,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 relative">
                 <h2 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
                     <span class="material-symbols-outlined text-lg">data_array</span>
-                    Cấu Trúc Hàng Đợi (Circular Buffer)
+                    Cáº¥u TrÃºc HÃ ng Äá»£i (Circular Buffer)
                 </h2>
                 
                 <!-- Visualization Canvas -->
@@ -95,8 +92,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
                 <!-- Legend -->
                 <div class="flex gap-4 mt-4 text-xs justify-center">
-                    <div class="flex items-center gap-1"><div class="w-3 h-3 bg-white border border-slate-400"></div> Trống</div>
-                    <div class="flex items-center gap-1"><div class="w-3 h-3 bg-blue-500"></div> Có dữ liệu</div>
+                    <div class="flex items-center gap-1"><div class="w-3 h-3 bg-white border border-slate-400"></div> Trá»‘ng</div>
+                    <div class="flex items-center gap-1"><div class="w-3 h-3 bg-blue-500"></div> CÃ³ dá»¯ liá»‡u</div>
                     <div class="flex items-center gap-1"><span class="text-green-600 font-bold">W</span> pcWriteTo</div>
                     <div class="flex items-center gap-1"><span class="text-red-600 font-bold">R</span> pcReadFrom</div>
                 </div>
@@ -106,7 +103,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="grid grid-cols-2 gap-6">
                 <!-- Task Lists -->
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
-                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Trạng Thái Task</h3>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Tráº¡ng ThÃ¡i Task</h3>
                     <div class="space-y-3">
                         <div id="task-running" class="p-2 bg-green-50 border border-green-200 rounded flex justify-between items-center">
                             <span class="text-xs font-semibold text-green-700">TASK A (Sender)</span>
@@ -122,7 +119,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
                 <!-- Kernel State -->
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
-                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Trạng Thái Kernel</h3>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Tráº¡ng ThÃ¡i Kernel</h3>
                     <div class="space-y-2 text-sm">
                         <div class="flex justify-between items-center p-2 rounded bg-slate-50" id="status-critical">
                             <span>Critical Section</span>
@@ -156,7 +153,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             
             <!-- Controls -->
             <div class="p-6 border-b border-slate-100 bg-slate-50">
-                <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">Chọn Kịch Bản (Scenario)</label>
+                <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">Chá»n Ká»‹ch Báº£n (Scenario)</label>
                 <div class="flex gap-2 mt-2 mb-4">
                     <button onclick="setScenario('fast')" class="flex-1 py-2 px-3 rounded text-xs font-medium bg-blue-100 text-blue-700 hover:bg-blue-200 border border-blue-200 transition-colors active-scenario ring-2 ring-blue-500" id="btn-fast">
                         Fast Path (Success)
@@ -174,7 +171,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <span class="material-symbols-outlined">arrow_back</span>
                     </button>
                     <div class="text-center">
-                        <span class="text-xs text-slate-400 uppercase">Bước</span>
+                        <span class="text-xs text-slate-400 uppercase">BÆ°á»›c</span>
                         <div class="font-bold text-xl text-blue-600" id="step-counter">0 / 7</div>
                     </div>
                     <button onclick="nextStep()" id="btn-next" class="p-2 rounded-full hover:bg-slate-100 disabled:opacity-30 text-blue-600">
@@ -188,12 +185,12 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <div class="sticky top-0 bg-white z-10 p-3 border-b border-slate-100 shadow-sm">
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2">
                         <span class="material-symbols-outlined text-orange-500">code</span>
-                        Luồng Xử Lý (xQueueGenericSend)
+                        Luá»“ng Xá»­ LÃ½ (xQueueGenericSend)
                     </h3>
                 </div>
                 <div class="p-4 space-y-1" id="code-flow"><div class="p-3 rounded text-xs font-mono border transition-all duration-200 flex gap-2 bg-white border-blue-200 text-slate-800">
                     <span class="w-4 text-right opacity-50 select-none">1</span>
-                    <span class="font-medium">xQueueGenericSend() bắt đầu. Vòng lặp vô hạn for(;;).</span>
+                    <span class="font-medium">xQueueGenericSend() báº¯t Ä‘áº§u. VÃ²ng láº·p vÃ´ háº¡n for(;;).</span>
                     
                 </div><div class="p-3 rounded text-xs font-mono border transition-all duration-200 flex gap-2 bg-slate-50 border-transparent text-slate-400">
                     <span class="w-4 text-right opacity-50 select-none">2</span>
@@ -201,7 +198,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     
                 </div><div class="p-3 rounded text-xs font-mono border transition-all duration-200 flex gap-2 bg-slate-50 border-transparent text-slate-400">
                     <span class="w-4 text-right opacity-50 select-none">3</span>
-                    <span class="font-medium">Kiểm tra: (uxMessagesWaiting &lt; uxLength)?</span>
+                    <span class="font-medium">Kiá»ƒm tra: (uxMessagesWaiting &lt; uxLength)?</span>
                     
                 </div><div class="p-3 rounded text-xs font-mono border transition-all duration-200 flex gap-2 bg-slate-50 border-transparent text-slate-400">
                     <span class="w-4 text-right opacity-50 select-none">4</span>
@@ -226,9 +223,9 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="p-6 bg-slate-50 border-t border-slate-200 min-h-[200px]">
                 <h3 class="text-xs font-bold text-indigo-600 uppercase mb-2 flex items-center gap-1">
                     <span class="material-symbols-outlined text-sm">lightbulb</span>
-                    Giải thích chi tiết
+                    Giáº£i thÃ­ch chi tiáº¿t
                 </h3>
-                <div id="explanation-text" class="text-sm text-slate-700 leading-relaxed">Nhấn 'Next' để bắt đầu mô phỏng.</div>
+                <div id="explanation-text" class="text-sm text-slate-700 leading-relaxed">Nháº¥n 'Next' Ä‘á»ƒ báº¯t Ä‘áº§u mÃ´ phá»ng.</div>
             </div>
         </div>
     </main>
@@ -268,7 +265,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         
         const scenarios = {
             'fast': {
-                name: "Fast Path (Gửi thành công)",
+                name: "Fast Path (Gá»­i thÃ nh cÃ´ng)",
                 init: () => {
                     queue = [null, null, null, null, null];
                     pcWriteTo = 0;
@@ -280,26 +277,26 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 steps: [
                     {
                         id: 'enter',
-                        text: 'xQueueGenericSend() bắt đầu. Vòng lặp vô hạn for(;;).',
-                        detail: 'Hàm bắt đầu. Nó chạy trong một vòng lặp để xử lý trường hợp bị wake up nhưng queue lại đầy.',
+                        text: 'xQueueGenericSend() báº¯t Ä‘áº§u. VÃ²ng láº·p vÃ´ háº¡n for(;;).',
+                        detail: 'HÃ m báº¯t Ä‘áº§u. NÃ³ cháº¡y trong má»™t vÃ²ng láº·p Ä‘á»ƒ xá»­ lÃ½ trÆ°á»ng há»£p bá»‹ wake up nhÆ°ng queue láº¡i Ä‘áº§y.',
                         action: () => {}
                     },
                     {
                         id: 'critical',
                         text: 'taskENTER_CRITICAL()',
-                        detail: '<b>4.1 Fast Path:</b> Vào đoạn găng (Critical Section). Tắt ngắt để đảm bảo tính nguyên tử (Atomicity). Không ai được xen ngang lúc này.',
+                        detail: '<b>4.1 Fast Path:</b> VÃ o Ä‘oáº¡n gÄƒng (Critical Section). Táº¯t ngáº¯t Ä‘á»ƒ Ä‘áº£m báº£o tÃ­nh nguyÃªn tá»­ (Atomicity). KhÃ´ng ai Ä‘Æ°á»£c xen ngang lÃºc nÃ y.',
                         action: () => { isCritical = true; }
                     },
                     {
                         id: 'check_space',
-                        text: 'Kiểm tra: (uxMessagesWaiting < uxLength)?',
-                        detail: 'Kiểm tra xem Queue còn chỗ trống không? Hiện tại uxMessagesWaiting = 0, uxLength = 5. -> CÒN CHỖ.',
+                        text: 'Kiá»ƒm tra: (uxMessagesWaiting < uxLength)?',
+                        detail: 'Kiá»ƒm tra xem Queue cÃ²n chá»— trá»‘ng khÃ´ng? Hiá»‡n táº¡i uxMessagesWaiting = 0, uxLength = 5. -> CÃ’N CHá»–.',
                         action: () => {}
                     },
                     {
                         id: 'copy',
                         text: 'prvCopyDataToQueue()',
-                        detail: '<b>4.3 Băng chuyền:</b> Copy dữ liệu vào vị trí `pcWriteTo`. Tăng `pcWriteTo`. Tăng `uxMessagesWaiting`.',
+                        detail: '<b>4.3 BÄƒng chuyá»n:</b> Copy dá»¯ liá»‡u vÃ o vá»‹ trÃ­ `pcWriteTo`. TÄƒng `pcWriteTo`. TÄƒng `uxMessagesWaiting`.',
                         action: () => {
                             queue[pcWriteTo] = "Data";
                             pcWriteTo = (pcWriteTo + 1) % QUEUE_LENGTH;
@@ -309,25 +306,25 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     {
                         id: 'check_wait',
                         text: 'xTasksWaitingToReceive > 0?',
-                        detail: 'Kiểm tra xem có Task nào đang ngủ chờ nhận dữ liệu không? Có Task B đang chờ.',
+                        detail: 'Kiá»ƒm tra xem cÃ³ Task nÃ o Ä‘ang ngá»§ chá» nháº­n dá»¯ liá»‡u khÃ´ng? CÃ³ Task B Ä‘ang chá».',
                         action: () => {}
                     },
                     {
                         id: 'wake',
                         text: 'xTaskRemoveFromEventList()',
-                        detail: 'Đánh thức Task B (unblock). Vì đang trong Critical Section, việc đánh thức này được ưu tiên nhưng context switch có thể chưa xảy ra ngay.',
+                        detail: 'ÄÃ¡nh thá»©c Task B (unblock). VÃ¬ Ä‘ang trong Critical Section, viá»‡c Ä‘Ã¡nh thá»©c nÃ y Ä‘Æ°á»£c Æ°u tiÃªn nhÆ°ng context switch cÃ³ thá»ƒ chÆ°a xáº£y ra ngay.',
                         action: () => { waitingReceivers = []; } // Remove task
                     },
                     {
                         id: 'exit',
                         text: 'taskEXIT_CRITICAL(); return pdPASS;',
-                        detail: 'Thoát đoạn găng. Bật lại ngắt. Trả về pdPASS báo hiệu gửi thành công. Kết thúc hàm.',
+                        detail: 'ThoÃ¡t Ä‘oáº¡n gÄƒng. Báº­t láº¡i ngáº¯t. Tráº£ vá» pdPASS bÃ¡o hiá»‡u gá»­i thÃ nh cÃ´ng. Káº¿t thÃºc hÃ m.',
                         action: () => { isCritical = false; }
                     }
                 ]
             },
             'wrap': {
-                name: "Circular Buffer Wrap (Vòng lại)",
+                name: "Circular Buffer Wrap (VÃ²ng láº¡i)",
                 init: () => {
                     // Setup queue almost at end
                     queue = [null, null, null, "D1", "D2"];
@@ -353,17 +350,17 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     waitingReceivers = [];
                 },
                 steps: [
-                    { id: 'enter', text: 'Vòng lặp for(;;)', detail: 'Bắt đầu gửi dữ liệu.', action: () => {} },
-                    { id: 'critical', text: 'taskENTER_CRITICAL()', detail: 'Vào vùng găng để thao tác bộ nhớ.', action: () => { isCritical = true; } },
-                    { id: 'check_space', text: 'Còn chỗ trống?', detail: 'Queue còn 1 chỗ tại Index 4.', action: () => {} },
-                    { id: 'copy_1', text: 'prvCopyDataToQueue(): Memcpy', detail: 'Copy dữ liệu vào ô nhớ số 4 (cuối mảng).', action: () => { queue[4] = "D5"; uxMessagesWaiting++; } },
+                    { id: 'enter', text: 'VÃ²ng láº·p for(;;)', detail: 'Báº¯t Ä‘áº§u gá»­i dá»¯ liá»‡u.', action: () => {} },
+                    { id: 'critical', text: 'taskENTER_CRITICAL()', detail: 'VÃ o vÃ¹ng gÄƒng Ä‘á»ƒ thao tÃ¡c bá»™ nhá»›.', action: () => { isCritical = true; } },
+                    { id: 'check_space', text: 'CÃ²n chá»— trá»‘ng?', detail: 'Queue cÃ²n 1 chá»— táº¡i Index 4.', action: () => {} },
+                    { id: 'copy_1', text: 'prvCopyDataToQueue(): Memcpy', detail: 'Copy dá»¯ liá»‡u vÃ o Ã´ nhá»› sá»‘ 4 (cuá»‘i máº£ng).', action: () => { queue[4] = "D5"; uxMessagesWaiting++; } },
                     { 
                         id: 'copy_2', 
-                        text: 'Tính toán Pointer (Wrap)', 
-                        detail: '<b>4.3 Băng chuyền:</b> `pcWriteTo` tăng lên. Nếu >= `pcTail` (cuối mảng), nó quay về đầu (`pcHead` = 0).', 
+                        text: 'TÃ­nh toÃ¡n Pointer (Wrap)', 
+                        detail: '<b>4.3 BÄƒng chuyá»n:</b> `pcWriteTo` tÄƒng lÃªn. Náº¿u >= `pcTail` (cuá»‘i máº£ng), nÃ³ quay vá» Ä‘áº§u (`pcHead` = 0).', 
                         action: () => { pcWriteTo = 0; } 
                     },
-                    { id: 'exit', text: 'taskEXIT_CRITICAL(); return pdPASS;', detail: 'Thoát vùng găng. Gửi xong.', action: () => { isCritical = false; } }
+                    { id: 'exit', text: 'taskEXIT_CRITICAL(); return pdPASS;', detail: 'ThoÃ¡t vÃ¹ng gÄƒng. Gá»­i xong.', action: () => { isCritical = false; } }
                 ]
             },
             'block': {
@@ -377,50 +374,50 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     waitingReceivers = [];
                 },
                 steps: [
-                    { id: 'enter', text: 'Vòng lặp for(;;)', detail: 'Task A muốn gửi dữ liệu...', action: () => {} },
-                    { id: 'critical', text: 'taskENTER_CRITICAL()', detail: 'Vào vùng găng.', action: () => { isCritical = true; } },
-                    { id: 'check_space', text: 'Kiểm tra chỗ trống?', detail: 'uxMessagesWaiting (5) == uxLength (5). <b>HẾT CHỖ!</b>', action: () => {} },
-                    { id: 'check_block', text: 'xTicksToWait > 0?', detail: 'Task chấp nhận chờ (Block) không? Có.', action: () => {} },
+                    { id: 'enter', text: 'VÃ²ng láº·p for(;;)', detail: 'Task A muá»‘n gá»­i dá»¯ liá»‡u...', action: () => {} },
+                    { id: 'critical', text: 'taskENTER_CRITICAL()', detail: 'VÃ o vÃ¹ng gÄƒng.', action: () => { isCritical = true; } },
+                    { id: 'check_space', text: 'Kiá»ƒm tra chá»— trá»‘ng?', detail: 'uxMessagesWaiting (5) == uxLength (5). <b>Háº¾T CHá»–!</b>', action: () => {} },
+                    { id: 'check_block', text: 'xTicksToWait > 0?', detail: 'Task cháº¥p nháº­n chá» (Block) khÃ´ng? CÃ³.', action: () => {} },
                     { 
                         id: 'reset_crit', 
                         text: 'taskEXIT_CRITICAL()', 
-                        detail: '<b>4.2 Slow Path:</b> Thoát vùng găng. Tại sao? Vì sắp tới phải đụng vào Scheduler (tốn thời gian), không thể giữ ngắt tắt lâu được.', 
+                        detail: '<b>4.2 Slow Path:</b> ThoÃ¡t vÃ¹ng gÄƒng. Táº¡i sao? VÃ¬ sáº¯p tá»›i pháº£i Ä‘á»¥ng vÃ o Scheduler (tá»‘n thá»i gian), khÃ´ng thá»ƒ giá»¯ ngáº¯t táº¯t lÃ¢u Ä‘Æ°á»£c.', 
                         action: () => { isCritical = false; } 
                     },
                     { 
                         id: 'suspend', 
                         text: 'vTaskSuspendAll()', 
-                        detail: 'Tạm dừng Scheduler. Không cho context switch xảy ra lúc này để chuẩn bị sửa danh sách Task.', 
+                        detail: 'Táº¡m dá»«ng Scheduler. KhÃ´ng cho context switch xáº£y ra lÃºc nÃ y Ä‘á»ƒ chuáº©n bá»‹ sá»­a danh sÃ¡ch Task.', 
                         action: () => { isSchedulerSuspended = true; } 
                     },
                     { 
                         id: 'lock', 
                         text: 'prvLockQueue()', 
-                        detail: 'Khóa Queue (cTxLock). Nếu ISR có gửi/nhận gì lúc này, nó sẽ không cập nhật list mà chỉ đánh dấu vào Lock count.', 
+                        detail: 'KhÃ³a Queue (cTxLock). Náº¿u ISR cÃ³ gá»­i/nháº­n gÃ¬ lÃºc nÃ y, nÃ³ sáº½ khÃ´ng cáº­p nháº­t list mÃ  chá»‰ Ä‘Ã¡nh dáº¥u vÃ o Lock count.', 
                         action: () => { isQueueLocked = true; } 
                     },
                     { 
                         id: 'check_again', 
-                        text: 'Kiểm tra lại chỗ trống?', 
-                        detail: 'Phải kiểm tra lại lần nữa phòng khi có ai đó lấy dữ liệu ngay trước khi ta lock. Vẫn đầy.', 
+                        text: 'Kiá»ƒm tra láº¡i chá»— trá»‘ng?', 
+                        detail: 'Pháº£i kiá»ƒm tra láº¡i láº§n ná»¯a phÃ²ng khi cÃ³ ai Ä‘Ã³ láº¥y dá»¯ liá»‡u ngay trÆ°á»›c khi ta lock. Váº«n Ä‘áº§y.', 
                         action: () => {} 
                     },
                     { 
                         id: 'add_list', 
                         text: 'vTaskPlaceOnEventList()', 
-                        detail: 'Đưa Task hiện tại vào danh sách <b>xTasksWaitingToSend</b>. Task chuyển sang trạng thái Blocked.', 
+                        detail: 'ÄÆ°a Task hiá»‡n táº¡i vÃ o danh sÃ¡ch <b>xTasksWaitingToSend</b>. Task chuyá»ƒn sang tráº¡ng thÃ¡i Blocked.', 
                         action: () => { blockedTasks.push("Task A"); } 
                     },
                     { 
                         id: 'unlock', 
                         text: 'prvUnlockQueue()', 
-                        detail: 'Mở khóa Queue. Xử lý các sự kiện bị hoãn (nếu có) khi nãy bị lock.', 
+                        detail: 'Má»Ÿ khÃ³a Queue. Xá»­ lÃ½ cÃ¡c sá»± kiá»‡n bá»‹ hoÃ£n (náº¿u cÃ³) khi nÃ£y bá»‹ lock.', 
                         action: () => { isQueueLocked = false; } 
                     },
                     { 
                         id: 'resume', 
                         text: 'xTaskResumeAll()', 
-                        detail: 'Cho phép Scheduler chạy lại. Sẽ xảy ra <b>Context Switch</b> ngay lập tức sang Task khác vì Task A đã bị Block.', 
+                        detail: 'Cho phÃ©p Scheduler cháº¡y láº¡i. Sáº½ xáº£y ra <b>Context Switch</b> ngay láº­p tá»©c sang Task khÃ¡c vÃ¬ Task A Ä‘Ã£ bá»‹ Block.', 
                         action: () => { isSchedulerSuspended = false; } 
                     }
                 ]
@@ -520,7 +517,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 const currentStep = steps[currentStepIndex - 1];
                 elExplanation.innerHTML = `<p class="font-bold mb-1">${currentStep.text}</p><p>${currentStep.detail}</p>`;
             } else {
-                elExplanation.innerHTML = "Nhấn 'Next' để bắt đầu mô phỏng.";
+                elExplanation.innerHTML = "Nháº¥n 'Next' Ä‘á»ƒ báº¯t Ä‘áº§u mÃ´ phá»ng.";
             }
         }
 
@@ -631,19 +628,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     div.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             });
-        }
-
-        function downloadSource() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'freertos_queue_sim.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
         }
 
         // Initialize

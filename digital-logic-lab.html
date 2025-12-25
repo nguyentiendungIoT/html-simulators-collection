@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -37,7 +37,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hành Trình Digital Logic: Từ SR Latch đến Master-Slave JK</title>
+    <title>HÃ nh TrÃ¬nh Digital Logic: Tá»« SR Latch Ä‘áº¿n Master-Slave JK</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
@@ -79,12 +79,9 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     <button id="tab-jk" onclick="switchTab('jk')" class="tab-btn px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition">2. Basic JK &amp; Racing</button>
                     <button id="tab-ms" onclick="switchTab('ms')" class="tab-btn px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition">3. Master-Slave JK</button>
                     <button id="tab-chip" onclick="switchTab('chip')" class="tab-btn px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition">4. 74LS76 Chip</button>
-                </nav>
-                
-                <!-- Download Button -->
-                <button onclick="downloadSource()" class="flex items-center gap-2 bg-gray-900 hover:bg-gray-700 text-white px-3 py-1.5 rounded text-sm font-medium transition shadow-sm">
+                </nav><button class="flex items-center gap-2 bg-gray-900 hover:bg-gray-700 text-white px-3 py-1.5 rounded text-sm font-medium transition shadow-sm">
                     <span class="material-symbols-outlined text-sm">download</span>
-                    <span class="hidden sm:inline">Tải Mã Nguồn</span>
+                    <span class="hidden sm:inline">Táº£i MÃ£ Nguá»“n</span>
                 </button>
             </div>
         </div>
@@ -105,17 +102,17 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Explanation -->
                 <div class="lg:col-span-1 space-y-4">
-                    <h2 class="text-2xl font-bold text-gray-900">Giai Đoạn 1: SR Flip-Flop</h2>
+                    <h2 class="text-2xl font-bold text-gray-900">Giai Äoáº¡n 1: SR Flip-Flop</h2>
                     <p class="text-gray-600 leading-relaxed">
-                        Đây là nền tảng của bộ nhớ kỹ thuật số. Mạch sử dụng tín hiệu <b>Clock</b> để đồng bộ hóa việc thay đổi trạng thái.
+                        ÄÃ¢y lÃ  ná»n táº£ng cá»§a bá»™ nhá»› ká»¹ thuáº­t sá»‘. Máº¡ch sá»­ dá»¥ng tÃ­n hiá»‡u <b>Clock</b> Ä‘á»ƒ Ä‘á»“ng bá»™ hÃ³a viá»‡c thay Ä‘á»•i tráº¡ng thÃ¡i.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm mt-0.5">check_circle</span> <b>S (Set) = 1:</b> Đặt Q = 1 (Lưu mức cao).</li>
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm mt-0.5">check_circle</span> <b>R (Reset) = 1:</b> Đặt Q = 0 (Lưu mức thấp).</li>
-                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-red-500 text-sm mt-0.5">warning</span> <b>Vấn đề chí mạng:</b> Khi <b>S=1 và R=1</b>, mạch rơi vào trạng thái "Không hợp lệ" (Invalid). Logic bị phá vỡ.</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm mt-0.5">check_circle</span> <b>S (Set) = 1:</b> Äáº·t Q = 1 (LÆ°u má»©c cao).</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm mt-0.5">check_circle</span> <b>R (Reset) = 1:</b> Äáº·t Q = 0 (LÆ°u má»©c tháº¥p).</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-red-500 text-sm mt-0.5">warning</span> <b>Váº¥n Ä‘á» chÃ­ máº¡ng:</b> Khi <b>S=1 vÃ  R=1</b>, máº¡ch rÆ¡i vÃ o tráº¡ng thÃ¡i "KhÃ´ng há»£p lá»‡" (Invalid). Logic bá»‹ phÃ¡ vá»¡.</li>
                     </ul>
                     <div class="p-3 bg-blue-50 text-blue-800 text-sm rounded-md border border-blue-100">
-                        <span class="font-bold">Thử ngay:</span> Bật Clock lên, sau đó thử bật cả S và R cùng lúc để xem điều gì xảy ra.
+                        <span class="font-bold">Thá»­ ngay:</span> Báº­t Clock lÃªn, sau Ä‘Ã³ thá»­ báº­t cáº£ S vÃ  R cÃ¹ng lÃºc Ä‘á»ƒ xem Ä‘iá»u gÃ¬ xáº£y ra.
                     </div>
                 </div>
 
@@ -150,7 +147,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                             </button>
                         </div>
                     </div>
-                    <div id="sr-status" class="mt-4 text-sm font-mono font-bold text-gray-500 h-6">Trạng thái: Giữ (Memory)</div>
+                    <div id="sr-status" class="mt-4 text-sm font-mono font-bold text-gray-500 h-6">Tráº¡ng thÃ¡i: Giá»¯ (Memory)</div>
                 </div>
             </div>
         </div>
@@ -160,20 +157,20 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Explanation -->
                 <div class="lg:col-span-1 space-y-4">
-                    <h2 class="text-2xl font-bold text-gray-900">Giai Đoạn 2: Sự Cố Racing</h2>
+                    <h2 class="text-2xl font-bold text-gray-900">Giai Äoáº¡n 2: Sá»± Cá»‘ Racing</h2>
                     <p class="text-gray-600 leading-relaxed">
-                        JK Flip-Flop cơ bản dùng "hồi tiếp" (feedback) để sửa lỗi S=1, R=1. Thay vì bị lỗi, nó sẽ <b>Đảo trạng thái (Toggle)</b>.
+                        JK Flip-Flop cÆ¡ báº£n dÃ¹ng "há»“i tiáº¿p" (feedback) Ä‘á»ƒ sá»­a lá»—i S=1, R=1. Thay vÃ¬ bá»‹ lá»—i, nÃ³ sáº½ <b>Äáº£o tráº¡ng thÃ¡i (Toggle)</b>.
                     </p>
                     <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                         <h3 class="font-bold text-yellow-800 mb-1 flex items-center gap-2">
-                            <span class="material-symbols-outlined">bolt</span> Hiện Tượng Racing
+                            <span class="material-symbols-outlined">bolt</span> Hiá»‡n TÆ°á»£ng Racing
                         </h3>
                         <p class="text-sm text-yellow-800">
-                            Trong thực tế, nếu xung Clock "mở" quá lâu (lâu hơn thời gian tín hiệu chạy vòng qua mạch), tín hiệu sẽ chạy vòng tròn liên tục: 0 -&gt; 1 -&gt; 0 -&gt; 1... tạo ra sự hỗn loạn.
+                            Trong thá»±c táº¿, náº¿u xung Clock "má»Ÿ" quÃ¡ lÃ¢u (lÃ¢u hÆ¡n thá»i gian tÃ­n hiá»‡u cháº¡y vÃ²ng qua máº¡ch), tÃ­n hiá»‡u sáº½ cháº¡y vÃ²ng trÃ²n liÃªn tá»¥c: 0 -&gt; 1 -&gt; 0 -&gt; 1... táº¡o ra sá»± há»—n loáº¡n.
                         </p>
                     </div>
                     <div class="p-3 bg-blue-50 text-blue-800 text-sm rounded-md border border-blue-100">
-                        <span class="font-bold">Thử nghiệm:</span> Bật <b>J=1, K=1</b>. Sau đó bật <b>Clock</b>. Quan sát đèn LED và biểu đồ bên dưới.
+                        <span class="font-bold">Thá»­ nghiá»‡m:</span> Báº­t <b>J=1, K=1</b>. Sau Ä‘Ã³ báº­t <b>Clock</b>. Quan sÃ¡t Ä‘Ã¨n LED vÃ  biá»ƒu Ä‘á»“ bÃªn dÆ°á»›i.
                     </div>
                 </div>
 
@@ -221,30 +218,30 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Explanation -->
                 <div class="lg:col-span-1 space-y-4">
-                    <h2 class="text-2xl font-bold text-gray-900">Giai Đoạn 3: Giải Pháp Master-Slave</h2>
+                    <h2 class="text-2xl font-bold text-gray-900">Giai Äoáº¡n 3: Giáº£i PhÃ¡p Master-Slave</h2>
                     <p class="text-gray-600 leading-relaxed">
-                        Để chặn đứng "Racing", ta dùng cấu trúc <b>Cửa Hai Lớp</b>.
+                        Äá»ƒ cháº·n Ä‘á»©ng "Racing", ta dÃ¹ng cáº¥u trÃºc <b>Cá»­a Hai Lá»›p</b>.
                     </p>
                     <ul class="space-y-3 text-sm text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
                         <li class="flex items-start gap-2">
                             <span class="material-symbols-outlined text-blue-600">login</span>
                             <div>
                                 <b>1. Khi Clock = 1 (Cao):</b><br>
-                                Cổng vào Master MỞ. Master nhận dữ liệu J, K.<br>
-                                Cổng vào Slave ĐÓNG. Đầu ra Q chưa đổi.
+                                Cá»•ng vÃ o Master Má»ž. Master nháº­n dá»¯ liá»‡u J, K.<br>
+                                Cá»•ng vÃ o Slave ÄÃ“NG. Äáº§u ra Q chÆ°a Ä‘á»•i.
                             </div>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="material-symbols-outlined text-purple-600">logout</span>
                             <div>
-                                <b>2. Khi Clock = 0 (Thấp):</b><br>
-                                Cổng vào Master ĐÓNG (Chốt dữ liệu).<br>
-                                Cổng vào Slave MỞ. Slave nhận lệnh từ Master và cập nhật Q.
+                                <b>2. Khi Clock = 0 (Tháº¥p):</b><br>
+                                Cá»•ng vÃ o Master ÄÃ“NG (Chá»‘t dá»¯ liá»‡u).<br>
+                                Cá»•ng vÃ o Slave Má»ž. Slave nháº­n lá»‡nh tá»« Master vÃ  cáº­p nháº­t Q.
                             </div>
                         </li>
                     </ul>
                     <div class="p-3 bg-green-50 text-green-800 text-sm rounded-md border border-green-100">
-                        <span class="font-bold">Kết quả:</span> Dữ liệu chỉ thay đổi đúng 1 lần khi Clock sập xuống (Falling Edge). Hết sạch lỗi Racing!
+                        <span class="font-bold">Káº¿t quáº£:</span> Dá»¯ liá»‡u chá»‰ thay Ä‘á»•i Ä‘Ãºng 1 láº§n khi Clock sáº­p xuá»‘ng (Falling Edge). Háº¿t sáº¡ch lá»—i Racing!
                     </div>
                 </div>
 
@@ -254,8 +251,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     <div class="relative w-full aspect-[2/1] bg-gray-50 rounded-lg border border-gray-200 mb-6 overflow-hidden">
                         <svg id="ms-canvas" viewBox="0 0 800 400" class="w-full h-full"><rect x="150" y="50" width="200" height="300" rx="10" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2"></rect><rect x="450" y="50" width="200" height="300" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"></rect><line x1="50" y1="100" x2="150" y2="100" class="wire "></line><line x1="50" y1="300" x2="150" y2="300" class="wire "></line><text x="220" y="200" font-size="20" font-weight="bold" fill="#6B7280">MASTER</text><circle cx="250" cy="150" r="10" fill="#374151"></circle><line x1="350" y1="150" x2="450" y2="150" class="wire "></line><text x="530" y="200" font-size="20" font-weight="bold" fill="#6B21A8">SLAVE</text><line x1="650" y1="150" x2="750" y2="150" class="wire "></line><circle cx="760" cy="150" r="15" class="led-off"></circle><text x="760" y="190" text-anchor="middle" font-weight="bold">Q</text><path d="M 50 200 h 100" stroke="#9CA3AF" stroke-width="3"></path><path d="M 100 200 v 180 h 400 v -100" stroke="none" fill="none"></path><circle cx="450" cy="200" r="5" fill="white" stroke="black"></circle></svg>
                         <!-- Labels for compartments -->
-                        <div class="absolute top-2 left-[25%] -translate-x-1/2 bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-bold border border-blue-200">MASTER (Phòng chờ)</div>
-                        <div class="absolute top-2 left-[75%] -translate-x-1/2 bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-bold border border-purple-200">SLAVE (Cửa ra)</div>
+                        <div class="absolute top-2 left-[25%] -translate-x-1/2 bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-bold border border-blue-200">MASTER (PhÃ²ng chá»)</div>
+                        <div class="absolute top-2 left-[75%] -translate-x-1/2 bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-bold border border-purple-200">SLAVE (Cá»­a ra)</div>
                     </div>
 
                     <!-- Controls -->
@@ -289,8 +286,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         <div id="content-chip" class="hidden space-y-8 animate-fade-in">
              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">IC 74LS76 Thực Tế</h2>
-                    <p class="text-gray-600 mb-4">Đây là con chip chứa sẵn 2 bộ Master-Slave JK Flip-Flop độc lập. Nó được sử dụng rộng rãi trong các mạch đếm, chia tần số.</p>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">IC 74LS76 Thá»±c Táº¿</h2>
+                    <p class="text-gray-600 mb-4">ÄÃ¢y lÃ  con chip chá»©a sáºµn 2 bá»™ Master-Slave JK Flip-Flop Ä‘á»™c láº­p. NÃ³ Ä‘Æ°á»£c sá»­ dá»¥ng rá»™ng rÃ£i trong cÃ¡c máº¡ch Ä‘áº¿m, chia táº§n sá»‘.</p>
                     
                     <div class="relative w-full h-64 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center border border-gray-300">
                         <!-- Chip Visualization -->
@@ -319,49 +316,49 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                             <div class="absolute -bottom-3 right-12 w-2 h-4 bg-gray-400"></div>
                         </div>
                     </div>
-                    <div class="mt-4 text-center text-sm text-gray-500 italic">Mô phỏng hình dáng DIP-16</div>
+                    <div class="mt-4 text-center text-sm text-gray-500 italic">MÃ´ phá»ng hÃ¬nh dÃ¡ng DIP-16</div>
                 </div>
 
                 <div class="space-y-4">
-                    <h3 class="font-bold text-gray-800">Thông Số Kỹ Thuật Chính</h3>
+                    <h3 class="font-bold text-gray-800">ThÃ´ng Sá»‘ Ká»¹ Thuáº­t ChÃ­nh</h3>
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
                         <table class="w-full text-sm text-left text-gray-600">
                             <thead class="bg-gray-50 text-gray-700 font-bold">
                                 <tr>
-                                    <th class="px-4 py-2 border-b">Đặc Điểm</th>
-                                    <th class="px-4 py-2 border-b">Mô Tả</th>
+                                    <th class="px-4 py-2 border-b">Äáº·c Äiá»ƒm</th>
+                                    <th class="px-4 py-2 border-b">MÃ´ Táº£</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="border-b">
-                                    <td class="px-4 py-2 font-medium">Cấu trúc</td>
-                                    <td class="px-4 py-2">Dual Master-Slave JK Flip-Flop (2 bộ trong 1 chip)</td>
+                                    <td class="px-4 py-2 font-medium">Cáº¥u trÃºc</td>
+                                    <td class="px-4 py-2">Dual Master-Slave JK Flip-Flop (2 bá»™ trong 1 chip)</td>
                                 </tr>
                                 <tr class="border-b bg-gray-50">
-                                    <td class="px-4 py-2 font-medium">Kích hoạt (Trigger)</td>
-                                    <td class="px-4 py-2 text-blue-600 font-bold">Sườn Âm (Falling Edge) <span class="material-symbols-outlined align-middle text-sm">arrow_downward</span></td>
+                                    <td class="px-4 py-2 font-medium">KÃ­ch hoáº¡t (Trigger)</td>
+                                    <td class="px-4 py-2 text-blue-600 font-bold">SÆ°á»n Ã‚m (Falling Edge) <span class="material-symbols-outlined align-middle text-sm">arrow_downward</span></td>
                                 </tr>
                                 <tr class="border-b">
-                                    <td class="px-4 py-2 font-medium">Chân Vcc / GND</td>
+                                    <td class="px-4 py-2 font-medium">ChÃ¢n Vcc / GND</td>
                                     <td class="px-4 py-2">Pin 5 (Vcc), Pin 13 (GND)</td>
                                 </tr>
                                 <tr class="bg-gray-50">
-                                    <td class="px-4 py-2 font-medium">Chức năng phụ</td>
-                                    <td class="px-4 py-2">Preset &amp; Clear (Kích hoạt mức thấp - Active Low)</td>
+                                    <td class="px-4 py-2 font-medium">Chá»©c nÄƒng phá»¥</td>
+                                    <td class="px-4 py-2">Preset &amp; Clear (KÃ­ch hoáº¡t má»©c tháº¥p - Active Low)</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="p-4 bg-blue-50 text-blue-800 rounded-lg text-sm border border-blue-100 flex gap-2">
                         <span class="material-symbols-outlined">info</span>
-                        <p>Lưu ý: Chân Clock có vòng tròn nhỏ (bubble) biểu thị kích hoạt khi tín hiệu chuyển từ <b>Cao xuống Thấp</b>.</p>
+                        <p>LÆ°u Ã½: ChÃ¢n Clock cÃ³ vÃ²ng trÃ²n nhá» (bubble) biá»ƒu thá»‹ kÃ­ch hoáº¡t khi tÃ­n hiá»‡u chuyá»ƒn tá»« <b>Cao xuá»‘ng Tháº¥p</b>.</p>
                     </div>
                 </div>
             </div>
             
             <!-- Attribution for datasheet data -->
             <div class="mt-8 pt-4 border-t border-gray-200 text-xs text-gray-400 flex gap-2">
-                <span>Nguồn dữ liệu tham khảo:</span>
+                <span>Nguá»“n dá»¯ liá»‡u tham kháº£o:</span>
                 <a href="https://www.futurlec.com/74/IC7476.shtml" target="_blank" class="hover:text-blue-500 flex items-center"><span class="material-symbols-outlined text-xs">link</span> Datasheet</a>
                 <a href="https://www.allelcoelec.com/blog/a-comprehensive-guide-to-the-74ls76-ic.html" target="_blank" class="hover:text-blue-500 flex items-center"><span class="material-symbols-outlined text-xs">link</span> Allelco Guide</a>
             </div>
@@ -370,18 +367,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     <script>
         // --- Download Functionality ---
-        function downloadSource() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'digital-logic-lab.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
 
         // --- State Management ---
         const state = {
@@ -492,25 +477,25 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     // In invalid state, usually Q and Q_bar go low (NOR based) or unstable
                     state.sr.q = 0; 
                     state.sr.q_bar = 0;
-                    document.getElementById('sr-status').innerHTML = '<span class="text-red-600 flex items-center gap-1"><span class="material-symbols-outlined text-sm">error</span> TRẠNG THÁI CẤM (INVALID)</span>';
+                    document.getElementById('sr-status').innerHTML = '<span class="text-red-600 flex items-center gap-1"><span class="material-symbols-outlined text-sm">error</span> TRáº NG THÃI Cáº¤M (INVALID)</span>';
                 } else {
                     state.sr.invalid = false;
                     if (clk === 1) {
                         if (s === 1 && r === 0) {
                             state.sr.q = 1;
                             state.sr.q_bar = 0;
-                            document.getElementById('sr-status').textContent = "Trạng thái: Đặt (Set Q=1)";
+                            document.getElementById('sr-status').textContent = "Tráº¡ng thÃ¡i: Äáº·t (Set Q=1)";
                         } else if (s === 0 && r === 1) {
                             state.sr.q = 0;
                             state.sr.q_bar = 1;
-                            document.getElementById('sr-status').textContent = "Trạng thái: Đặt lại (Reset Q=0)";
+                            document.getElementById('sr-status').textContent = "Tráº¡ng thÃ¡i: Äáº·t láº¡i (Reset Q=0)";
                         } else {
                             // No change (Memory)
-                             document.getElementById('sr-status').textContent = "Trạng thái: Giữ (Memory)";
+                             document.getElementById('sr-status').textContent = "Tráº¡ng thÃ¡i: Giá»¯ (Memory)";
                         }
                     } else {
                         // Clock 0: Memory
-                        document.getElementById('sr-status').textContent = "Trạng thái: Giữ (Memory - Clock Low)";
+                        document.getElementById('sr-status').textContent = "Tráº¡ng thÃ¡i: Giá»¯ (Memory - Clock Low)";
                     }
                 }
                 drawSR();

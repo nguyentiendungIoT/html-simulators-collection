@@ -332,12 +332,6 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
                     <span class="text-xl font-mono text-yellow-400" id="next-unblock-display">Wait...</span>
                 </div>
             </div>
-
-            <!-- Download Button -->
-            <button onclick="downloadSource()" class="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg border border-gray-600 transition flex items-center gap-2 shadow-sm" title="Tải toàn bộ mã nguồn HTML trang này">
-                <span class="material-symbols-outlined text-sm">download</span>
-                <span class="text-sm font-semibold hidden md:inline">Tải Mã Nguồn</span>
-            </button>
         </div>
     </header>
 
@@ -714,21 +708,6 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
         }
         
         // --- UTILITIES ---
-
-        function downloadSource() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'freertos_simulation.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-
-
         // --- HELPERS ---
 
         function recalcNextUnblockTime() {

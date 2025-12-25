@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
@@ -86,11 +86,9 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     <span class="material-symbols-outlined text-green-400 text-4xl">toc</span>
                     FreeRTOS Lists &amp; Scheduler
                 </h1>
-                <p class="text-slate-400 text-sm mt-1">Cơ chế "Móc Áo" (List Items) quản lý Task</p>
+                <p class="text-slate-400 text-sm mt-1">CÆ¡ cháº¿ "MÃ³c Ão" (List Items) quáº£n lÃ½ Task</p>
             </div>
-            <button onclick="downloadSource()" class="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-xs text-white font-bold py-2 px-3 rounded border border-slate-500 transition-colors">
-                <span class="material-symbols-outlined text-sm">download</span> Tải Mã Nguồn
-            </button>
+
         </div>
     </header>
 
@@ -100,31 +98,31 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8">
             <h2 class="text-xl font-bold mb-4 flex items-center gap-2 text-slate-700">
                 <span class="material-symbols-outlined text-yellow-600">lightbulb</span>
-                Tư duy "Giá Treo Quần Áo" (The Coat Rack Analogy)
+                TÆ° duy "GiÃ¡ Treo Quáº§n Ão" (The Coat Rack Analogy)
             </h2>
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-4">
-                    <p>Kernel không chạy khắp nơi tìm Task. Nó chỉ nhìn vào các <strong>Danh Sách (Lists)</strong>.</p>
+                    <p>Kernel khÃ´ng cháº¡y kháº¯p nÆ¡i tÃ¬m Task. NÃ³ chá»‰ nhÃ¬n vÃ o cÃ¡c <strong>Danh SÃ¡ch (Lists)</strong>.</p>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
                             <div class="bg-blue-100 p-2 rounded text-blue-600"><span class="material-symbols-outlined">badge</span></div>
                             <div>
-                                <span class="font-bold block">TCB = Hồ Sơ Nhân Viên</span>
-                                Chứa mọi thông tin về Task. Nhưng TCB rất nặng, không thể copy qua lại.
+                                <span class="font-bold block">TCB = Há»“ SÆ¡ NhÃ¢n ViÃªn</span>
+                                Chá»©a má»i thÃ´ng tin vá» Task. NhÆ°ng TCB ráº¥t náº·ng, khÃ´ng thá»ƒ copy qua láº¡i.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="bg-green-100 p-2 rounded text-green-600"><span class="material-symbols-outlined">link</span></div>
                             <div>
-                                <span class="font-bold block">ListItem = Cái Móc Áo</span>
-                                Trên hồ sơ có gắn sẵn 2 cái móc (`xStateListItem` và `xEventListItem`). Kernel chỉ việc móc cái móc này lên các giá treo khác nhau.
+                                <span class="font-bold block">ListItem = CÃ¡i MÃ³c Ão</span>
+                                TrÃªn há»“ sÆ¡ cÃ³ gáº¯n sáºµn 2 cÃ¡i mÃ³c (`xStateListItem` vÃ  `xEventListItem`). Kernel chá»‰ viá»‡c mÃ³c cÃ¡i mÃ³c nÃ y lÃªn cÃ¡c giÃ¡ treo khÃ¡c nhau.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="bg-slate-100 p-2 rounded text-slate-600"><span class="material-symbols-outlined">shelves</span></div>
                             <div>
-                                <span class="font-bold block">List = Giá Treo</span>
-                                Scheduler là ông sếp, chỉ nhìn vào giá treo "Ready" để xem hồ sơ nào đang ở đó thì gọi nhân viên đó vào làm.
+                                <span class="font-bold block">List = GiÃ¡ Treo</span>
+                                Scheduler lÃ  Ã´ng sáº¿p, chá»‰ nhÃ¬n vÃ o giÃ¡ treo "Ready" Ä‘á»ƒ xem há»“ sÆ¡ nÃ o Ä‘ang á»Ÿ Ä‘Ã³ thÃ¬ gá»i nhÃ¢n viÃªn Ä‘Ã³ vÃ o lÃ m.
                             </div>
                         </li>
                     </ul>
@@ -142,11 +140,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <div class="absolute -right-3 top-20 w-6 h-6 bg-purple-500 rounded-full border-2 border-white shadow-md flex items-center justify-center text-white text-[10px] font-bold z-20" title="xEventListItem">E</div>
 
                         <!-- Owner Pointer Arrow -->
-                        <div class="absolute -left-16 top-12 text-[10px] text-slate-400 w-12 text-right">Owner →</div>
-                        <div class="absolute -right-16 top-22 text-[10px] text-slate-400 w-12 text-left">← Owner</div>
+                        <div class="absolute -left-16 top-12 text-[10px] text-slate-400 w-12 text-right">Owner â†’</div>
+                        <div class="absolute -right-16 top-22 text-[10px] text-slate-400 w-12 text-left">â† Owner</div>
                     </div>
                     <div class="absolute bottom-4 text-center text-xs text-slate-500">
-                        Một TCB có 2 "móc" để treo vào các danh sách khác nhau cùng lúc.
+                        Má»™t TCB cÃ³ 2 "mÃ³c" Ä‘á»ƒ treo vÃ o cÃ¡c danh sÃ¡ch khÃ¡c nhau cÃ¹ng lÃºc.
                     </div>
                 </div>
             </div>
@@ -157,11 +155,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold flex items-center gap-3">
                     <span class="material-symbols-outlined text-blue-600 text-3xl">play_circle</span>
-                    Mô Phỏng Scheduler
+                    MÃ´ Phá»ng Scheduler
                 </h2>
                 <div class="flex gap-2">
                     <button onclick="runAction('create')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2 px-4 rounded text-sm transition shadow-sm">
-                        1. Khởi tạo Task
+                        1. Khá»Ÿi táº¡o Task
                     </button>
                     <button onclick="runAction('delay')" class="bg-yellow-100 hover:bg-yellow-200 text-yellow-800 font-bold py-2 px-4 rounded text-sm transition shadow-sm border border-yellow-300">
                         2. vTaskDelay()
@@ -191,8 +189,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <span class="material-symbols-outlined text-sm">checklist</span> Ready List
                     </div>
                     <div class="text-xs text-center text-slate-500 mb-8">
-                        Scheduler LUÔN LUÔN tìm task ở đây để chạy.<br>
-                        (Sắp xếp theo Priority)
+                        Scheduler LUÃ”N LUÃ”N tÃ¬m task á»Ÿ Ä‘Ã¢y Ä‘á»ƒ cháº¡y.<br>
+                        (Sáº¯p xáº¿p theo Priority)
                     </div>
                     <!-- Task Container Placeholder -->
                     <div id="container-ready" class="w-full flex justify-center flex-grow transition-all"></div>
@@ -204,8 +202,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <span class="material-symbols-outlined text-sm">timer</span> Delayed List
                     </div>
                     <div class="text-xs text-center text-slate-500 mb-8">
-                        Task đang ngủ hoặc chờ Timeout.<br>
-                        Scheduler bỏ qua vùng này.
+                        Task Ä‘ang ngá»§ hoáº·c chá» Timeout.<br>
+                        Scheduler bá» qua vÃ¹ng nÃ y.
                     </div>
                     <!-- Task Container Placeholder -->
                     <div id="container-delayed" class="w-full flex justify-center flex-grow transition-all"></div>
@@ -217,8 +215,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <span class="material-symbols-outlined text-sm">mail</span> Queue Event List
                     </div>
                     <div class="text-xs text-center text-slate-500 mb-8">
-                        Task đang chờ thư (Queue) hoặc Semaphore.<br>
-                        Dùng <strong>xEventListItem</strong> để treo vào đây.
+                        Task Ä‘ang chá» thÆ° (Queue) hoáº·c Semaphore.<br>
+                        DÃ¹ng <strong>xEventListItem</strong> Ä‘á»ƒ treo vÃ o Ä‘Ã¢y.
                     </div>
                     <!-- Queue Box Representation -->
                     <div class="bg-white border-2 border-purple-300 p-3 rounded w-3/4 mb-4 shadow-inner text-center">
@@ -255,7 +253,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <div class="flex flex-col items-center gap-1 group">
                             <div id="hook-state" class="w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 cursor-help hook-point relative">
                                 <div class="absolute bottom-full mb-2 hidden group-hover:block w-32 bg-black text-white text-[10px] p-1 rounded z-50">
-                                    xStateListItem: Gắn vào Ready hoặc Delayed list
+                                    xStateListItem: Gáº¯n vÃ o Ready hoáº·c Delayed list
                                 </div>
                             </div>
                             <span class="text-[10px] font-mono text-green-700 font-bold">xState</span>
@@ -270,7 +268,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         <div class="flex flex-col items-center gap-1 group">
                             <div id="hook-event" class="w-4 h-4 bg-purple-500 rounded-full border-2 border-slate-800 cursor-help hook-point relative">
                                 <div class="absolute bottom-full mb-2 hidden group-hover:block w-32 bg-black text-white text-[10px] p-1 rounded z-50">
-                                    xEventListItem: Gắn vào Queue khi chờ event
+                                    xEventListItem: Gáº¯n vÃ o Queue khi chá» event
                                 </div>
                             </div>
                             <span class="text-[10px] font-mono text-purple-700 font-bold">xEvent</span>
@@ -282,17 +280,17 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <!-- Console / Explanation Log -->
             <div class="mt-8 bg-slate-900 text-green-400 p-4 rounded-lg font-mono text-sm h-32 overflow-y-auto border border-slate-700 shadow-inner" id="console-log">
                 &gt; System ready.<br>
-                &gt; Click "1. Khởi tạo Task" để bắt đầu demo.
+                &gt; Click "1. Khá»Ÿi táº¡o Task" Ä‘á»ƒ báº¯t Ä‘áº§u demo.
             </div>
 
         </section>
 
         <!-- 3. Owner Pointer Explanation -->
         <section class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-            <h3 class="font-bold text-lg text-blue-800 mb-2">Tại sao cần `listSET_LIST_ITEM_OWNER`?</h3>
+            <h3 class="font-bold text-lg text-blue-800 mb-2">Táº¡i sao cáº§n `listSET_LIST_ITEM_OWNER`?</h3>
             <p class="text-slate-700 text-sm leading-relaxed">
-                Khi bạn treo áo lên giá, cái móc áo (ListItem) nằm trên giá. Nhưng Scheduler cần biết <strong>"Cái áo này của ai?"</strong> để gọi người đó dậy làm việc.<br><br>
-                Macro `listSET_LIST_ITEM_OWNER( &amp;xStateListItem, pxTCB )` chính là việc ghi tên nhân viên lên cái móc áo. Khi Scheduler duyệt qua danh sách Ready, nó cầm lấy cái móc (`xStateListItem`), đọc tên trên đó (`pvOwner`), và tìm ra được TCB của Task để nạp vào CPU.
+                Khi báº¡n treo Ã¡o lÃªn giÃ¡, cÃ¡i mÃ³c Ã¡o (ListItem) náº±m trÃªn giÃ¡. NhÆ°ng Scheduler cáº§n biáº¿t <strong>"CÃ¡i Ã¡o nÃ y cá»§a ai?"</strong> Ä‘á»ƒ gá»i ngÆ°á»i Ä‘Ã³ dáº­y lÃ m viá»‡c.<br><br>
+                Macro `listSET_LIST_ITEM_OWNER( &amp;xStateListItem, pxTCB )` chÃ­nh lÃ  viá»‡c ghi tÃªn nhÃ¢n viÃªn lÃªn cÃ¡i mÃ³c Ã¡o. Khi Scheduler duyá»‡t qua danh sÃ¡ch Ready, nÃ³ cáº§m láº¥y cÃ¡i mÃ³c (`xStateListItem`), Ä‘á»c tÃªn trÃªn Ä‘Ã³ (`pvOwner`), vÃ  tÃ¬m ra Ä‘Æ°á»£c TCB cá»§a Task Ä‘á»ƒ náº¡p vÃ o CPU.
             </p>
         </section>
 
@@ -338,27 +336,27 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 taskCard.classList.remove('hidden');
                 moveToContainer(containers.ready);
                 
-                updateTaskStatus("READY", "Task được thêm vào Ready List theo Priority.");
+                updateTaskStatus("READY", "Task Ä‘Æ°á»£c thÃªm vÃ o Ready List theo Priority.");
                 log("xTaskCreate() called. TCB created.");
                 log("vListInsert( &pxReadyTasksLists[ uxPriority ], &pxNewTCB->xStateListItem )");
                 
                 setTimeout(drawConnections, 100);
             }
             else if (action === 'delay') {
-                if (currentMode === 'NONE') return alert("Hãy tạo Task trước!");
+                if (currentMode === 'NONE') return alert("HÃ£y táº¡o Task trÆ°á»›c!");
                 currentMode = 'DELAYED';
                 
                 moveToContainer(containers.delayed);
                 
-                updateTaskStatus("BLOCKED (Time)", "Task bị gỡ khỏi Ready List, treo sang Delayed List.");
+                updateTaskStatus("BLOCKED (Time)", "Task bá»‹ gá»¡ khá»i Ready List, treo sang Delayed List.");
                 log("vTaskDelay(100) called.");
-                log("uxListRemove( &xStateListItem ) -> Gỡ khỏi Ready");
-                log("vListInsert( &pxDelayedTaskList, &xStateListItem ) -> Treo vào Delayed");
+                log("uxListRemove( &xStateListItem ) -> Gá»¡ khá»i Ready");
+                log("vListInsert( &pxDelayedTaskList, &xStateListItem ) -> Treo vÃ o Delayed");
                 
                 setTimeout(drawConnections, 100);
             }
             else if (action === 'queue') {
-                if (currentMode === 'NONE') return alert("Hãy tạo Task trước!");
+                if (currentMode === 'NONE') return alert("HÃ£y táº¡o Task trÆ°á»›c!");
                 currentMode = 'QUEUE_BLOCK';
                 
                 // This is special: The card visually goes to Event Zone (conceptually), 
@@ -368,23 +366,23 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 // Let's visualize the "Event Wait" as the primary location
                 moveToContainer(containers.event);
 
-                updateTaskStatus("BLOCKED (Event)", "Task chờ Queue. xEventListItem treo vào Queue, xStateListItem treo vào Delayed (timeout).");
+                updateTaskStatus("BLOCKED (Event)", "Task chá» Queue. xEventListItem treo vÃ o Queue, xStateListItem treo vÃ o Delayed (timeout).");
                 log("xQueueReceive(..., 100) called (Blocking).");
-                log("vListInsert( &pxQueue->xTasksWaitingToReceive, &xEventListItem ) -> Treo vào Queue");
-                log("vListInsert( &pxDelayedTaskList, &xStateListItem ) -> Treo vào Delayed (để wake up nếu timeout)");
+                log("vListInsert( &pxQueue->xTasksWaitingToReceive, &xEventListItem ) -> Treo vÃ o Queue");
+                log("vListInsert( &pxDelayedTaskList, &xStateListItem ) -> Treo vÃ o Delayed (Ä‘á»ƒ wake up náº¿u timeout)");
                 
                 setTimeout(drawConnections, 100);
             }
             else if (action === 'ready') {
-                if (currentMode === 'NONE') return alert("Hãy tạo Task trước!");
+                if (currentMode === 'NONE') return alert("HÃ£y táº¡o Task trÆ°á»›c!");
                 currentMode = 'READY';
                 
                 moveToContainer(containers.ready);
                 
-                updateTaskStatus("READY", "Timeout hoặc có Event! Task quay về Ready List.");
+                updateTaskStatus("READY", "Timeout hoáº·c cÃ³ Event! Task quay vá» Ready List.");
                 log("Event happened or Timeout expired.");
-                log("uxListRemove( &xListItem ) -> Gỡ khỏi list cũ");
-                log("vListInsert( &ReadyList, &xStateListItem ) -> Về lại Ready");
+                log("uxListRemove( &xListItem ) -> Gá»¡ khá»i list cÅ©");
+                log("vListInsert( &ReadyList, &xStateListItem ) -> Vá» láº¡i Ready");
                 
                 setTimeout(drawConnections, 100);
             }
@@ -479,18 +477,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         }
         animateLoop();
 
-        function downloadSource() {
-            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'freertos_lists_scheduler.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
     </script>
 
 </body></html>

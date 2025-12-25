@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -37,7 +37,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Mô phỏng Trực quan: Queue, Stack &amp; Heap trong RTOS</title>
+    <title>MÃ´ phá»ng Trá»±c quan: Queue, Stack &amp; Heap trong RTOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
@@ -87,13 +87,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <span class="material-symbols-outlined text-3xl">memory</span>
                 RTOS Memory Explorer
             </h1>
-            <p class="text-xs text-slate-400 mt-1">Phân rã khái niệm: Queue vs Stack vs Heap</p>
+            <p class="text-xs text-slate-400 mt-1">PhÃ¢n rÃ£ khÃ¡i niá»‡m: Queue vs Stack vs Heap</p>
         </div>
-        <div class="flex items-center gap-4">
-            <!-- Download Button -->
-            <button onclick="downloadSource()" class="flex items-center gap-2 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 border border-slate-600 rounded text-sm text-slate-200 font-medium transition-all shadow hover:shadow-lg active:scale-95 group" title="Tải toàn bộ mã nguồn HTML">
+        <div class="flex items-center gap-4"><button class="flex items-center gap-2 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 border border-slate-600 rounded text-sm text-slate-200 font-medium transition-all shadow hover:shadow-lg active:scale-95 group" title="Táº£i toÃ n bá»™ mÃ£ nguá»“n HTML">
                 <span class="material-symbols-outlined text-lg group-hover:text-blue-400 transition-colors">download</span>
-                <span class="hidden sm:inline">Tải Mã Nguồn</span>
+                <span class="hidden sm:inline">Táº£i MÃ£ Nguá»“n</span>
             </button>
             
             <div class="hidden md:block text-right border-l border-slate-600 pl-4">
@@ -110,7 +108,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="flex flex-col gap-1 p-2">
                 <button class="nav-btn active flex items-center gap-3 p-3 rounded-lg text-left hover:bg-slate-700 transition-colors bg-blue-600 text-white" id="btn-overview" onclick="switchTab('overview')">
                     <span class="material-symbols-outlined">dashboard</span>
-                    <span class="hidden md:inline font-medium">Tổng quan</span>
+                    <span class="hidden md:inline font-medium">Tá»•ng quan</span>
                 </button>
                 <button class="nav-btn flex items-center gap-3 p-3 rounded-lg text-left hover:bg-slate-700 transition-colors text-slate-300" id="btn-queue-stack" onclick="switchTab('queue-stack')">
                     <span class="material-symbols-outlined">compare_arrows</span>
@@ -130,7 +128,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 </button>
             </div>
             <div class="p-4 border-t border-slate-700 hidden md:block">
-                <div class="text-xs text-slate-500 mb-2">Chú giải màu sắc:</div>
+                <div class="text-xs text-slate-500 mb-2">ChÃº giáº£i mÃ u sáº¯c:</div>
                 <div class="flex items-center gap-2 text-xs mb-1"><div class="w-3 h-3 bg-blue-500 rounded"></div> Queue (FIFO)</div>
                 <div class="flex items-center gap-2 text-xs mb-1"><div class="w-3 h-3 bg-purple-500 rounded"></div> Stack (LIFO)</div>
                 <div class="flex items-center gap-2 text-xs"><div class="w-3 h-3 bg-emerald-500 rounded"></div> Heap (Free)</div>
@@ -142,12 +140,12 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             
             <!-- SECTION 1: OVERVIEW -->
             <section class="view-section fade-in max-w-6xl mx-auto" id="view-overview">
-                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">So sánh Nguyên lý (First Principles)</h2>
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">So sÃ¡nh NguyÃªn lÃ½ (First Principles)</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Queue Card -->
                     <div class="bg-slate-800 rounded-xl p-6 border-t-4 border-blue-500 shadow-lg hover:shadow-blue-900/20 transition-all">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-blue-400">Queue (Hàng đợi)</h3>
+                            <h3 class="text-xl font-bold text-blue-400">Queue (HÃ ng Ä‘á»£i)</h3>
                             <span class="material-symbols-outlined text-blue-500 text-3xl">arrow_forward</span>
                         </div>
                         <div class="bg-slate-900 rounded p-4 mb-4 h-24 flex items-center justify-center gap-2 relative overflow-hidden">
@@ -159,17 +157,17 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                             <span class="material-symbols-outlined absolute left-2 text-slate-600">logout</span>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Nguyên lý:</span> FIFO (Vào trước - Ra trước)</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Hình ảnh:</span> Hàng người xếp hàng mua vé.</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Mục đích:</span> Truyền dữ liệu giữa các Task hoặc Interrupt. "Ống dẫn" an toàn.</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Vật lý:</span> Vùng RAM tĩnh + Con trỏ Read/Write.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">NguyÃªn lÃ½:</span> FIFO (VÃ o trÆ°á»›c - Ra trÆ°á»›c)</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">HÃ¬nh áº£nh:</span> HÃ ng ngÆ°á»i xáº¿p hÃ ng mua vÃ©.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Má»¥c Ä‘Ã­ch:</span> Truyá»n dá»¯ liá»‡u giá»¯a cÃ¡c Task hoáº·c Interrupt. "á»ng dáº«n" an toÃ n.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Váº­t lÃ½:</span> VÃ¹ng RAM tÄ©nh + Con trá» Read/Write.</li>
                         </ul>
                     </div>
 
                     <!-- Stack Card -->
                     <div class="bg-slate-800 rounded-xl p-6 border-t-4 border-purple-500 shadow-lg hover:shadow-purple-900/20 transition-all">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-purple-400">Stack (Ngăn xếp)</h3>
+                            <h3 class="text-xl font-bold text-purple-400">Stack (NgÄƒn xáº¿p)</h3>
                             <span class="material-symbols-outlined text-purple-500 text-3xl">layers</span>
                         </div>
                         <div class="bg-slate-900 rounded p-4 mb-4 h-24 flex flex-col-reverse items-center justify-center gap-1 relative overflow-hidden">
@@ -178,17 +176,17 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                             <div class="w-16 h-4 bg-purple-600 rounded text-[10px] text-center">Data A</div>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Nguyên lý:</span> LIFO (Vào sau - Ra trước)</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Hình ảnh:</span> Chồng đĩa. Chỉ lấy được cái trên cùng.</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Mục đích:</span> Lưu ngữ cảnh thực thi (biến cục bộ), địa chỉ trả về hàm.</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Vật lý:</span> RAM tuyến tính + Thanh ghi SP (Stack Pointer).</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">NguyÃªn lÃ½:</span> LIFO (VÃ o sau - Ra trÆ°á»›c)</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">HÃ¬nh áº£nh:</span> Chá»“ng Ä‘Ä©a. Chá»‰ láº¥y Ä‘Æ°á»£c cÃ¡i trÃªn cÃ¹ng.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Má»¥c Ä‘Ã­ch:</span> LÆ°u ngá»¯ cáº£nh thá»±c thi (biáº¿n cá»¥c bá»™), Ä‘á»‹a chá»‰ tráº£ vá» hÃ m.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Váº­t lÃ½:</span> RAM tuyáº¿n tÃ­nh + Thanh ghi SP (Stack Pointer).</li>
                         </ul>
                     </div>
 
                     <!-- Heap Card -->
                     <div class="bg-slate-800 rounded-xl p-6 border-t-4 border-emerald-500 shadow-lg hover:shadow-emerald-900/20 transition-all">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-emerald-400">Heap (Vùng nhớ)</h3>
+                            <h3 class="text-xl font-bold text-emerald-400">Heap (VÃ¹ng nhá»›)</h3>
                             <span class="material-symbols-outlined text-emerald-500 text-3xl">dataset</span>
                         </div>
                         <div class="bg-slate-900 rounded p-4 mb-4 h-24 grid grid-cols-4 gap-1 relative overflow-hidden content-center">
@@ -202,10 +200,10 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                             <div class="bg-emerald-900/50 rounded h-4"></div>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Nguyên lý:</span> Free Access (Truy cập tự do)</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Hình ảnh:</span> Kho nguyên liệu lớn. Lấy bao nhiêu tùy ý.</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Mục đích:</span> Cấp phát động (Dynamic Allocation) khi chạy (Runtime).</li>
-                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Vật lý:</span> "Ao" bộ nhớ chia thành các khối (Blocks).</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">NguyÃªn lÃ½:</span> Free Access (Truy cáº­p tá»± do)</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">HÃ¬nh áº£nh:</span> Kho nguyÃªn liá»‡u lá»›n. Láº¥y bao nhiÃªu tÃ¹y Ã½.</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Má»¥c Ä‘Ã­ch:</span> Cáº¥p phÃ¡t Ä‘á»™ng (Dynamic Allocation) khi cháº¡y (Runtime).</li>
+                            <li class="flex gap-2"><span class="font-bold text-white min-w-[70px]">Váº­t lÃ½:</span> "Ao" bá»™ nhá»› chia thÃ nh cÃ¡c khá»‘i (Blocks).</li>
                         </ul>
                     </div>
                 </div>
@@ -213,15 +211,15 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
             <!-- SECTION 2: QUEUE VS STACK SIMULATION -->
             <section class="view-section hidden max-w-6xl mx-auto h-full flex flex-col" id="view-queue-stack">
-                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Mô phỏng Cơ chế Truy cập</h2>
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">MÃ´ phá»ng CÆ¡ cháº¿ Truy cáº­p</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1">
                     <!-- Queue Interactive -->
                     <div class="bg-slate-800 rounded-xl p-4 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold text-blue-400">Queue (FIFO) - "Ống dẫn"</h3>
+                            <h3 class="text-xl font-bold text-blue-400">Queue (FIFO) - "á»ng dáº«n"</h3>
                             <div class="space-x-2">
-                                <button class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="addToQueue()">ENQUEUE (Gửi)</button>
-                                <button class="px-3 py-1 border border-blue-500 text-blue-400 hover:bg-blue-900/30 rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="removeFromQueue()">DEQUEUE (Đọc)</button>
+                                <button class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="addToQueue()">ENQUEUE (Gá»­i)</button>
+                                <button class="px-3 py-1 border border-blue-500 text-blue-400 hover:bg-blue-900/30 rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="removeFromQueue()">DEQUEUE (Äá»c)</button>
                             </div>
                         </div>
                         <!-- Visualization -->
@@ -236,8 +234,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                                 <div class="flex gap-2 w-full justify-end overflow-hidden px-4" id="queue-items"></div>
                             </div>
                             <div class="mt-4 text-sm text-slate-400 text-center">
-                                Dữ liệu đi vào ở <span class="text-white font-bold">Đuôi (Tail)</span> và đi ra ở <span class="text-white font-bold">Đầu (Head)</span>.<br>
-                                Đảm bảo trật tự công bằng.
+                                Dá»¯ liá»‡u Ä‘i vÃ o á»Ÿ <span class="text-white font-bold">ÄuÃ´i (Tail)</span> vÃ  Ä‘i ra á»Ÿ <span class="text-white font-bold">Äáº§u (Head)</span>.<br>
+                                Äáº£m báº£o tráº­t tá»± cÃ´ng báº±ng.
                             </div>
                         </div>
                     </div>
@@ -245,10 +243,10 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     <!-- Stack Interactive -->
                     <div class="bg-slate-800 rounded-xl p-4 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold text-purple-400">Stack (LIFO) - "Chồng đĩa"</h3>
+                            <h3 class="text-xl font-bold text-purple-400">Stack (LIFO) - "Chá»“ng Ä‘Ä©a"</h3>
                             <div class="space-x-2">
-                                <button class="px-3 py-1 bg-purple-600 hover:bg-purple-500 text-white rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="pushToStack()">PUSH (Thêm)</button>
-                                <button class="px-3 py-1 border border-purple-500 text-purple-400 hover:bg-purple-900/30 rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="popFromStack()">POP (Lấy)</button>
+                                <button class="px-3 py-1 bg-purple-600 hover:bg-purple-500 text-white rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="pushToStack()">PUSH (ThÃªm)</button>
+                                <button class="px-3 py-1 border border-purple-500 text-purple-400 hover:bg-purple-900/30 rounded text-sm font-bold shadow transition-transform active:scale-95" onclick="popFromStack()">POP (Láº¥y)</button>
                             </div>
                         </div>
                         <!-- Visualization -->
@@ -257,8 +255,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                             <!-- The Stack Container -->
                             <div class="w-32 h-64 border-l-2 border-r-2 border-b-2 border-slate-500 rounded-b-lg relative bg-slate-800/30 flex flex-col-reverse items-center justify-start p-1 gap-1" id="stack-container"></div>
                             <div class="mt-4 text-sm text-slate-400 text-center">
-                                Chỉ tương tác với <span class="text-white font-bold">Đỉnh (Top)</span>.<br>
-                                CPU dùng để "tạm giữ" khi đi làm việc khác.
+                                Chá»‰ tÆ°Æ¡ng tÃ¡c vá»›i <span class="text-white font-bold">Äá»‰nh (Top)</span>.<br>
+                                CPU dÃ¹ng Ä‘á»ƒ "táº¡m giá»¯" khi Ä‘i lÃ m viá»‡c khÃ¡c.
                             </div>
                         </div>
                     </div>
@@ -267,12 +265,12 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
             <!-- SECTION 3: HEAP MEMORY -->
             <section class="view-section hidden max-w-4xl mx-auto" id="view-heap">
-                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Heap: Quản lý sở hữu</h2>
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Heap: Quáº£n lÃ½ sá»Ÿ há»¯u</h2>
                 <div class="bg-slate-800 rounded-xl p-6">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                         <div>
                             <h3 class="text-xl font-bold text-emerald-400">Heap Allocation Simulation</h3>
-                            <p class="text-sm text-slate-400">Vùng nhớ tự do. Cấp phát thủ công, giải phóng thủ công.</p>
+                            <p class="text-sm text-slate-400">VÃ¹ng nhá»› tá»± do. Cáº¥p phÃ¡t thá»§ cÃ´ng, giáº£i phÃ³ng thá»§ cÃ´ng.</p>
                         </div>
                         <div class="flex gap-2">
                             <button class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-bold shadow flex items-center gap-2" onclick="mallocHeap()">
@@ -295,15 +293,15 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         </div>
                     </div>
                     <div class="bg-slate-700/50 p-4 rounded border-l-4 border-emerald-500 text-sm text-slate-300">
-                        <p class="mb-2"><strong class="text-white">Tính sở hữu:</strong> Khi gọi <code class="font-mono bg-slate-800 px-1 rounded text-emerald-300">pvPortMalloc()</code>, bạn lấy một miếng RAM và "toàn quyền sở hữu" cho đến khi trả lại.</p>
-                        <p><strong class="text-white">Khác với Queue:</strong> Queue copy dữ liệu vào vùng đệm riêng của nó. Heap chỉ đưa cho bạn địa chỉ vùng nhớ.</p>
+                        <p class="mb-2"><strong class="text-white">TÃ­nh sá»Ÿ há»¯u:</strong> Khi gá»i <code class="font-mono bg-slate-800 px-1 rounded text-emerald-300">pvPortMalloc()</code>, báº¡n láº¥y má»™t miáº¿ng RAM vÃ  "toÃ n quyá»n sá»Ÿ há»¯u" cho Ä‘áº¿n khi tráº£ láº¡i.</p>
+                        <p><strong class="text-white">KhÃ¡c vá»›i Queue:</strong> Queue copy dá»¯ liá»‡u vÃ o vÃ¹ng Ä‘á»‡m riÃªng cá»§a nÃ³. Heap chá»‰ Ä‘Æ°a cho báº¡n Ä‘á»‹a chá»‰ vÃ¹ng nhá»›.</p>
                     </div>
                 </div>
             </section>
 
             <!-- SECTION 4: RING BUFFER (UNDER THE HOOD) -->
             <section class="view-section hidden max-w-4xl mx-auto" id="view-ring-buffer">
-                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Cấu trúc Queue: Ring Buffer</h2>
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Cáº¥u trÃºc Queue: Ring Buffer</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <!-- Visualization -->
                     <div class="bg-slate-800 rounded-xl p-8 flex justify-center items-center min-h-[400px] relative">
@@ -320,13 +318,13 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     <!-- Controls & Explanation -->
                     <div class="space-y-6">
                         <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
-                            <h3 class="text-lg font-bold text-blue-400 mb-2">Cơ chế hoạt động</h3>
+                            <h3 class="text-lg font-bold text-blue-400 mb-2">CÆ¡ cháº¿ hoáº¡t Ä‘á»™ng</h3>
                             <p class="text-sm text-slate-300 mb-4">
-                                Queue sử dụng một mảng byte liên tục. Khi con trỏ ghi đến cuối mảng, nó quay ngược lại đầu mảng (wrap around) để tận dụng chỗ trống. Đây là "Vòng đệm".
+                                Queue sá»­ dá»¥ng má»™t máº£ng byte liÃªn tá»¥c. Khi con trá» ghi Ä‘áº¿n cuá»‘i máº£ng, nÃ³ quay ngÆ°á»£c láº¡i Ä‘áº§u máº£ng (wrap around) Ä‘á»ƒ táº­n dá»¥ng chá»— trá»‘ng. ÄÃ¢y lÃ  "VÃ²ng Ä‘á»‡m".
                             </p>
                             <div class="flex gap-4">
                                 <button class="flex-1 py-2 bg-green-600 hover:bg-green-500 text-white rounded font-bold shadow" onclick="ringWrite()">Write (Ghi)</button>
-                                <button class="flex-1 py-2 bg-red-600 hover:bg-red-500 text-white rounded font-bold shadow" onclick="ringRead()">Read (Đọc)</button>
+                                <button class="flex-1 py-2 bg-red-600 hover:bg-red-500 text-white rounded font-bold shadow" onclick="ringRead()">Read (Äá»c)</button>
                             </div>
                         </div>
                         <div class="bg-slate-900 p-4 rounded-lg font-mono text-sm border border-slate-700">
@@ -349,12 +347,12 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
             <!-- SECTION 5: RTOS CONTEXT -->
             <section class="view-section hidden max-w-6xl mx-auto" id="view-rtos-comm">
-                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Tại sao RTOS cần Queue?</h2>
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-slate-700 pb-2">Táº¡i sao RTOS cáº§n Queue?</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Scenario 1: Global Variable (Bad) -->
                     <div class="bg-slate-800 rounded-xl p-6 border border-red-900/50 opacity-90 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-2 py-1 font-bold rounded-bl">CÁCH CŨ (NGUY HIỂM)</div>
-                        <h3 class="text-xl font-bold text-red-400 mb-4">Global Variable (Biến toàn cục)</h3>
+                        <div class="absolute top-0 right-0 bg-red-600 text-white text-xs px-2 py-1 font-bold rounded-bl">CÃCH CÅ¨ (NGUY HIá»‚M)</div>
+                        <h3 class="text-xl font-bold text-red-400 mb-4">Global Variable (Biáº¿n toÃ n cá»¥c)</h3>
                         <div class="flex justify-between items-center my-8 relative">
                             <!-- Task A -->
                             <div class="text-center w-1/3">
@@ -382,11 +380,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         </div>
                         <div class="bg-red-900/20 p-3 rounded text-sm text-red-200 border border-red-900">
                             <ul class="list-disc pl-4 space-y-1">
-                                <li><strong>Race Condition:</strong> Dữ liệu có thể bị ghi đè khi chưa kịp đọc.</li>
-                                <li><strong>Wasted CPU:</strong> Task B phải liên tục kiểm tra (while loop) xem biến có thay đổi không.</li>
+                                <li><strong>Race Condition:</strong> Dá»¯ liá»‡u cÃ³ thá»ƒ bá»‹ ghi Ä‘Ã¨ khi chÆ°a ká»‹p Ä‘á»c.</li>
+                                <li><strong>Wasted CPU:</strong> Task B pháº£i liÃªn tá»¥c kiá»ƒm tra (while loop) xem biáº¿n cÃ³ thay Ä‘á»•i khÃ´ng.</li>
                             </ul>
                         </div>
-                        <button class="mt-4 w-full py-2 bg-slate-700 hover:bg-slate-600 text-white rounded" onclick="runBadSimulation()">Chạy mô phỏng (Quan sát CPU)</button>
+                        <button class="mt-4 w-full py-2 bg-slate-700 hover:bg-slate-600 text-white rounded" onclick="runBadSimulation()">Cháº¡y mÃ´ phá»ng (Quan sÃ¡t CPU)</button>
                     </div>
 
                     <!-- Scenario 2: RTOS Queue (Good) -->
@@ -419,12 +417,12 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                         </div>
                         <div class="bg-blue-900/20 p-3 rounded text-sm text-blue-200 border border-blue-900">
                             <ul class="list-disc pl-4 space-y-1">
-                                <li><strong>Blocking:</strong> Task B ngủ (CPU 0%) khi Queue rỗng.</li>
-                                <li><strong>Event Driven:</strong> Khi Task A gửi tin, Kernel tự động "đánh thức" Task B.</li>
-                                <li><strong>Data Safety:</strong> Dữ liệu được copy an toàn vào Queue.</li>
+                                <li><strong>Blocking:</strong> Task B ngá»§ (CPU 0%) khi Queue rá»—ng.</li>
+                                <li><strong>Event Driven:</strong> Khi Task A gá»­i tin, Kernel tá»± Ä‘á»™ng "Ä‘Ã¡nh thá»©c" Task B.</li>
+                                <li><strong>Data Safety:</strong> Dá»¯ liá»‡u Ä‘Æ°á»£c copy an toÃ n vÃ o Queue.</li>
                             </ul>
                         </div>
-                        <button class="mt-4 w-full py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded shadow-lg shadow-blue-600/30" onclick="runGoodSimulation()">Gửi dữ liệu vào Queue</button>
+                        <button class="mt-4 w-full py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded shadow-lg shadow-blue-600/30" onclick="runGoodSimulation()">Gá»­i dá»¯ liá»‡u vÃ o Queue</button>
                     </div>
                 </div>
             </section>
@@ -477,32 +475,11 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         }
 
         // --- Download Source Function ---
-        function downloadSource() {
-            // Get the full HTML content of the current page
-            const htmlContent = document.documentElement.outerHTML;
-            
-            // Create a Blob object
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            
-            // Create a temporary link element
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'rtos_memory_explorer.html'; // Filename
-            
-            // Trigger download
-            document.body.appendChild(a);
-            a.click();
-            
-            // Cleanup
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
 
         // --- 1. Queue Logic ---
         function addToQueue() {
             if (state.queue.length >= 6) {
-                alert("Queue đầy! (Full)");
+                alert("Queue Ä‘áº§y! (Full)");
                 return;
             }
             const id = Math.floor(Math.random() * 90 + 10);
@@ -614,7 +591,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 }
                 attempts++;
             }
-            alert("Heap Fragmentation/Full! (Không tìm thấy vùng nhớ trống)");
+            alert("Heap Fragmentation/Full! (KhÃ´ng tÃ¬m tháº¥y vÃ¹ng nhá»› trá»‘ng)");
         }
 
         function freeHeap() {
@@ -665,7 +642,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         function ringWrite() {
             const rb = state.ringBuffer;
             if (rb.count >= rb.size) {
-                alert("Buffer Full! (Ghi đè hoặc Block)");
+                alert("Buffer Full! (Ghi Ä‘Ã¨ hoáº·c Block)");
                 return;
             }
             

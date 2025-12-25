@@ -1,7 +1,7 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bộ Giải Mã Hiển Thị 8-Bit Tương Tác</title>
+    <title>Bá»™ Giáº£i MÃ£ Hiá»ƒn Thá»‹ 8-Bit TÆ°Æ¡ng TÃ¡c</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;family=Orbitron:wght@400;700;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
@@ -454,7 +454,7 @@
                 <span class="text-red-500">DISPLAY</span> DECODER
             </h1>
             <p class="text-lg md:text-xl text-slate-300 max-w-2xl bg-black/50 p-4 rounded-lg backdrop-blur-sm border-l-4 border-red-500">
-                Xây dựng "gương mặt" cho máy tính 8-bit. Từ cổng Logic đến Ánh sáng.
+                XÃ¢y dá»±ng "gÆ°Æ¡ng máº·t" cho mÃ¡y tÃ­nh 8-bit. Tá»« cá»•ng Logic Ä‘áº¿n Ãnh sÃ¡ng.
             </p>
         </div>
     </header>
@@ -465,24 +465,21 @@
             <!-- Tabs Container (Centered on MD) -->
             <div class="flex space-x-1 overflow-x-auto justify-start md:justify-center w-full pb-1 md:pb-0 no-scrollbar">
                 <button onclick="switchTab('hardware')" id="btn-hardware" class="tab-btn px-4 py-2 rounded-md hover:bg-slate-700 focus:outline-none transition-colors text-slate-400 hover:text-white flex items-center gap-2 active-tab whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">memory</span> Phần Cứng
+                    <span class="material-symbols-outlined text-sm">memory</span> Pháº§n Cá»©ng
                 </button>
                 <button onclick="switchTab('logic')" id="btn-logic" class="tab-btn px-4 py-2 rounded-md hover:bg-slate-700 focus:outline-none transition-colors text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">table_chart</span> Logic Bảng Chân Trị
+                    <span class="material-symbols-outlined text-sm">table_chart</span> Logic Báº£ng ChÃ¢n Trá»‹
                 </button>
                 <button onclick="switchTab('circuit')" id="btn-circuit" class="tab-btn px-4 py-2 rounded-md hover:bg-slate-700 focus:outline-none transition-colors text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">schema</span> Thiết Kế Mạch (Gate)
+                    <span class="material-symbols-outlined text-sm">schema</span> Thiáº¿t Káº¿ Máº¡ch (Gate)
                 </button>
                 <button onclick="switchTab('simulation')" id="btn-simulation" class="tab-btn px-4 py-2 rounded-md hover:bg-slate-700 focus:outline-none transition-colors text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">play_circle</span> Mô Phỏng Đầy Đủ
+                    <span class="material-symbols-outlined text-sm">play_circle</span> MÃ´ Phá»ng Äáº§y Äá»§
                 </button>
             </div>
             
             <!-- Download Button (Absolute Right on MD, Static on Mobile) -->
-            <button onclick="downloadSource()" class="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 mt-2 md:mt-0 bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded text-sm font-bold flex items-center gap-2 transition-colors shadow-lg mx-auto md:mx-0 w-fit">
-                <span class="material-symbols-outlined text-lg">download</span>
-                Tải Mã Nguồn
-            </button>
+
         </div>
     </nav>
 
@@ -493,31 +490,31 @@
         <section id="hardware" class="tab-content active space-y-8">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-6">
-                    <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">1. Giải Phẫu LED 7 Thanh</h2>
+                    <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">1. Giáº£i Pháº«u LED 7 Thanh</h2>
                     <p class="text-slate-300 leading-relaxed">
-                        Để máy tính giao tiếp với con người, chúng ta dùng LED 7 thanh. Mỗi con số được tạo thành từ 7 đèn LED riêng biệt (gọi là <strong>segment</strong>), được đặt tên từ <strong>a</strong> đến <strong>g</strong>.
+                        Äá»ƒ mÃ¡y tÃ­nh giao tiáº¿p vá»›i con ngÆ°á»i, chÃºng ta dÃ¹ng LED 7 thanh. Má»—i con sá»‘ Ä‘Æ°á»£c táº¡o thÃ nh tá»« 7 Ä‘Ã¨n LED riÃªng biá»‡t (gá»i lÃ  <strong>segment</strong>), Ä‘Æ°á»£c Ä‘áº·t tÃªn tá»« <strong>a</strong> Ä‘áº¿n <strong>g</strong>.
                     </p>
                     
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
                         <h3 class="text-xl font-bold text-red-400 mb-2 flex items-center gap-2">
                             <span class="material-symbols-outlined">electrical_services</span>
-                            Common Anode (Cực Dương Chung)
+                            Common Anode (Cá»±c DÆ°Æ¡ng Chung)
                         </h3>
-                        <p class="text-sm mb-4">Loại màn hình chúng ta đang dùng có tất cả cực dương (+) nối sẵn với nguồn 5V.</p>
+                        <p class="text-sm mb-4">Loáº¡i mÃ n hÃ¬nh chÃºng ta Ä‘ang dÃ¹ng cÃ³ táº¥t cáº£ cá»±c dÆ°Æ¡ng (+) ná»‘i sáºµn vá»›i nguá»“n 5V.</p>
                         <ul class="space-y-3 text-sm">
                             <li class="flex items-center gap-3">
                                 <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded border border-red-500/30 font-mono">Input 0 (0V)</span>
-                                <span>➡ Dòng điện chạy ➡ <strong>Đèn SÁNG</strong></span>
+                                <span>âž¡ DÃ²ng Ä‘iá»‡n cháº¡y âž¡ <strong>ÄÃ¨n SÃNG</strong></span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <span class="px-2 py-1 bg-slate-700 text-slate-400 rounded border border-slate-600 font-mono">Input 1 (5V)</span>
-                                <span>➡ Không chênh lệch áp ➡ <strong>Đèn TẮT</strong></span>
+                                <span>âž¡ KhÃ´ng chÃªnh lá»‡ch Ã¡p âž¡ <strong>ÄÃ¨n Táº®T</strong></span>
                             </li>
                         </ul>
                     </div>
 
                     <div class="bg-amber-900/20 p-4 rounded border-l-4 border-amber-500 text-amber-200 text-sm">
-                        <span class="font-bold">Thử nghiệm:</span> Bấm vào các thanh LED bên phải để nối đất (Ground) thủ công và xem chúng sáng lên!
+                        <span class="font-bold">Thá»­ nghiá»‡m:</span> Báº¥m vÃ o cÃ¡c thanh LED bÃªn pháº£i Ä‘á»ƒ ná»‘i Ä‘áº¥t (Ground) thá»§ cÃ´ng vÃ  xem chÃºng sÃ¡ng lÃªn!
                     </div>
                 </div>
 
@@ -577,10 +574,10 @@
 
         <!-- TAB 2: LOGIC (Truth Table) -->
         <section id="logic" class="tab-content space-y-8">
-            <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">2. Bản Đồ Logic (Truth Table)</h2>
+            <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">2. Báº£n Äá»“ Logic (Truth Table)</h2>
             <p class="text-slate-300">
-                Máy tính gửi ra 4 bit (0000 - 1111). Chúng ta cần quy định mẫu đèn nào sẽ sáng cho từng con số.
-                Kéo thanh trượt bên dưới để xem sự tương ứng giữa <strong>Mã Nhị Phân</strong> và <strong>Số Hex</strong>.
+                MÃ¡y tÃ­nh gá»­i ra 4 bit (0000 - 1111). ChÃºng ta cáº§n quy Ä‘á»‹nh máº«u Ä‘Ã¨n nÃ o sáº½ sÃ¡ng cho tá»«ng con sá»‘.
+                KÃ©o thanh trÆ°á»£t bÃªn dÆ°á»›i Ä‘á»ƒ xem sá»± tÆ°Æ¡ng á»©ng giá»¯a <strong>MÃ£ Nhá»‹ PhÃ¢n</strong> vÃ  <strong>Sá»‘ Hex</strong>.
             </p>
 
             <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-xl">
@@ -695,7 +692,7 @@
                             <div class="text-slate-400 text-xs font-mono mb-1">BINARY INPUT</div>
                             <div id="binary-display-lg" class="text-3xl font-bold text-green-400 tracking-widest font-mono">0000</div>
                         </div>
-                        <div class="text-2xl text-slate-500">⬇ DECODING ⬇</div>
+                        <div class="text-2xl text-slate-500">â¬‡ DECODING â¬‡</div>
                         <div class="relative">
                             <!-- Small Preview Display -->
                             <svg width="100" height="150" viewBox="0 0 120 200">
@@ -719,35 +716,35 @@
 
         <!-- TAB 3: CIRCUIT (Deep Dive Segment A) -->
         <section id="circuit" class="tab-content space-y-8">
-            <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">3. Thiết Kế Mạch: "Chia Để Trị"</h2>
+            <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">3. Thiáº¿t Káº¿ Máº¡ch: "Chia Äá»ƒ Trá»‹"</h2>
             
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Explainer Column -->
                 <div class="lg:col-span-1 space-y-6">
                     <p class="text-slate-300 text-sm">
-                        Thay vì làm cả 7 thanh cùng lúc, hãy tập trung vào <strong>Thanh 'a'</strong> (trên cùng).
+                        Thay vÃ¬ lÃ m cáº£ 7 thanh cÃ¹ng lÃºc, hÃ£y táº­p trung vÃ o <strong>Thanh 'a'</strong> (trÃªn cÃ¹ng).
                     </p>
                     <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
-                        <h4 class="font-bold text-white mb-2">Chiến Thuật: Tìm Số Cần TẮT</h4>
-                        <p class="text-slate-400 text-xs mb-3">Vì dùng Common Anode, TẮT dễ thiết kế hơn (Output Logic 1 = Tắt).</p>
+                        <h4 class="font-bold text-white mb-2">Chiáº¿n Thuáº­t: TÃ¬m Sá»‘ Cáº§n Táº®T</h4>
+                        <p class="text-slate-400 text-xs mb-3">VÃ¬ dÃ¹ng Common Anode, Táº®T dá»… thiáº¿t káº¿ hÆ¡n (Output Logic 1 = Táº¯t).</p>
                         <ul class="space-y-2 text-xs font-mono">
                             <li class="flex justify-between items-center p-2 bg-slate-900 rounded border border-slate-700">
-                                <span>Số 1 (0001)</span> <span class="text-red-400">Thanh a TẮT</span>
+                                <span>Sá»‘ 1 (0001)</span> <span class="text-red-400">Thanh a Táº®T</span>
                             </li>
                             <li class="flex justify-between items-center p-2 bg-slate-900 rounded border border-slate-700">
-                                <span>Số 4 (0100)</span> <span class="text-red-400">Thanh a TẮT</span>
+                                <span>Sá»‘ 4 (0100)</span> <span class="text-red-400">Thanh a Táº®T</span>
                             </li>
                             <li class="flex justify-between items-center p-2 bg-slate-900 rounded border border-slate-700">
-                                <span>Số B (1011)</span> <span class="text-red-400">Thanh a TẮT</span>
+                                <span>Sá»‘ B (1011)</span> <span class="text-red-400">Thanh a Táº®T</span>
                             </li>
                             <li class="flex justify-between items-center p-2 bg-slate-900 rounded border border-slate-700">
-                                <span>Số D (1101)</span> <span class="text-red-400">Thanh a TẮT</span>
+                                <span>Sá»‘ D (1101)</span> <span class="text-red-400">Thanh a Táº®T</span>
                             </li>
                         </ul>
                     </div>
                     <div class="bg-blue-900/20 p-4 rounded border-l-4 border-blue-500 text-xs text-blue-200">
-                        <p class="font-bold mb-1">Cách hoạt động:</p>
-                        4 cổng AND "săn tìm" 4 số này. Nếu bắt được bất kỳ số nào, cổng OR sẽ kích hoạt và gửi tín hiệu TẮT tới thanh 'a'.
+                        <p class="font-bold mb-1">CÃ¡ch hoáº¡t Ä‘á»™ng:</p>
+                        4 cá»•ng AND "sÄƒn tÃ¬m" 4 sá»‘ nÃ y. Náº¿u báº¯t Ä‘Æ°á»£c báº¥t ká»³ sá»‘ nÃ o, cá»•ng OR sáº½ kÃ­ch hoáº¡t vÃ  gá»­i tÃ­n hiá»‡u Táº®T tá»›i thanh 'a'.
                     </div>
                 </div>
 
@@ -850,9 +847,9 @@
 
                         <!-- Overlay Logic Text -->
                         <div class="absolute bottom-2 right-2 text-right">
-                            <div class="text-xs text-slate-500">TRẠNG THÁI THANH A</div>
+                            <div class="text-xs text-slate-500">TRáº NG THÃI THANH A</div>
                             <div id="circuit-status-text" class="text-xl font-bold font-mono">ON</div>
-                            <div class="text-[10px] text-slate-600 font-mono mt-1">Logic 1 = TẮT</div>
+                            <div class="text-[10px] text-slate-600 font-mono mt-1">Logic 1 = Táº®T</div>
                         </div>
                     </div>
                 </div>
@@ -861,10 +858,10 @@
             <div class="bg-black/50 p-6 rounded-lg border border-slate-700 flex items-start gap-4">
                 <img src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjBmMGYwIi8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2IwYjBiMCIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYSIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMXMiIGJlZ2luPSIwcyIvPiA8YW5pbWF0ZVRyYW5zZm9ybSBpZD0iYiIgYXR0cmlidXRlTmFtZT0iZ3JhZGllbnRUcmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIgZnJvbT0iMCIgdG89IjIiIGR1cj0iMS41cyIgYmVnaW49ImEuZW5kIi8+IDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9ImdyYWRpZW50VHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGZyb209IjAiIHRvPSIyIiBkdXI9IjJzIiBiZWdpbj0iYi5lbmQiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+IDwvbGluZWFyR3JhZGllbnQ+IDwvZGVmcz4gPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZykiLz4gPC9zdmc+IA==" go-data-src="/gen?prompt=chaotic+mess+of+jumper+wires+on+a+large+breadboard,+complex+electronics+project,+tangled+cables+nightmare,+high+detail+photo&amp;aspect=4:3" alt="Breadboard Mess" class="w-32 h-24 object-cover rounded shadow-lg border border-slate-600" style="aspect-ratio: 4/3">
                 <div>
-                    <h4 class="text-white font-bold mb-1">Thực tế: "Cơn ác mộng" dây nhợ</h4>
+                    <h4 class="text-white font-bold mb-1">Thá»±c táº¿: "CÆ¡n Ã¡c má»™ng" dÃ¢y nhá»£</h4>
                     <p class="text-slate-400 text-sm">
-                        Mạch trên chỉ là cho <strong>1 thanh</strong>! Để làm cả 7 thanh, bạn cần nhân khối lượng công việc lên 7 lần. 
-                        Điều này cần khoảng 33 cổng AND, 17 cổng OR, và hàng trăm sợi dây nối trên Breadboard.
+                        Máº¡ch trÃªn chá»‰ lÃ  cho <strong>1 thanh</strong>! Äá»ƒ lÃ m cáº£ 7 thanh, báº¡n cáº§n nhÃ¢n khá»‘i lÆ°á»£ng cÃ´ng viá»‡c lÃªn 7 láº§n. 
+                        Äiá»u nÃ y cáº§n khoáº£ng 33 cá»•ng AND, 17 cá»•ng OR, vÃ  hÃ ng trÄƒm sá»£i dÃ¢y ná»‘i trÃªn Breadboard.
                     </p>
                 </div>
             </div>
@@ -872,7 +869,7 @@
 
         <!-- TAB 4: FULL SIMULATION -->
         <section id="simulation" class="tab-content space-y-8">
-            <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">4. Mô Phỏng Hệ Thống Hoàn Chỉnh</h2>
+            <h2 class="text-3xl font-bold text-white border-b border-slate-700 pb-2">4. MÃ´ Phá»ng Há»‡ Thá»‘ng HoÃ n Chá»‰nh</h2>
             
             <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border-4 border-slate-700 shadow-2xl max-w-2xl mx-auto transform transition-all hover:scale-[1.01]">
                 <!-- Display Area -->
@@ -1008,27 +1005,6 @@
         }
 
         // --- SOURCE DOWNLOAD ---
-        function downloadSource() {
-            // Get the full HTML content of the page
-            const htmlContent = document.documentElement.outerHTML;
-            
-            // Create a Blob object from the content
-            const blob = new Blob([htmlContent], {type: 'text/html'});
-            
-            // Create a download link
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'display-decoder-8bit.html'; // Filename
-            
-            // Append to body, click, and remove
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            
-            // Clean up the URL object
-            URL.revokeObjectURL(url);
-        }
 
         // --- TAB 1: HARDWARE ---
         function toggleSegment(id) {
@@ -1038,12 +1014,12 @@
             // Toggle class
             if(seg.classList.contains('on')) {
                 seg.classList.remove('on');
-                status.innerHTML = `Segment <span class="font-bold text-white uppercase">${id}</span>: INPUT 1 (5V) ➡ OFF`;
+                status.innerHTML = `Segment <span class="font-bold text-white uppercase">${id}</span>: INPUT 1 (5V) âž¡ OFF`;
                 status.classList.remove('text-red-400');
                 status.classList.add('text-slate-400');
             } else {
                 seg.classList.add('on');
-                status.innerHTML = `Segment <span class="font-bold text-red-400 uppercase">${id}</span>: INPUT 0 (GND) ➡ ON`;
+                status.innerHTML = `Segment <span class="font-bold text-red-400 uppercase">${id}</span>: INPUT 0 (GND) âž¡ ON`;
                 status.classList.remove('text-slate-400');
                 status.classList.add('text-red-400');
             }

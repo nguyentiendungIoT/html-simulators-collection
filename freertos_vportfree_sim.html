@@ -81,10 +81,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 </h1>
                 <p class="text-slate-400 text-sm mt-1">Trực quan hóa quá trình giải phóng bộ nhớ và gộp block (Coalescence)</p>
             </div>
-            <button onclick="downloadSource()" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded shadow transition">
-                <span class="material-symbols-outlined">download</span>
-                Tải Mã Nguồn
-            </button>
         </div>
     </header>
 
@@ -545,21 +541,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         // Need to wait for DOM layout for pointers
         window.addEventListener('resize', updatePointerPositions);
         setScenario(1);
-
-
-        // --- Download Feature ---
-        function downloadSource() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'freertos_vportfree_sim.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
 
     </script>
 

@@ -69,9 +69,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <p class="text-xs opacity-90">Mô phỏng cơ chế Tick Interrupt trong FreeRTOS</p>
             </div>
         </div>
-        <button onclick="downloadSource()" class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 flex items-center gap-2 font-medium transition">
-            <span class="material-symbols-outlined">code</span> Tải Mã Nguồn
-        </button>
     </header>
 
     <!-- Main Content -->
@@ -536,19 +533,6 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             renderAll();
             updateStats();
             document.getElementById('explanation-text').innerHTML = "Đã reset hệ thống.";
-        }
-
-        function downloadSource() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'freertos_tick_sim.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
         }
 
         // Start

@@ -1,4 +1,4 @@
-<html lang="vi"><head>
+﻿<html lang="vi"><head>
 
 <script class="injected-ffc2e83d85">
 (function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
@@ -37,7 +37,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mô phỏng FreeRTOS Heap_4 &amp; xTaskCreate</title>
+    <title>MÃ´ phá»ng FreeRTOS Heap_4 &amp; xTaskCreate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 <span class="material-symbols-outlined text-4xl">memory</span>
                 FreeRTOS Memory Visualizer
             </h1>
-            <p class="mt-2 text-blue-100 text-lg">Mô phỏng trực quan `heap_4.c`, `xTaskCreate()` và Dynamic Allocation</p>
+            <p class="mt-2 text-blue-100 text-lg">MÃ´ phá»ng trá»±c quan `heap_4.c`, `xTaskCreate()` vÃ  Dynamic Allocation</p>
         </div>
     </header>
 
@@ -70,20 +70,20 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
                 <h2 class="text-xl font-bold text-gray-700 mb-3 flex items-center">
                     <span class="material-symbols-outlined mr-2">school</span>
-                    Nguyên lý hoạt động
+                    NguyÃªn lÃ½ hoáº¡t Ä‘á»™ng
                 </h2>
                 <div class="space-y-4 text-sm text-gray-600">
                     <p>
                         <strong class="text-blue-600">8) xTaskCreate Flow:</strong><br>
-                        Khi tạo task, FreeRTOS cần 2 khối nhớ từ <code class="bg-gray-100 px-1 rounded">ucHeap</code>:
+                        Khi táº¡o task, FreeRTOS cáº§n 2 khá»‘i nhá»› tá»« <code class="bg-gray-100 px-1 rounded">ucHeap</code>:
                         </p><ul class="list-disc pl-5 mt-1 space-y-1">
-                            <li><strong>TCB (Task Control Block):</strong> Chứa trạng thái task, độ ưu tiên, v.v.</li>
-                            <li><strong>Stack:</strong> Vùng nhớ hoạt động cho task.</li>
+                            <li><strong>TCB (Task Control Block):</strong> Chá»©a tráº¡ng thÃ¡i task, Ä‘á»™ Æ°u tiÃªn, v.v.</li>
+                            <li><strong>Stack:</strong> VÃ¹ng nhá»› hoáº¡t Ä‘á»™ng cho task.</li>
                         </ul>
                     <p></p>
                     <p>
                         <strong class="text-green-600">heap_4.c Logic:</strong><br>
-                        Sử dụng thuật toán <em>First Fit</em> (tìm khối trống đầu tiên vừa đủ) và <em>Coalescence</em> (gộp khối trống liền kề khi giải phóng).
+                        Sá»­ dá»¥ng thuáº­t toÃ¡n <em>First Fit</em> (tÃ¬m khá»‘i trá»‘ng Ä‘áº§u tiÃªn vá»«a Ä‘á»§) vÃ  <em>Coalescence</em> (gá»™p khá»‘i trá»‘ng liá»n ká» khi giáº£i phÃ³ng).
                     </p>
                 </div>
             </div>
@@ -92,12 +92,12 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
                 <h2 class="text-xl font-bold text-gray-700 mb-4 flex items-center">
                     <span class="material-symbols-outlined mr-2">tune</span>
-                    Bảng điều khiển
+                    Báº£ng Ä‘iá»u khiá»ƒn
                 </h2>
                 <div class="space-y-3">
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center transition" onclick="simCreateTask()">
                         <span class="material-symbols-outlined mr-2">add_task</span>
-                        Gọi xTaskCreate()
+                        Gá»i xTaskCreate()
                     </button>
                     
                     <div class="grid grid-cols-2 gap-2">
@@ -146,13 +146,10 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
 
             <!-- Download Buttons -->
             <div class="grid grid-cols-1 gap-3">
-                <button class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-xl shadow-lg flex items-center justify-center transition" onclick="downloadSource()">
-                    <span class="material-symbols-outlined mr-2">description</span>
-                    Tải Mã Nguồn C (Logic)
-                </button>
+
                 <button class="w-full bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 px-4 rounded-xl shadow-lg flex items-center justify-center transition" onclick="downloadHTML()">
                     <span class="material-symbols-outlined mr-2">html</span>
-                    Tải Mã Nguồn HTML (App)
+                    Táº£i MÃ£ Nguá»“n HTML (App)
                 </button>
             </div>
 
@@ -164,7 +161,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             <!-- Visual Heap -->
             <div class="bg-white rounded-xl shadow-md border border-gray-200 p-6 flex-grow flex flex-col">
                 <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-xl font-bold text-gray-700">Mô phỏng Bộ Nhớ (ucHeap)</h2>
+                    <h2 class="text-xl font-bold text-gray-700">MÃ´ phá»ng Bá»™ Nhá»› (ucHeap)</h2>
                     <div class="flex gap-4 text-xs font-medium">
                         <div class="flex items-center"><div class="w-3 h-3 bg-green-200 border border-green-500 rounded mr-1"></div> Free</div>
                         <div class="flex items-center"><div class="w-3 h-3 bg-blue-200 border border-blue-500 rounded mr-1"></div> TCB</div>
@@ -184,8 +181,8 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             </div>
 
             <!-- Logger / Console -->
-            <div class="bg-gray-900 rounded-xl shadow-md p-4 h-64 overflow-y-auto font-mono text-sm text-gray-300 flex flex-col-reverse" id="log-console"><div class="mb-1 border-b border-gray-800 pb-1"><span class="text-gray-500 mr-2">[2:29:23]</span> Hệ thống khởi động. Heap được khởi tạo (1 khối Free duy nhất).</div>
-                <div class="mt-2 italic text-gray-500">Hệ thống đã sẵn sàng...</div>
+            <div class="bg-gray-900 rounded-xl shadow-md p-4 h-64 overflow-y-auto font-mono text-sm text-gray-300 flex flex-col-reverse" id="log-console"><div class="mb-1 border-b border-gray-800 pb-1"><span class="text-gray-500 mr-2">[2:29:23]</span> Há»‡ thá»‘ng khá»Ÿi Ä‘á»™ng. Heap Ä‘Æ°á»£c khá»Ÿi táº¡o (1 khá»‘i Free duy nháº¥t).</div>
+                <div class="mt-2 italic text-gray-500">Há»‡ thá»‘ng Ä‘Ã£ sáºµn sÃ ng...</div>
             </div>
 
         </div>
@@ -213,7 +210,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             freeCount = 0;
             minFreeEver = HEAP_SIZE;
             renderHeap();
-            log("Hệ thống khởi động. Heap được khởi tạo (1 khối Free duy nhất).");
+            log("Há»‡ thá»‘ng khá»Ÿi Ä‘á»™ng. Heap Ä‘Æ°á»£c khá»Ÿi táº¡o (1 khá»‘i Free duy nháº¥t).");
             updateStats();
         }
 
@@ -257,14 +254,14 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                     }
 
                     allocCount++;
-                    log(`pvPortMalloc(${size}): Tìm thấy khối trống tại offset ${newBlock.start}. Cấp phát ${type}.`);
+                    log(`pvPortMalloc(${size}): TÃ¬m tháº¥y khá»‘i trá»‘ng táº¡i offset ${newBlock.start}. Cáº¥p phÃ¡t ${type}.`);
                     renderHeap();
                     updateStats();
                     return newBlock.id;
                 }
             }
             
-            log(`Lỗi: pvPortMalloc(${size}) thất bại! Không đủ bộ nhớ trống liên tục.`);
+            log(`Lá»—i: pvPortMalloc(${size}) tháº¥t báº¡i! KhÃ´ng Ä‘á»§ bá»™ nhá»› trá»‘ng liÃªn tá»¥c.`);
             return null;
         }
 
@@ -274,7 +271,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             if (index === -1) return;
 
             const block = heapBlocks[index];
-            log(`vPortFree: Giải phóng khối tại offset ${block.start} (${block.type})...`);
+            log(`vPortFree: Giáº£i phÃ³ng khá»‘i táº¡i offset ${block.start} (${block.type})...`);
             
             // Mark as free
             block.type = 'FREE';
@@ -284,14 +281,14 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             // Algorithm: Coalescence (Merge adjacent free blocks)
             // Check Next
             if (index + 1 < heapBlocks.length && heapBlocks[index + 1].type === 'FREE') {
-                log(`Coalescence: Gộp với khối trống kế tiếp (Size ${heapBlocks[index+1].size}).`);
+                log(`Coalescence: Gá»™p vá»›i khá»‘i trá»‘ng káº¿ tiáº¿p (Size ${heapBlocks[index+1].size}).`);
                 block.size += heapBlocks[index + 1].size;
                 heapBlocks.splice(index + 1, 1); // Remove the next block
             }
 
             // Check Previous
             if (index - 1 >= 0 && heapBlocks[index - 1].type === 'FREE') {
-                log(`Coalescence: Gộp với khối trống phía trước (Size ${heapBlocks[index-1].size}).`);
+                log(`Coalescence: Gá»™p vá»›i khá»‘i trá»‘ng phÃ­a trÆ°á»›c (Size ${heapBlocks[index-1].size}).`);
                 const prevBlock = heapBlocks[index - 1];
                 prevBlock.size += block.size;
                 heapBlocks.splice(index, 1); // Remove current block (merged into previous)
@@ -304,13 +301,13 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         // --- High Level Functions ---
 
         async function simCreateTask() {
-            log("--> Bắt đầu xTaskCreate()...");
+            log("--> Báº¯t Ä‘áº§u xTaskCreate()...");
             
             // Step 1: Allocate TCB
             await delay(300);
             const tcbId = pvPortMalloc(TCB_SIZE, 'TCB');
             if (!tcbId) {
-                log("xTaskCreate thất bại do thiếu RAM cho TCB!");
+                log("xTaskCreate tháº¥t báº¡i do thiáº¿u RAM cho TCB!");
                 return;
             }
 
@@ -318,7 +315,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             await delay(600);
             const stackId = pvPortMalloc(DEFAULT_STACK_SIZE, 'STACK');
             if (!stackId) {
-                log("xTaskCreate thất bại do thiếu RAM cho Stack! (Rollback TCB)");
+                log("xTaskCreate tháº¥t báº¡i do thiáº¿u RAM cho Stack! (Rollback TCB)");
                 vPortFree(tcbId);
                 return;
             }
@@ -327,7 +324,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
             const stackBlock = heapBlocks.find(b => b.id === stackId);
             if(stackBlock) stackBlock.relatedId = tcbId; // Link them conceptually
 
-            log("xTaskCreate thành công! Task đã sẵn sàng.");
+            log("xTaskCreate thÃ nh cÃ´ng! Task Ä‘Ã£ sáºµn sÃ ng.");
         }
 
         function simMalloc(size) {
@@ -388,7 +385,7 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
                 // Click to Free (only if allocated)
                 if (block.type !== 'FREE') {
                     div.onclick = () => {
-                        if (confirm(`Giải phóng khối nhớ ${block.type} tại ${block.start}?`)) {
+                        if (confirm(`Giáº£i phÃ³ng khá»‘i nhá»› ${block.type} táº¡i ${block.start}?`)) {
                             vPortFree(block.id);
                         }
                     };
@@ -438,63 +435,21 @@ a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons"
         }
 
         // --- Source Code Generator (C) ---
-        function downloadSource() {
-            const cCode = `/* 
- * MINH HỌA NGUYÊN LÝ HEAP_4 & xTaskCreate
- * File này được tạo tự động từ trình mô phỏng.
- */
 
-#include "FreeRTOS.h"
-#include "task.h"
-
-/* 
- * 1. Nguồn RAM thực tế
- * Trong heap_4.c, RAM được lấy từ một mảng tĩnh khổng lồ.
- * Linker không quản lý heap này, FreeRTOS tự quản lý.
- */
-#define configTOTAL_HEAP_SIZE  ( 10 * 1024 )
-static uint8_t ucHeap[ configTOTAL_HEAP_SIZE ];
-
-/*
- * 2. Cấu trúc Linked List (ẩn trong heap_4.c)
- * Dùng để quản lý các khối nhớ trống (Free Blocks).
- */
-typedef struct A_BLOCK_LINK
-{
-    struct A_BLOCK_LINK *pxNextFreeBlock; // Trỏ tới khối trống tiếp theo
-    size_t xBlockSize;                    // Kích thước khối này (bao gồm cả header)
-} BlockLink_t;
-
-/*
- * 3. Minh họa pvPortMalloc (First Fit Logic)
- * Tìm khối trống đầu tiên đủ lớn, cắt nhỏ ra nếu cần.
- */
-void *pvPortMalloc( size_t xWantedSize )
-{
-    BlockLink_t *pxBlock, *pxPreviousBlock;
-    void *pvReturn = NULL;
-
-    vTaskSuspendAll(); // Thread safety
-    {
-        /* Căn chỉnh bộ nhớ (Alignment) */
-        if( ( xWantedSize & portBYTE_ALIGNMENT_MASK ) != 0x00 ) {
-             /* Adjust size code... */
-        }
-
-        /* Duyệt Free List từ đầu */
-        pxBlock = &xStart; // xStart là đầu danh sách
+        /* Duyá»‡t Free List tá»« Ä‘áº§u */
+        pxBlock = &xStart; // xStart lÃ  Ä‘áº§u danh sÃ¡ch
         while( ( pxBlock->xBlockSize < xWantedSize ) && ( pxBlock->pxNextFreeBlock != NULL ) )
         {
             pxPreviousBlock = pxBlock;
             pxBlock = pxBlock->pxNextFreeBlock;
         }
 
-        /* Nếu tìm thấy khối phù hợp */
+        /* Náº¿u tÃ¬m tháº¥y khá»‘i phÃ¹ há»£p */
         if( pxBlock != pxEnd )
         {
             pvReturn = ( void * ) ( ( uint8_t * ) pxPreviousBlock->pxNextFreeBlock + xHeapStructSize );
             
-            /* Cắt khối (Split) nếu khối tìm thấy quá lớn */
+            /* Cáº¯t khá»‘i (Split) náº¿u khá»‘i tÃ¬m tháº¥y quÃ¡ lá»›n */
             if( ( pxBlock->xBlockSize - xWantedSize ) > heapMINIMUM_BLOCK_SIZE )
             {
                 BlockLink_t *pxNewBlockLink = ( void * ) ( ( ( uint8_t * ) pxBlock ) + xWantedSize );
@@ -502,12 +457,12 @@ void *pvPortMalloc( size_t xWantedSize )
                 pxNewBlockLink->xBlockSize = pxBlock->xBlockSize - xWantedSize;
                 pxBlock->xBlockSize = xWantedSize;
                 
-                /* Chèn phần dư trở lại danh sách trống */
+                /* ChÃ¨n pháº§n dÆ° trá»Ÿ láº¡i danh sÃ¡ch trá»‘ng */
                 prvInsertBlockIntoFreeList( ( pxNewBlockLink ) );
             }
             
-            /* Xóa khối đã cấp phát khỏi danh sách Free */
-            /* (Trong heap_4 thực tế, bit cao nhất của xBlockSize được set để đánh dấu allocated) */
+            /* XÃ³a khá»‘i Ä‘Ã£ cáº¥p phÃ¡t khá»i danh sÃ¡ch Free */
+            /* (Trong heap_4 thá»±c táº¿, bit cao nháº¥t cá»§a xBlockSize Ä‘Æ°á»£c set Ä‘á»ƒ Ä‘Ã¡nh dáº¥u allocated) */
         }
     }
     xTaskResumeAll();
@@ -515,30 +470,30 @@ void *pvPortMalloc( size_t xWantedSize )
 }
 
 /*
- * 4. Minh họa xTaskCreate 
- * Gọi malloc 2 lần riêng biệt cho TCB và Stack
+ * 4. Minh há»a xTaskCreate 
+ * Gá»i malloc 2 láº§n riÃªng biá»‡t cho TCB vÃ  Stack
  */
 BaseType_t xTaskCreate( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth, ... )
 {
     TCB_t *pxNewTCB;
     StackType_t *pxNewTCBStack;
 
-    /* Bước 1: Cấp phát TCB */
+    /* BÆ°á»›c 1: Cáº¥p phÃ¡t TCB */
     pxNewTCB = ( TCB_t * ) pvPortMalloc( sizeof( TCB_t ) );
 
     if( pxNewTCB != NULL )
     {
-        /* Bước 2: Cấp phát Stack (lưu ý chuyển đơn vị từ Word sang Byte) */
+        /* BÆ°á»›c 2: Cáº¥p phÃ¡t Stack (lÆ°u Ã½ chuyá»ƒn Ä‘Æ¡n vá»‹ tá»« Word sang Byte) */
         pxNewTCBStack = ( StackType_t * ) pvPortMalloc( ( ( size_t ) usStackDepth ) * sizeof( StackType_t ) );
 
         if( pxNewTCBStack != NULL )
         {
-            /* Thành công! Khởi tạo task... */
+            /* ThÃ nh cÃ´ng! Khá»Ÿi táº¡o task... */
             prvInitialiseNewTask( ..., pxNewTCB, pxNewTCBStack, ... );
         }
         else
         {
-            /* Có TCB nhưng thiếu Stack -> Phải giải phóng TCB để tránh leak */
+            /* CÃ³ TCB nhÆ°ng thiáº¿u Stack -> Pháº£i giáº£i phÃ³ng TCB Ä‘á»ƒ trÃ¡nh leak */
             vPortFree( pxNewTCB );
             pxNewTCB = NULL;
         }
@@ -571,15 +526,15 @@ void vShowHeapStats()
 
         // --- Source Code Generator (HTML) ---
         function downloadHTML() {
-            // Lấy toàn bộ nội dung HTML của trang hiện tại
+            // Láº¥y toÃ n bá»™ ná»™i dung HTML cá»§a trang hiá»‡n táº¡i
             const htmlContent = document.documentElement.outerHTML;
             
-            // Tạo Blob và link download
+            // Táº¡o Blob vÃ  link download
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = "FreeRTOS_Heap_Sim.html"; // Tên file tải về
+            a.download = "FreeRTOS_Heap_Sim.html"; // TÃªn file táº£i vá»
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
